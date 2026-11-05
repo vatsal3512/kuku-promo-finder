@@ -17,7 +17,7 @@ SAMPLE = ROOT / "tests" / "fixtures" / "sample_show"
 LOGO = ROOT / "assets" / "kuku-logo-white.png"
 RED = "#EC1C24"
 
-st.set_page_config(page_title="PromoFinder", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="PromoFinder", layout="wide", initial_sidebar_state="expanded")
 
 st.markdown(
     """
@@ -57,6 +57,11 @@ section[data-testid="stSidebar"] { background: #131416; border-right: 1px solid 
 .cut { color: #6f7278; font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase; padding: 6px 0 6px 10px; border-bottom: 1px solid #1b1c1f; }
 .scores { color: #9a9da3; font-size: 13.5px; }
 .scores b { color: #ededed; font-weight: 600; }
+.guide { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 28px; padding: 4px 2px 2px 2px; }
+.guide .n { display: inline-block; width: 20px; height: 20px; border-radius: 50%; border: 1px solid #EC1C24; color: #EC1C24; font-size: 12px; font-weight: 700; text-align: center; line-height: 18px; margin-right: 8px; }
+.guide .h { color: #ededed; font-weight: 600; font-size: 14.5px; }
+.guide .b { color: #a9acb2; font-size: 13.5px; line-height: 1.5; margin: 4px 0 0 28px; }
+.guide .b b { color: #dcdcdc; font-weight: 600; }
 .foot { color: #6f7278; font-size: 12px; margin-top: 28px; padding-top: 10px; border-top: 1px solid #222327; }
 .foot a { color: #9a9da3; }
 .stButton button { border-radius: 6px; font-weight: 600; }
@@ -190,22 +195,45 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+GUIDE = [
+    ("Pick a promo on the left",
+     "The list is already ranked. <b>Post first</b> (#1) is the safest strong clip to run first. <b>Test next</b> are the ones to try against it. "
+     "<b>Retargeting</b> clips give away late twists, so they are for people already watching. Click a row to open it."),
+    ("Read it on the right",
+     "The exact cut, a bar showing where it sits in the episode (bright red is the first 3 seconds, where the hook must land), "
+     "the hook and cliffhanger lines, why it works and why it has that rank, anything to check before posting, the full transcript "
+     "with the hook and cliffhanger marked, and the scores from two AI judges."),
+    ("Approve or reject",
+     "At the bottom of each promo. Add a note if you like. Decisions are saved with the run so the ranking can be tuned later."),
+    ("Run it on new scripts",
+     "Use the panel on the left (the <b>&raquo;</b> arrow if it is closed). Upload one script file per episode (.txt, .md or .fountain), "
+     "or use the two-episode sample. <b>Rules only</b> takes seconds and needs no key. <b>Full</b> uses the AI judges, about 20-25 minutes "
+     "for 50 episodes. The new run then shows up in the dropdown at the top right, next to the <b>Submitted run</b> and the <b>Rules only</b> run."),
+]
+with st.expander("How to use this app", expanded=True):
+    st.markdown(
+        '<div class="guide">' + "".join(
+            f'<div><div class="h"><span class="n">{i}</span>{h}</div><div class="b">{b}</div></div>' for i, (h, b) in enumerate(GUIDE, 1)
+        ) + "</div>",
+        unsafe_allow_html=True,
+    )
+
 ROLE = {"control": "Post first", "challenger": "Test next", "retargeting": "Retargeting"}
 table = pd.DataFrame([{
     "#": p["rank"],
-    "Clip": " + ".join(f"Ep {s['episode']}  {s['start'][:5]}" for s in p["segments"]),
+    "Clip": " + ".join(f"Ep {s['episode']}" for s in p["segments"]) + f"  {p['segments'][0]['start'][:5]}",
     "Length": f"{p['duration']:.0f}s",
     "Use": ROLE.get(p.get("role"), p.get("role", "")),
 } for p in promos])
 
-left, right = st.columns([1.05, 1.6], gap="large")
+left, right = st.columns([1.25, 1.5], gap="large")
 with left:
     st.markdown('<div class="label">Ranked promos</div>', unsafe_allow_html=True)
     event = st.dataframe(
         table, hide_index=True, on_select="rerun", selection_mode="single-row", key="list", height=35 * len(table) + 38,
-        column_config={"#": st.column_config.NumberColumn(width=40), "Clip": st.column_config.TextColumn(width=180), "Length": st.column_config.TextColumn(width=64), "Use": st.column_config.TextColumn(width=118)},
+        column_config={"#": st.column_config.NumberColumn(width=34), "Clip": st.column_config.TextColumn(width=150), "Length": st.column_config.TextColumn(width=58), "Use": st.column_config.TextColumn(width=118)},
     )
-    st.caption("Click a row to open it. #1 is the safest early clip to post first. Retargeting cuts give away late twists, so they are for people already watching. To try it on new scripts, open the panel with the arrow at the top left.")
+    st.caption("Click a row to open it. #1 is the safest early clip to post first. Retargeting cuts give away late twists, so they are for people already watching.")
 
 rows = event.selection.rows if event and event.selection else []
 p = promos[rows[0]] if rows else promos[0]

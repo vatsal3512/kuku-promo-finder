@@ -1,0 +1,18 @@
+[project]
+name = "promofinder"
+version = "0.1.0"
+description = "Ranked promo clips from microdrama screenplays"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "openai>=1.40", "pydantic>=2.6", "PyYAML>=6.0", "rapidfuzz>=3.0", "pandas>=2.0", "streamlit>=1.35"]
+
+[project.scripts]
+promofinder = "promofinder.__main__:main"
+
+[tool.setuptools]
+packages = ["promofinder"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.pyright]
+extraPaths = ["."]

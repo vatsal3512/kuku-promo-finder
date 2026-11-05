@@ -1,0 +1,70 @@
+{
+  "show": "I Married a Broken Soldier. He was a Duke",
+  "input": "../I Married a Broken Soldier. He was a Duke-scripts (2) (1)/I Married a Broken Soldier. He was a Duke",
+  "mode": "offline",
+  "model": null,
+  "judge_model": null,
+  "episodes": 50,
+  "beats": 3727,
+  "candidates": 3605,
+  "generated": 3605,
+  "seconds": 2.74,
+  "llm_usage": null,
+  "config": {
+    "gates": {
+      "min_duration": 20,
+      "max_duration": 60,
+      "max_hook_offset": 3.0,
+      "max_tail": 1.5,
+      "max_segments": 3,
+      "min_segment": 4.0
+    },
+    "generation": {
+      "hooks_per_episode": 12,
+      "cliffs_per_episode": 6,
+      "cross_episode": true,
+      "montage": true,
+      "montage_max_gap": 6,
+      "montage_hooks_per_episode": 4,
+      "montage_cliffs_per_episode": 3
+    },
+    "weights": {
+      "hook": 0.3,
+      "cliff": 0.3,
+      "intensity": 0.12,
+      "stakes": 0.1,
+      "escalation": 0.05,
+      "sound_off": 0.05,
+      "funnel": 0.12
+    },
+    "penalties": {
+      "dead_air_per_second": 0.03,
+      "context": 0.1,
+      "single": 0.0,
+      "cross": 0.02,
+      "montage": 0.08,
+      "policy_high": 0.5,
+      "policy_medium": 0.05
+    },
+    "selection": {
+      "top": 15,
+      "pool": 400,
+      "mmr_lambda": 0.75,
+      "max_overlap": 0.35,
+      "max_per_episode": 2
+    },
+    "llm": {
+      "model": "groq/llama-3.3-70b-versatile",
+      "judge_model": "",
+      "judge_pool": 40,
+      "judge_batch": 5,
+      "pairwise_top": 12,
+      "temperature": 0.2,
+      "max_tokens": 4000,
+      "cache_dir": ".cache/llm",
+      "blend": 0.65,
+      "pairwise_passes": 2
+    },
+    "names": []
+  }
+}

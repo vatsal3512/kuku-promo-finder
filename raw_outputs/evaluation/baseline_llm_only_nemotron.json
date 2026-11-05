@@ -1,0 +1,1073 @@
+{
+  "summary": {
+    "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+    "episodes": 50,
+    "promos": 100,
+    "fully_valid": 77,
+    "valid_ratio": 0.77,
+    "issue_counts": {
+      "named cliffhanger is not at the cut": 23,
+      "named hook is not in the first 3 seconds": 1,
+      "duration outside 20-60": 1
+    },
+    "usage": {
+      "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+      "calls": 0,
+      "cache_hits": 50,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "seconds": 0.0,
+      "failures": 0
+    }
+  },
+  "rows": [
+    {
+      "episode": 1,
+      "start": "00:11.30",
+      "end": "00:43.10",
+      "hook": "You should turn around, Juliana.",
+      "cliffhanger": "Because he is marrying me.",
+      "why": "Opens on the matriarch's chilling command that instantly signals something is wrong; builds through Juliana's dawning horror to the sister's brutal reveal that the groom is marrying her instead, ending on the protagonist's shattered 'No...' — a complete betrayal arc in 32 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 1,
+      "start": "01:45.40",
+      "end": "02:17.50",
+      "hook": "And I am what?",
+      "cliffhanger": "Solemn low-pitched string drone swells to an ominous cliffhanger peak.",
+      "why": "Juliana's desperate question hooks the viewer into the family's cruel verdict; the sister and matriarch dismantle her worth line by line, the groom delivers the final blow, and the promo ends on Juliana's white-knuckled grip on her mother's gown as the score hits an ominous peak — pure emotional devastation in 32 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 2,
+      "start": "00:00.00",
+      "end": "00:44.70",
+      "hook": "I cannot marry you, Juliana.",
+      "cliffhanger": "Do not disgrace us further.",
+      "why": "Opens on the brutal jilting at the altar; closes with the father's cold rejection, leaving Juliana utterly alone — a complete emotional arc in 45 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 2,
+      "start": "00:47.80",
+      "end": "01:36.60",
+      "hook": "Why are you surprised, sister? Look at you.",
+      "cliffhanger": "You have shown them exactly what your word is worth.",
+      "why": "Launches with the sister's venomous public humiliation; builds through the matriarch's cruelty to Juliana's mic-drop indictment of Gerald's honor — a revenge fantasy hook.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 3,
+      "start": "00:30.40",
+      "end": "01:12.10",
+      "hook": "I was humiliated by your family.",
+      "cliffhanger": "Take your hands off her.",
+      "why": "Opens on Juliana's raw accusation against the powerful matriarch, escalates through her public disownment and violent removal by guards, and ends on the mysterious stranger's first commanding intervention — a complete betrayal-to-rescue arc in 42 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 3,
+      "start": "01:30.40",
+      "end": "02:20.30",
+      "hook": "Are you hurt?",
+      "cliffhanger": "Lady Juliana... accept my hand.",
+      "why": "Opens on intimate tenderness after brutal action — the stranger's quiet concern contrasts his violence seconds prior. Builds through his public defense of her worth, then delivers a shocking on-one-knee proposal to a stranger as the congregation gasps. High-romance cliffhanger with maximum viral potential.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 4,
+      "start": "00:28.00",
+      "end": "01:14.50",
+      "hook": "Because I know what I see.",
+      "cliffhanger": "Then I accept.",
+      "why": "Opens on the stranger's magnetic certainty, builds through raw vulnerability and a vow that isn't pity, ends on Juliana's irreversible choice to marry a mystery man — perfect emotional arc with a gasp-worthy commitment.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 4,
+      "start": "01:35.80",
+      "end": "02:14.50",
+      "hook": "You need not say anything you do not mean.",
+      "cliffhanger": "You are disowned!",
+      "why": "Starts at the altar with a groom who refuses coercion, races through vows, ring, and pronouncement into explosive fallout — Gerald's rage and Lady Ashcroft's disownment deliver a double cliffhanger that demands the next episode.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 5,
+      "start": "00:06.80",
+      "end": "00:37.60",
+      "hook": "You will not leave this church carrying the Ashcroft name.",
+      "cliffhanger": "No, Father. You chose that long before today.",
+      "why": "Father disowns daughter at her wedding altar; her final retort reframes their entire history in three seconds.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 5,
+      "start": "00:44.30",
+      "end": "01:31.00",
+      "hook": "And the ledger... that belongs to this family.",
+      "cliffhanger": "Let them keep everything else.",
+      "why": "Mother's heirloom flung into mud before the bride's eyes; the stranger's tender retrieval redefines loyalty and love amid ruin.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 6,
+      "start": "00:00.00",
+      "end": "00:30.15",
+      "hook": "Juliana lifts the hem of her white satin wedding gown to keep it out of the pooling mud, shivering under her dark hooded cloak.",
+      "cliffhanger": "At least no one there will be waiting to humiliate me.",
+      "why": "Opens on a striking visual contradiction — a bride in wilderness mud — instantly raising questions. Builds mystery through rain-soaked walk and cryptic dialogue, then lands a devastating reveal: her wedding day ended in humiliation, not celebration.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 6,
+      "start": "01:00.30",
+      "end": "01:49.00",
+      "hook": "I am. But not because of you.",
+      "cliffhanger": "And yet... Sitting here with him, I don't feel afraid.",
+      "why": "Opens on raw emotional honesty that reframes their dynamic. Quiet domestic actions — sweeping, fire-making — show trust building without words. Ends on a shocking admission of peace amid total loss, leaving viewers desperate to know what happens next.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 7,
+      "start": "00:22.00",
+      "end": "01:11.20",
+      "hook": "This is where you live now?",
+      "cliffhanger": "Where is that beggar husband?",
+      "why": "Opens on a cruel class insult that instantly establishes conflict; builds through Juliana's defiant pride and Gerald's escalating threats, ending on the chilling question that summons the silent protector — a perfect setup for the power reversal.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 7,
+      "start": "01:05.60",
+      "end": "01:47.80",
+      "hook": "I have enough influence to make a beggar disappear.",
+      "cliffhanger": "I didn't need to.",
+      "why": "Opens with the villain's coldest threat, then delivers the entire payoff in 42 seconds: the husband's wordless arrival, Gerald's instant terror, the carriage fleeing, and the final line that redefines strength as silence — a complete, satisfying arc with a mic-drop ending.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 8,
+      "start": "00:00.00",
+      "end": "00:49.60",
+      "hook": "Some of the pages are ruined. Careful.",
+      "cliffhanger": "But one day, I am trimming that beard.",
+      "why": "Opens on a fragile heirloom and a mother's legacy, then builds intimate tension through shared botanical knowledge and charged grooming banter, ending on a playful promise of future closeness.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 8,
+      "start": "00:53.30",
+      "end": "01:15.30",
+      "hook": "That one grows near the northern stream. Crushed leaves ease swelling.",
+      "cliffhanger": "Perhaps I was wrong.",
+      "why": "Reveals Alexander's hidden medicinal expertise mirroring her mother's notes, then pivots to his war scars and her realization that losing wealth uncovered something more valuable.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 9,
+      "start": "00:02.00",
+      "end": "00:54.30",
+      "hook": "SFX: Heavy, frantic pounding echoes against the heavy wooden cottage door.",
+      "cliffhanger": "Juliana: \"Wait.\"",
+      "why": "Opens with visceral urgency — pounding door, a dying child, a healer under pressure. The 52-second arc builds life-or-death stakes through herbal lore and raw emotion, then cuts on Juliana's single whispered command as the mother panics, leaving the remedy's fate hanging.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 9,
+      "start": "01:24.00",
+      "end": "01:49.80",
+      "hook": "ACTION: The Former Groom, soaked from the rain and clutching his hat, walks nervously through the double doors into the study.",
+      "cliffhanger": "Blond Nobleman: \"Impossible.\"",
+      "why": "A rain-lashed messenger delivers a rumor that shatters the nobleman's composure: a scarred veteran who mirrors the dead Duke. The 26-second clip layers political dread into a single revelation, ending on the nobleman's stunned denial — a hook that demands the next episode.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 10,
+      "start": "00:02.10",
+      "end": "00:38.90",
+      "hook": "A heavy wooden door suddenly creaks and bangs open in the quiet cottage.",
+      "cliffhanger": "Dear God.",
+      "why": "Opens with a visceral intrusion that shatters the quiet, then escalates through terse dialogue to a devastating reveal of hidden scars — perfect tension arc for a cold-open promo.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 10,
+      "start": "01:03.90",
+      "end": "01:25.90",
+      "hook": "Why do you look at me like that?",
+      "cliffhanger": "Your touch is the only medicine that has ever eased my pain.",
+      "why": "Instant romantic tension hook, builds through charged micro-beats, and lands on a line that reframes their entire dynamic — ideal for a character/relationship teaser.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 11,
+      "start": "00:16.80",
+      "end": "00:53.60",
+      "hook": "Gerald: \"Your husband stole my gold pocket watch!\"",
+      "cliffhanger": "Alexander: \"Search it. Let them.\"",
+      "why": "Opens on an explosive accusation that instantly raises stakes; builds through Juliana's denial, Gerald's class cruelty, and the constable's arrival to a defiant climax where Alexander invites the search — a power move that promises disaster.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 11,
+      "start": "00:54.50",
+      "end": "01:44.20",
+      "hook": "SFX: Heavy thud of boots entering wooden floorboards, followed by forceful banging of furniture.",
+      "cliffhanger": "Gerald: \"There it is. Ha!\"",
+      "why": "Visceral, immediate action hook; the violent search destroys Juliana's last sentimental possessions while she pleads, Alexander restrains himself, and the constable finds the planted watch — ending on Gerald's triumphant reveal, the ultimate rug-pull.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 12,
+      "start": "00:00.50",
+      "end": "00:41.50",
+      "hook": "Put out your hands, veteran. You are under arrest for theft.",
+      "cliffhanger": "Perhaps I can give you one.",
+      "why": "Opens with immediate high-stakes arrest of a vulnerable veteran; builds through Juliana's fierce defense, the planted evidence reveal, and culminates in Clarissa's chilling offer of a 'way out' that signals a darker trap.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 12,
+      "start": "00:44.00",
+      "end": "01:09.20",
+      "hook": "I want to see you crawl, sister.",
+      "cliffhanger": "Fail, or refuse, and your husband hangs from the gallows.",
+      "why": "Hook lands with pure sadistic cruelty from the sister; the promo then unfolds the impossible task — bare hands in frozen thorns — and ends on the ultimate ticking-clock ultimatum: mutilation or execution.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 13,
+      "start": "00:05.40",
+      "end": "00:51.50",
+      "hook": "Juliana, look at those thorns. You cannot do this.",
+      "cliffhanger": "Please...",
+      "why": "Opens on Alexander's desperate plea revealing the lethal stakes, builds through Juliana's unwavering loyalty and the antagonists' cruelty, ends on Alexander's broken whisper as she disappears into the briars.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 13,
+      "start": "01:02.20",
+      "end": "01:49.00",
+      "hook": "Keep searching, Juliana. Your husband's freedom is somewhere in that garden.",
+      "cliffhanger": "Juliana reaches out her torn, bloodied hand and wraps her fingers tightly around the emerald ring.",
+      "why": "Gerald's sadistic command hooks the stakes; visceral SFX and Juliana's mutilated crawl sustain tension; the ring grasp delivers a blood-earned cliffhanger that demands resolution.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 14,
+      "start": "00:07.70",
+      "end": "00:54.00",
+      "hook": "I found it. Now release my husband.",
+      "cliffhanger": "But I didn't lose you.",
+      "why": "High-stakes rescue opening resolves into raw emotional payoff, showcasing the couple's devotion through sacrifice.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 14,
+      "start": "00:33.20",
+      "end": "01:27.63",
+      "hook": "You should never have had to bleed for me.",
+      "cliffhanger": "No one will ever hurt you for protecting me again.",
+      "why": "Tender aftermath pivots to terrifying vengeance turn; final iron fist and bass drop deliver a massive series-level cliffhanger.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 15,
+      "start": "00:47.40",
+      "end": "01:24.00",
+      "hook": "The Thug with Cap violently shoves Juliana back with both hands; she cries out as she loses her balance and crashes hard onto the wet stone path.",
+      "cliffhanger": "What? You want to fight us, veteran?",
+      "why": "Opens on visceral violence against a vulnerable woman defending her mother's legacy; builds through her bloodied crawl to Alexander's lethal entrance and the armed standoff, ending on the thug's arrogant challenge and a cello swell cut to black.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 15,
+      "start": "01:00.00",
+      "end": "01:24.00",
+      "hook": "The Tall Thug hoists his heavy wooden club above his head to crush the remaining herbs right before Juliana. Juliana: \"Stop!\"",
+      "cliffhanger": "What? You want to fight us, veteran?",
+      "why": "Instant life-or-death stakes: club raised for the kill, heroine's desperate scream, then Alexander storms in like a force of nature. The 24-second sprint from execution to protector's arrival to mutual death-stare delivers maximum adrenaline for vertical feed retention.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 16,
+      "start": "00:00.00",
+      "end": "00:52.20",
+      "hook": "ACTION: Alexander stands tall and unyielding, blocking the path to Juliana, while the Thug with Cap steps forward clutching an iron pipe.",
+      "cliffhanger": "Thug With Cap: \"Harrington! Gerald Harrington paid us!\"",
+      "why": "Opens with immediate physical threat and power imbalance; delivers a full fight sequence showcasing Alexander's lethal skill, then drops the season's villain name as a hard revelation.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 16,
+      "start": "01:00.00",
+      "end": "01:23.19",
+      "hook": "ACTION: Alexander flexes his bleeding hand, showing no sign of pain.",
+      "cliffhanger": "SFX: Slow, resonant emotional cello melody swelling to a dramatic cliffhanger hold.",
+      "why": "Shifts from violence to intimacy; the stoic soldier mask cracks as Juliana reads his hidden past, ending on a charged silent gaze that promises romance and secrets.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 17,
+      "start": "00:09.30",
+      "end": "00:34.80",
+      "hook": "Some of them survived.",
+      "cliffhanger": "I just did.",
+      "why": "Opens on a fragile metaphor (the daisy) that instantly raises stakes, then escalates through revealed danger and a kneeling vow into an impossible promise that hooks viewers with romantic tension and protective devotion.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 17,
+      "start": "01:00.80",
+      "end": "01:40.30",
+      "hook": "Of losing you.",
+      "cliffhanger": "Not yet.",
+      "why": "Raw vulnerability hooks in three words; the promo then builds intimate physical awareness (heartbeats, hair, laughter) into a charged wrist-catch moment where Alexander's solemn 'Not yet' leaves the relationship's next step tantalizingly unresolved.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 18,
+      "start": "00:56.50",
+      "end": "01:27.50",
+      "hook": "The ledger!",
+      "cliffhanger": "Down!",
+      "why": "Juliana risks her life for her mother's ledger in a burning room; Alexander tackles her seconds before a massive beam crashes down — visceral action, emotional stakes, and a gasp-worthy near-death beat in 31 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 18,
+      "start": "02:25.80",
+      "end": "03:06.50",
+      "hook": "Why would anyone do this?",
+      "cliffhanger": "What are you going to do?",
+      "why": "From the ashes of their home, Juliana demands answers and Alexander vows vengeance; the promo pivots from grief to a hardening resolve, ending on an open threat that promises a ruthless next chapter.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 19,
+      "start": "00:43.00",
+      "end": "01:28.90",
+      "hook": "Your Grace.",
+      "cliffhanger": "Then Ashburg will remember who it belongs to.",
+      "why": "Opens on a mysterious informant's reveal, escalates to the duke's mother imprisoned and his presumed death, closes on a vow of reclamation — high-stakes revenge hook in 46 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 19,
+      "start": "00:00.00",
+      "end": "00:37.40",
+      "hook": "This was our home.",
+      "cliffhanger": "Goodbye, Blackwood.",
+      "why": "Visceral opening on ashes and a scorched legacy book; emotional goodbye to a burned life and a step into the unknown — perfect loss-to-resilience arc in 37 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 20,
+      "start": "00:21.30",
+      "end": "00:42.40",
+      "hook": "Once my cousin Alexander's death is formally sealed by the Crown...",
+      "cliffhanger": "Not through the winter. I've ensured her quiet comfort.",
+      "why": "Opens on the cold mechanics of a succession murder, escalates through the Dowager's 'wasting' illness, and lands on Rupert's chilling admission he's actively hastening her end — a complete villain arc in 21 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 20,
+      "start": "01:28.20",
+      "end": "01:49.20",
+      "hook": "Let the peasants rot in their barns.",
+      "cliffhanger": "This house will only bow to me.",
+      "why": "The porcelain chime punctuates Catherine's pivot from schemer to sovereign; the clip layers Rupert's validation, the Duchess's impending death, and Catherine's physical claim of the estate, ending on her absolute declaration of dominance.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 21,
+      "start": "00:03.50",
+      "end": "00:58.20",
+      "hook": "Lady Juliana! Please! You have to help me, Toby is dying!",
+      "cliffhanger": "I cannot let my own weariness stop me. This boy needs my mother's knowledge.",
+      "why": "Opens with violent urgency — barn doors slam, a child's life hangs on a penniless healer. Class conflict, ticking clock, and Juliana's wounded hands crushing herbs for a stranger's son create visceral stakes in under a minute.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 21,
+      "start": "01:23.00",
+      "end": "01:48.50",
+      "hook": "You saved him. The grand doctors left him to choke, but you... I have no money, Lady Juliana, but I swear on my life, I will do anything to repay you.",
+      "cliffhanger": "She is dying, Lady Juliana. A strange, mysterious illness is eating her away. Inside that massive house with all their wealth, she is fading to nothing, and no one can stop it.",
+      "why": "Emotional payoff pivots instantly to series-level jeopardy: the Dowager Duchess is dying of an unknown ailment, and the only cure may lie in Juliana's ashes-scattered ledger. Perfect episode-to-episode bridge.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 22,
+      "start": "00:07.00",
+      "end": "00:37.00",
+      "hook": "Keep your head down. If anyone recognizes you, everything is over.",
+      "cliffhanger": "Today, I am only a maid.",
+      "why": "Opens with immediate life-or-death stakes for a noblewoman in disguise; closes on her total identity surrender, promising a high-stakes upstairs/downstairs thriller.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 22,
+      "start": "01:45.50",
+      "end": "02:07.20",
+      "hook": "Lady Juliana reaches out with a trembling hand and quietly turns the ornate brass and glass door knob.",
+      "cliffhanger": "Who has been treating you?",
+      "why": "Visual hook of a forbidden door opening into a deathbed scene; ends on a bombshell medical accusation that reframes the Duchess's illness as potential murder.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 23,
+      "start": "00:57.50",
+      "end": "01:28.00",
+      "hook": "Juliana draws in a sharp, startled breath, her eyes widening in horror. \"Mother.\"",
+      "cliffhanger": "Juliana: \"Arsenic.\"",
+      "why": "Opens on a visceral physical reaction that signals a terrifying realization; builds through rapid-fire diagnostic dialogue to the explosive accusation of murder by poison — perfect medical-mystery hook with family stakes.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 23,
+      "start": "01:34.50",
+      "end": "02:11.20",
+      "hook": "Prudence: \"Can you save her?\" Juliana: \"I can try.\"",
+      "cliffhanger": "SFX: Loud, metallic clack of the door latch turning, followed by the slow creak of wood hinges.",
+      "why": "Instant life-or-death urgency; shows the heroine springing into action (grinding charcoal antidote) while a ticking-clock threat (footsteps, then the door opening) crashes in — dual cliffhanger of medical and physical peril.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 24,
+      "start": "00:06.80",
+      "end": "00:42.80",
+      "hook": "Who are you?",
+      "cliffhanger": "And certainly not a woman whose opinion matters.",
+      "why": "Opens on immediate power confrontation; builds through Juliana's quiet defiance and brutal punishment to a dehumanizing verbal cliffhanger that crystallizes the class warfare.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 24,
+      "start": "00:45.50",
+      "end": "01:29.80",
+      "hook": "Good. Perhaps we can teach you your place.",
+      "cliffhanger": "I will return. You cannot stop the healer.",
+      "why": "Villain's threat launches a descent into soot-blackened punishment, then pivots sharply to Juliana's hidden journal and vial reveal, ending on her fierce promise that reframes her submission as strategy.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 25,
+      "start": "00:32.80",
+      "end": "01:23.50",
+      "hook": "Who?",
+      "cliffhanger": "Arsenic.",
+      "why": "Opens on Alexander's intense physical confrontation — stepping into her space, seizing her hand, demanding the truth — then escalates through the revelation of Lady Catherine, the Dowager Duchess, and the secret poisoning, landing on the single, chilling word 'Arsenic' that reframes everything as murder.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 25,
+      "start": "02:08.20",
+      "end": "02:37.40",
+      "hook": "Because you were standing inside a house where someone is poisoning a woman... and you never told me.",
+      "cliffhanger": "Everything you saw.",
+      "why": "Explodes with raw emotional stakes — Alexander's fury at her secrecy and the mortal danger she faced — then pivots to her unshakeable resolve to stay, forcing his reluctant surrender and a partnership sealed by the open-ended demand for every secret she holds.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 26,
+      "start": "00:56.00",
+      "end": "01:55.50",
+      "hook": "Rupert and Catherine want me dead. They are poisoning me in my own bed, aren't they?",
+      "cliffhanger": "Where... where... Where did you get this ring? Speak to me!",
+      "why": "Opens on the lethal conspiracy confession, builds through Juliana's hidden nobility, and detonates on the ring recognition that threatens to expose her true identity.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 26,
+      "start": "00:30.80",
+      "end": "00:56.00",
+      "hook": "You... you are no common servant. You took Catherine's whip for me the other day.",
+      "cliffhanger": "Rupert and Catherine want me dead. They are poisoning me in my own bed, aren't they?",
+      "why": "Hooks with the Duchess recognizing Juliana's secret heroism, then escalates to a life-or-death poisoning accusation that reframes every prior interaction.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 27,
+      "start": "00:01.30",
+      "end": "00:37.60",
+      "hook": "This ring... Look at me, girl. Who gave this to you?",
+      "cliffhanger": "My lost son wore that ring!",
+      "why": "Opens on a mysterious object and a demand for truth; closes on the explosive revelation that Juliana's husband may be the Dowager's missing heir, flipping the entire identity premise in 36 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 27,
+      "start": "01:48.30",
+      "end": "02:28.00",
+      "hook": "It is an antidote. An antidote to what? Poison.",
+      "cliffhanger": "Take her.",
+      "why": "The single word 'Poison' reframes everything—Juliana wasn't harming the Duchess, she was saving her—then the Blond Nobleman twists it into grounds for arrest, ending on a visceral physical cliffhanger as guards drag her away.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 28,
+      "start": "00:12.70",
+      "end": "00:47.00",
+      "hook": "She looks exactly like a poisoner.",
+      "cliffhanger": "They have been—",
+      "why": "Opens on Catherine's damning accusation, escalates through Juliana's desperate defense and the Dowager Duchess's explosive revelation that she was poisoned and Catherine knew, ending on the Duchess's collapse mid-sentence — a perfect ticking-clock cliffhanger.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 28,
+      "start": "01:28.00",
+      "end": "02:16.70",
+      "hook": "Catherine lifts the heavy herbarium, dusting off the cover before opening its aged parchment pages.",
+      "cliffhanger": "...before he sends you to the gallows.",
+      "why": "Opens on the visual hook of the secret herbarium being opened, builds through the shocking identity reveal 'Lady Juliana Ashcroft' and Catherine's ruthless public shaming of Juliana's fall from nobility, ending on the explicit death-sentence threat that raises stakes to maximum.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 29,
+      "start": "00:07.40",
+      "end": "00:53.80",
+      "hook": "Catherine! Please! That book is my mother's only legacy!",
+      "cliffhanger": "...no one will remember what was written inside.",
+      "why": "Opens on Juliana's desperate plea for her mother's medical legacy, escalates through Catherine's witchcraft framing, and ends on the chilling threat to erase both the book and Juliana from history.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 29,
+      "start": "00:50.10",
+      "end": "01:18.10",
+      "hook": "And when they find your corpse at the end of the rope...",
+      "cliffhanger": "What exactly do you think a penniless veteran can do against Ashbrook?",
+      "why": "Launches with a death threat, reveals Catherine's misogynistic motive, and closes by crushing Juliana's last lifeline—her husband—leaving her utterly alone against the regime.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 30,
+      "start": "00:08.80",
+      "end": "00:59.40",
+      "hook": "You have a rat in your cellar, Rupert. And the servants are beginning to smell it.",
+      "cliffhanger": "We use the law to destroy her.",
+      "why": "Opens with a visceral metaphor hook that instantly establishes stakes and secrecy; builds through physical intimidation and whispered conspiracy to a chilling pivot from hiding a prisoner to weaponizing the state against her.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 30,
+      "start": "01:25.80",
+      "end": "02:17.50",
+      "hook": "Then call it witchcraft.",
+      "cliffhanger": "Tomorrow, she stops being a prisoner. She becomes a witch.",
+      "why": "Opens on the escalation to a capital charge, then lays out the cold mechanics of framing a trial, buying a jury, and manufacturing evidence, ending on a terrifying identity shift and a hard deadline that promises imminent doom.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 31,
+      "start": "00:39.20",
+      "end": "01:38.20",
+      "hook": "I became a disgrace when I refused to become cruel.",
+      "cliffhanger": "But cruelty certainly doesn't make you better than me.",
+      "why": "The full ideological duel: Juliana reframes her jilting as moral choice, Catherine weaponizes the public humiliation, and Juliana lands the thematic knockout that love > status. Opens on defiance, closes on a mic-drop that reframes the entire power dynamic.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 31,
+      "start": "02:11.00",
+      "end": "02:31.20",
+      "hook": "Enough!",
+      "cliffhanger": "One flame, and your mother's life's work becomes ash.",
+      "why": "Visceral climax: Catherine snaps, targets Juliana's last tether (her mother's book), and escalates to physical destruction. The 20-second pressure cooker ends on a literal burning-stakes cliffhanger that demands immediate resolution.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 32,
+      "start": "00:54.60",
+      "end": "01:22.00",
+      "hook": "Gerald leaving me was the best thing he ever did for me.",
+      "cliffhanger": "My husband.",
+      "why": "Juliana reframes her rejection as liberation and drops the bombshell that her 'soldier' is now her husband, flipping the power dynamic in a single word.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 32,
+      "start": "02:12.00",
+      "end": "02:34.38",
+      "hook": "But look at you.",
+      "cliffhanger": "Then let's see how brave you are when it touches your skin!",
+      "why": "Juliana exposes Catherine's hollow cruelty, then the promo ends on the branding iron millimeters from Juliana's eye — visceral, immediate danger.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 33,
+      "start": "01:04.40",
+      "end": "02:02.80",
+      "hook": "One word from me, and the county gaol will take him before sunrise.",
+      "cliffhanger": "You heard words you could not understand.",
+      "why": "Opens on a lethal threat to a child, then escalates through coercion into a damning legal framing — perfect tension arc for a vertical hook.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 33,
+      "start": "02:04.50",
+      "end": "02:36.00",
+      "hook": "That is witchcraft.",
+      "cliffhanger": "And now... you will save your brother.",
+      "why": "Instant accusation hook, then twists into a forced-choice ultimatum that leaves the viewer desperate for resolution.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 34,
+      "start": "01:25.00",
+      "end": "02:03.20",
+      "hook": "It was not a ritual!",
+      "cliffhanger": "Herbs are not magic! They are medicine!",
+      "why": "Opens on Juliana's explosive physical defiance — cuffed hands slamming the dock — then escalates through witness accusations to her core thesis: science vs. superstition. The cliffhanger reframes the entire trial in three seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 34,
+      "start": "02:37.00",
+      "end": "03:10.00",
+      "hook": "You understand that refusal may be treated as proof that you knowingly practiced witchcraft?",
+      "cliffhanger": "The Judge extends his raised hand high in judgment over Lady Juliana as the scene holds on her standing still and unbroken before fading to black.",
+      "why": "The Judge's ultimatum hooks instantly with lethal stakes. Juliana's 'Then let it be' (02:43.50) and final stand ('I will not call healing evil') build to the visual cliffhanger: judgment poised, fate unresolved, screen cuts to black.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 35,
+      "start": "00:05.50",
+      "end": "00:52.50",
+      "hook": "I will not die in that house.",
+      "cliffhanger": "I buried you.",
+      "why": "Opens on a desperate escape declaration, builds through mother's perilous flight and emotional reunion, ends on the shattering revelation she believed her son dead for three years.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 35,
+      "start": "02:02.00",
+      "end": "02:25.50",
+      "hook": "I survived because the men who came looking for me believed I was already dead.",
+      "cliffhanger": "The men behind it... are the same men ruling Ashwood now.",
+      "why": "Opens on the survival conspiracy hook, escalates through the admission of a deliberate cover-up, ends on the explosive twist linking the ambush to current power structure.",
+      "issues": [
+        "named hook is not in the first 3 seconds",
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 36,
+      "start": "01:14.90",
+      "end": "02:14.50",
+      "hook": "She went into Ashbourne Manor to save you. She never came back.",
+      "cliffhanger": "She is to be executed.",
+      "why": "Opens on the emotional gut-punch of Juliana's disappearance, then escalates through arrest, witch accusation, and a death sentence — delivering a complete mini-arc of betrayal and urgency in under 60 seconds.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 36,
+      "start": "02:20.20",
+      "end": "03:16.80",
+      "hook": "When?",
+      "cliffhanger": "...their dead Duke is coming home.",
+      "why": "A single-word hook launches a ticking-clock sequence: wedding in two days, execution after, Alexander's vow to reclaim his name and save his wife — culminating in the series' ultimate power reversal.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 37,
+      "start": "00:06.00",
+      "end": "00:26.40",
+      "hook": "Every important family in the county should witness it.",
+      "cliffhanger": "Juliana's execution comes after the wedding.",
+      "why": "Opens on the villains' cold calculation — a wedding as cover for a land grab and a public execution — then escalates in 20 seconds to the chilling reveal that Juliana's death is the entertainment. Perfect stakes-setting for a pilot promo.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 37,
+      "start": "01:36.00",
+      "end": "01:56.20",
+      "hook": "They think hunger will make me surrender.",
+      "cliffhanger": "They cannot take who I am!",
+      "why": "Juliana's dungeon defiance is visceral, visual, and instantly character-defining. The hook drops us into her resistance; the cliffhanger lands her unbreakable identity. Ideal for a character-driven vertical teaser.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 38,
+      "start": "00:34.50",
+      "end": "01:16.00",
+      "hook": "Alexander... are you safe?",
+      "cliffhanger": "Then I suppose I'm next.",
+      "why": "Tracks Juliana's emotional spiral from desperate longing for her husband to the horrifying realization that the wedding bells signal her own impending doom, delivering a complete narrative arc with a devastating twist.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 38,
+      "start": "00:16.00",
+      "end": "00:50.50",
+      "hook": "Why?",
+      "cliffhanger": "What if I never see you again?",
+      "why": "Opens on a single-word mystery that pulls viewers into the guard's inexplicable kindness, then builds through Juliana's raw vulnerability to a heartbreaking cliffhanger that establishes the central romance and life-or-death stakes.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 39,
+      "start": "00:18.30",
+      "end": "00:49.20",
+      "hook": "Six at the front.",
+      "cliffhanger": "Tell the Duke.",
+      "why": "Tight infiltration sequence: scout count, sentry takedown, and the coded go-signal that launches the coup.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 39,
+      "start": "01:02.00",
+      "end": "01:38.41",
+      "hook": "Enough hiding.",
+      "cliffhanger": "And I am bringing my wife home.",
+      "why": "Alexander sheds exile, claims his title, and declares war in one relentless march — ending on a personal stake that raises the emotional stakes.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 40,
+      "start": "00:12.40",
+      "end": "00:48.30",
+      "hook": "Look at them. Every noble family in the county is here today.",
+      "cliffhanger": "And everything that comes after it.",
+      "why": "Opens on the Harringtons' predatory arrival, layers their gloating over Juliana's implied doom, and ends on Lady Harrington's chilling promise of vengeance beyond the wedding.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 40,
+      "start": "01:05.00",
+      "end": "01:50.08",
+      "hook": "All entrances are covered?",
+      "cliffhanger": "And you look better in silk than you ever did as an ignored cousin.",
+      "why": "Drops straight into the assassination lockdown, confirms the 'witch will be dead' order, then pivots to the bride and groom's ruthless alliance — ending on their triumphant, conspiratorial smiles as the screen cuts to black.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 41,
+      "start": "00:01.80",
+      "end": "00:58.00",
+      "hook": "Catherine: \"Wait.\"",
+      "cliffhanger": "Juliana: \"You needed an entire chapel to feel powerful over one chained woman?\"",
+      "why": "Opens with Catherine seizing a royal wedding mid-ceremony; builds through Juliana's humiliating prisoner entrance and Catherine's gloating, then flips the power dynamic entirely on Juliana's cutting retort — a perfect self-contained rivalry beat.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 41,
+      "start": "00:58.00",
+      "end": "01:29.00",
+      "hook": "Juliana: \"You needed an entire chapel to feel powerful over one chained woman?\"",
+      "cliffhanger": "ACTION: Silhouetted armed figures emerge through the smoke and rubble of the breached doorway. Juliana slowly turns her head, glancing back toward the light.",
+      "why": "Starts on Juliana's mic-drop defiance, then escalates through Catherine's cold resolve, the priest's ominous \"Shall we?\", and a cathedral-shattering explosion — ending on mysterious armed intruders and Juliana's fateful look toward the breach.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 42,
+      "start": "00:12.80",
+      "end": "00:49.20",
+      "hook": "You already know.",
+      "cliffhanger": "Look at you... my beautiful boy.",
+      "why": "Opens on Alexander's icy power move, builds through the guards' mutiny and Rupert's panic, lands on the mother's tearful recognition — emotional payoff that demands the next scene.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 42,
+      "start": "00:34.00",
+      "end": "01:17.50",
+      "hook": "And yet, here I stand. That is the lie you built your life upon.",
+      "cliffhanger": "And now, Rupert... we settle what you stole.",
+      "why": "Alexander's mic-drop rebuttal hooks instantly; the mother's public declaration of his birthright raises stakes; final line launches the revenge arc — perfect mid-season trailer.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 43,
+      "start": "00:00.60",
+      "end": "00:21.50",
+      "hook": "You're lying!",
+      "cliffhanger": "No. He is your Duke.",
+      "why": "Opens on immediate accusation and physical violence, builds through Rupert's desperate authority claim, pays off with the Guard Captain's definitive rejection — a complete power inversion in 21 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 43,
+      "start": "00:26.10",
+      "end": "01:04.20",
+      "hook": "Then let the Crown decide.",
+      "cliffhanger": "Rupert Ashburn.",
+      "why": "Alexander's calm challenge hooks the viewer; the dossier reveal escalates with each document layer — ambush, deliberate leak, British channels — culminating in the Crown Official naming Rupert as traitor, a devastating cliffhanger.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 44,
+      "start": "00:03.30",
+      "end": "00:42.80",
+      "hook": "Lord Henry Sterling, you are under arrest by order of the Crown.",
+      "cliffhanger": "Alexander abruptly pulls his face back, refusing her touch and leaving her hand suspended in mid-air.",
+      "why": "Opens with high-stakes arrest of a lord, cross-cuts to Rupert's desperate struggle and Catherine's visceral reaction, builds to the emotional gut-punch of a presumed-dead lover rejecting her touch — a multi-thread collision that demands resolution.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 44,
+      "start": "00:25.20",
+      "end": "01:10.10",
+      "hook": "Alexander... I thought you had died.",
+      "cliffhanger": "Her?!",
+      "why": "Starts on the bombshell reunion of lovers separated by three years and a faked death, escalates through Catherine's raw confession and Alexander's cruel dismantling of their past, ends on Catherine's horrified realization he's chosen another woman — pure romantic catastrophe in under 45 seconds.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 45,
+      "start": "01:11.50",
+      "end": "01:49.00",
+      "hook": "Before the Crown and before God...",
+      "cliffhanger": "You are not Alexander Ashburton's lawful wife.",
+      "why": "Full ceremonial arc: triumphant public claim of wife and title instantly dismantled by Crown authority, delivering a complete rise-and-fall in 37 seconds with maximum vertical-drama stakes.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 45,
+      "start": "00:49.80",
+      "end": "01:08.80",
+      "hook": "Alexander...",
+      "cliffhanger": "Wife?!",
+      "why": "Rival Catherine's desperate interruption triggers Alexander's explosive accusation of poisoning and torture, culminating in the shocking revelation of their secret marriage — a 19-second pressure cooker that hooks on vulnerability and cliffhangs on a game-changing bombshell.",
+      "issues": [
+        "duration 19.0s outside 20-60",
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 46,
+      "start": "00:20.60",
+      "end": "01:10.50",
+      "hook": "You married this woman as a nameless beggar... in a hedge ceremony no clerk in England ever recorded. Three years later, the beggar is revealed to be a Duke. The marriage does not rise with him.",
+      "cliffhanger": "Love doesn't make a Duchess, girl. Paper does.",
+      "why": "Opens on the explosive legal invalidation of their marriage, builds through the Crown's ruthless technicalities (Alexander presumed dead, no license, no register), peaks with Juliana's raw defiance ('I didn't ask this church for permission to survive'), and ends on the High Priest's cold thematic dagger that reframes the entire conflict: bureaucracy vs. soul.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 46,
+      "start": "01:36.80",
+      "end": "02:18.50",
+      "hook": "I have the power to undo in one hearing what took you three years to steal!",
+      "cliffhanger": "Ten days, Duke. Choose your witnesses well.",
+      "why": "Opens on the High Priest's direct threat to annihilate their marriage in a single session, escalates through Alexander's brilliant jurisdictional trap (peerage court vs. parish priest), the Duke weaponizing the Crown's own confirmation against its bailiffs, and closes on the ticking-clock ultimatum that launches the season's central quest: prove a hedge wedding valid in ten days or lose her forever.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 47,
+      "start": "00:56.80",
+      "end": "01:31.50",
+      "hook": "You dare show your face in Ashbourne courtyard?",
+      "cliffhanger": "If you seek shelter in this house, Catherine, you earn it.",
+      "why": "High-stakes confrontation flips into shocking power reversal as Juliana reduces a noblewoman to a scullery maid.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 47,
+      "start": "00:35.80",
+      "end": "01:22.20",
+      "hook": "Look at me, Juliana.",
+      "cliffhanger": "Stop.",
+      "why": "Tender marital declaration collides with brutal expulsion order, ending on Juliana's single-word intervention that changes everything.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 48,
+      "start": "00:00.00",
+      "end": "00:32.00",
+      "hook": "Two words, and that healer's crown rolls right back into the gutter where it belongs.",
+      "cliffhanger": "Lock it.",
+      "why": "Opens on Catherine's venomous smirk and immediate threat, builds the 10-day ticking clock, and ends on the chilling order to imprison Agnes — establishing Catherine as a ruthless schemer locking down her pawns.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 48,
+      "start": "00:47.00",
+      "end": "01:13.40",
+      "hook": "I'm not leaving the county, Agnes. I'm going back into that house.",
+      "cliffhanger": "And make sure no one sees him arrive.",
+      "why": "Flips expectations — Catherine isn't fleeing, she's infiltrating. The promo escalates through priest corruption and secret gold, ending on the order to smuggle Father Thomas in, promising a covert strike before the hearing.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 49,
+      "start": "00:33.50",
+      "end": "01:16.80",
+      "hook": "A priest and a disgraced bride meeting before dawn in her bedchamber. I'd say thoroughness served us both rather well.",
+      "cliffhanger": "What is it you actually need from me, Catherine? Say it plainly, for once.",
+      "why": "Opens on the forbidden core relationship — priest and disgraced bride, secrets, mutual use — then escalates through blackmail stakes to a direct demand for the truth, leaving the audience desperate to hear her answer.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 49,
+      "start": "01:34.40",
+      "end": "02:24.00",
+      "hook": "I want eyes and ears everywhere that decides my future.",
+      "cliffhanger": "We always have.",
+      "why": "Opens with Catherine's ruthless demand for total surveillance, then spirals into explicit treason talk, death stakes, and a sealed pact — ending on the chilling confirmation that their conspiracy is absolute and enduring.",
+      "issues": [],
+      "valid": true
+    },
+    {
+      "episode": 50,
+      "start": "00:16.80",
+      "end": "01:00.30",
+      "hook": "\"Name your price.\"",
+      "cliffhanger": "\"Or perhaps discretion isn't the only thing you've developed a taste for.\"",
+      "why": "A priest and a noblewoman negotiate corruption like a business deal — sex as leverage, territory as currency, faith as a front. The power dynamic flips with every line.",
+      "issues": [
+        "named cliffhanger is not at the cut"
+      ],
+      "valid": false
+    },
+    {
+      "episode": 50,
+      "start": "00:43.20",
+      "end": "01:18.60",
+      "hook": "\"Done. You told yourself this ends when the hearing does.\"",
+      "cliffhanger": "Agnes's jaw drops open in shock as she stifles a cry.",
+      "why": "The affair's fragile truce shatters when a witness catches them — forbidden desire, political blackmail, and a single gasp that could topple empires.",
+      "issues": [],
+      "valid": true
+    }
+  ]
+}

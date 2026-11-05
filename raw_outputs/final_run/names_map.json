@@ -1,0 +1,422 @@
+{
+  "Lady Ashcroft": {
+    "MATRIARCH": [
+      1
+    ],
+    "NOBLE MATRIARCH": [
+      3
+    ],
+    "LADY ASHCROFT": [
+      4,
+      5
+    ]
+  },
+  "Lady Juliana": {
+    "LADY JULIANA": [
+      1,
+      2,
+      3,
+      21,
+      22,
+      23,
+      24,
+      34
+    ]
+  },
+  "Clarissa": {
+    "LADY IN GOLD GOWN": [
+      1,
+      2,
+      3
+    ],
+    "CLARISSA": [
+      4,
+      5,
+      12,
+      13
+    ],
+    "ARISTOCRATIC WOMAN": [
+      7
+    ],
+    "LADY CLARISSA": [
+      37
+    ]
+  },
+  "Gerald": {
+    "THE FORMER GROOM": [
+      1,
+      2,
+      3,
+      9
+    ],
+    "GERALD": [
+      4,
+      5,
+      7,
+      11,
+      12,
+      13
+    ]
+  },
+  "Blond Nobleman": {
+    "BLOND NOBLEMAN": [
+      2,
+      9,
+      27,
+      28,
+      40,
+      41,
+      42,
+      43,
+      44
+    ]
+  },
+  "Off-screen Voice": {
+    "OFF-SCREEN VOICE": [
+      2
+    ]
+  },
+  "Alexander": {
+    "THE BEARDED STRANGER": [
+      3
+    ],
+    "MYSTERIOUS BEARDED MAN": [
+      4,
+      5,
+      6
+    ],
+    "SCARRED BEARDED MAN": [
+      7
+    ],
+    "ALEXANDER": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      25,
+      35,
+      36,
+      39,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ]
+  },
+  "Royal Guard": {
+    "ROYAL GUARD": [
+      3,
+      40,
+      42,
+      43
+    ]
+  },
+  "Juliana": {
+    "JULIANA": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      25,
+      26,
+      27,
+      28,
+      29,
+      31,
+      32,
+      37,
+      38,
+      41,
+      42,
+      45,
+      46,
+      47
+    ]
+  },
+  "The Priest": {
+    "THE PRIEST": [
+      4
+    ]
+  },
+  "Lord Ashcroft": {
+    "LORD ASHCROFT": [
+      5
+    ]
+  },
+  "Peasant Mother": {
+    "PEASANT MOTHER": [
+      9
+    ]
+  },
+  "Constable": {
+    "CONSTABLE": [
+      11,
+      12
+    ]
+  },
+  "Thug With Cap": {
+    "THUG WITH CAP": [
+      15,
+      16
+    ]
+  },
+  "Bald Thug": {
+    "BALD THUG": [
+      15,
+      16
+    ]
+  },
+  "Tall Thug": {
+    "TALL THUG": [
+      15
+    ]
+  },
+  "Third Thug": {
+    "THIRD THUG": [
+      16
+    ]
+  },
+  "Elder Villager": {
+    "ELDER VILLAGER": [
+      19
+    ]
+  },
+  "Informant": {
+    "INFORMANT": [
+      19
+    ]
+  },
+  "Catherine": {
+    "CATHERINE": [
+      20,
+      28,
+      29,
+      30,
+      31,
+      32,
+      37,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "NOBLEWOMAN": [
+      24,
+      41
+    ],
+    "LADY CATHERINE": [
+      27
+    ]
+  },
+  "Rupert": {
+    "RUPERT": [
+      20,
+      30,
+      45
+    ],
+    "BLOND NOBLEMAN": [
+      37
+    ]
+  },
+  "Seamus": {
+    "SEAMUS": [
+      20
+    ]
+  },
+  "Prudence": {
+    "PRUDENCE": [
+      21,
+      22,
+      23,
+      24,
+      34
+    ]
+  },
+  "Housekeeper": {
+    "HOUSEKEEPER": [
+      22
+    ]
+  },
+  "Dowager Duchess": {
+    "DOWAGER DUCHESS": [
+      26,
+      27,
+      28,
+      43
+    ],
+    "ALEXANDER'S MOTHER": [
+      35,
+      36,
+      42
+    ],
+    "LADY ASHBOURNE": [
+      47
+    ]
+  },
+  "Guard": {
+    "GUARD": [
+      29,
+      38
+    ]
+  },
+  "Elder Nobleman": {
+    "ELDER NOBLEMAN": [
+      30,
+      40
+    ]
+  },
+  "Lord": {
+    "LORD": [
+      33,
+      34
+    ]
+  },
+  "Maid": {
+    "MAID": [
+      33
+    ]
+  },
+  "Judge": {
+    "JUDGE": [
+      34
+    ]
+  },
+  "Townsman": {
+    "TOWNSMAN": [
+      34
+    ]
+  },
+  "Old Woman": {
+    "OLD WOMAN": [
+      34
+    ]
+  },
+  "Butler": {
+    "BUTLER": [
+      37
+    ]
+  },
+  "Nobleman": {
+    "NOBLEMAN": [
+      37,
+      41
+    ]
+  },
+  "Loyalist Scout": {
+    "LOYALIST SCOUT": [
+      39
+    ]
+  },
+  "Loyalist Fighter": {
+    "LOYALIST FIGHTER": [
+      39
+    ]
+  },
+  "Royal Sentry": {
+    "ROYAL SENTRY": [
+      39
+    ]
+  },
+  "Cart Driver": {
+    "CART DRIVER": [
+      39
+    ]
+  },
+  "Loyalist": {
+    "LOYALIST": [
+      39
+    ]
+  },
+  "Footman": {
+    "FOOTMAN": [
+      40
+    ]
+  },
+  "Lady Harrington": {
+    "LADY HARRINGTON": [
+      40
+    ]
+  },
+  "Lord Harrington": {
+    "LORD HARRINGTON": [
+      40
+    ]
+  },
+  "Priest": {
+    "PRIEST": [
+      41
+    ]
+  },
+  "Crown Official": {
+    "CROWN OFFICIAL": [
+      43
+    ]
+  },
+  "Police Constable": {
+    "POLICE CONSTABLE": [
+      43,
+      44
+    ]
+  },
+  "Lord Sterling": {
+    "LORD STERLING": [
+      44
+    ]
+  },
+  "High Priest": {
+    "HIGH PRIEST": [
+      45,
+      46
+    ]
+  },
+  "Conspirator": {
+    "CONSPIRATOR": [
+      47
+    ]
+  },
+  "Vaughn": {
+    "VAUGHN": [
+      47
+    ]
+  },
+  "Agnes": {
+    "AGNES": [
+      48
+    ]
+  },
+  "Father Thomas": {
+    "FATHER THOMAS": [
+      49,
+      50
+    ]
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "places_and_names": [
+    {
+      "variants": {
+        "Ashbury": {
+          "count": 11,
+          "episodes": [
+            20,
+            21,
+            22,
+            23
+          ]
+        },
+        "Ashbourne": {
+          "count": 11,
+          "episodes": [
+            27,
+            36,
+            47
+          ]
+        },
+        "Ashburton": {
+          "count": 9,
+          "episodes": [
+            22,
+            45,
+            46
+          ]
+        },
+        "Ashburn": {
+          "count": 9,
+          "episodes": [
+            42,
+            43
+          ]
+        },
+        "Ashburg": {
+          "count": 6,
+          "episodes": [
+            19,
+            25,
+            26
+          ]
+        },
+        "Ashburgh": {
+          "count": 4,
+          "episodes": [
+            40,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "variants": {
+        "Juliana": {
+          "count": 1080,
+          "episodes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            44,
+            45,
+            46,
+            47,
+            48
+          ]
+        },
+        "Julian": {
+          "count": 1,
+          "episodes": [
+            22
+          ]
+        }
+      }
+    },
+    {
+      "variants": {
+        "Clarissa": {
+          "count": 74,
+          "episodes": [
+            1,
+            2,
+            4,
+            5,
+            11,
+            12,
+            13,
+            31,
+            32,
+            37
+          ]
+        },
+        "Clarisse": {
+          "count": 1,
+          "episodes": [
+            31
+          ]
+        }
+      }
+    },
+    {
+      "variants": {
+        "Ashcroft": {
+          "count": 33,
+          "episodes": [
+            4,
+            5,
+            6,
+            28,
+            30,
+            31,
+            34,
+            41,
+            45
+          ]
+        },
+        "Ashcrofts": {
+          "count": 1,
+          "episodes": [
+            37
+          ]
+        }
+      }
+    }
+  ],
+  "speaker_labels": {
+    "characters_with_several_labels": [
+      {
+        "character": "Lady Ashcroft",
+        "labels": {
+          "MATRIARCH": [
+            1
+          ],
+          "NOBLE MATRIARCH": [
+            3
+          ],
+          "LADY ASHCROFT": [
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "character": "Clarissa",
+        "labels": {
+          "LADY IN GOLD GOWN": [
+            1,
+            2,
+            3
+          ],
+          "CLARISSA": [
+            4,
+            5,
+            12,
+            13
+          ],
+          "ARISTOCRATIC WOMAN": [
+            7
+          ],
+          "LADY CLARISSA": [
+            37
+          ]
+        }
+      },
+      {
+        "character": "Gerald",
+        "labels": {
+          "THE FORMER GROOM": [
+            1,
+            2,
+            3,
+            9
+          ],
+          "GERALD": [
+            4,
+            5,
+            7,
+            11,
+            12,
+            13
+          ]
+        }
+      },
+      {
+        "character": "Alexander",
+        "labels": {
+          "THE BEARDED STRANGER": [
+            3
+          ],
+          "MYSTERIOUS BEARDED MAN": [
+            4,
+            5,
+            6
+          ],
+          "SCARRED BEARDED MAN": [
+            7
+          ],
+          "ALEXANDER": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16,
+            17,
+            18,
+            19,
+            25,
+            35,
+            36,
+            39,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47
+          ]
+        }
+      },
+      {
+        "character": "Catherine",
+        "labels": {
+          "CATHERINE": [
+            20,
+            28,
+            29,
+            30,
+            31,
+            32,
+            37,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50
+          ],
+          "NOBLEWOMAN": [
+            24,
+            41
+          ],
+          "LADY CATHERINE": [
+            27
+          ]
+        }
+      },
+      {
+        "character": "Rupert",
+        "labels": {
+          "RUPERT": [
+            20,
+            30,
+            45
+          ],
+          "BLOND NOBLEMAN": [
+            37
+          ]
+        }
+      },
+      {
+        "character": "Dowager Duchess",
+        "labels": {
+          "DOWAGER DUCHESS": [
+            26,
+            27,
+            28,
+            43
+          ],
+          "ALEXANDER'S MOTHER": [
+            35,
+            36,
+            42
+          ],
+          "LADY ASHBOURNE": [
+            47
+          ]
+        }
+      }
+    ],
+    "labels_used_for_several_characters": [
+      {
+        "label": "BLOND NOBLEMAN",
+        "used_for": [
+          {
+            "character": "Blond Nobleman",
+            "episodes": [
+              2,
+              9,
+              27,
+              28,
+              40,
+              41,
+              42,
+              43,
+              44
+            ]
+          },
+          {
+            "character": "Rupert",
+            "episodes": [
+              37
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

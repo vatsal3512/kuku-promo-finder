@@ -1,0 +1,306 @@
+WHICH WOULD YOU POST? (about 5 minutes)
+
+You only answer A or B. No scores.
+Imagine you are scrolling Instagram and have never heard of this show.
+For each pair, pick the clip you would rather see as an ad, the one more likely to make you tap to watch the next episode.
+Go with your gut. If both feel the same, still pick one.
+Write your answers in ab_answers.csv (column 'pick': A or B). The 'why' column is optional: one word like hook, ending, confusing, boring, too long.
+Lines marked VISUAL or SOUND are what you would see or hear on screen.
+
+#################### PAIR 1 ####################
+----- A  (44s)
+[0:00] Lady Juliana (Heartbroken): "Why are you holding her hand?"
+[0:03] Clarissa (Gloating, Smug): "Because he is marrying me."
+[0:06] Lady Juliana (Gasping, Devastated): "No..."
+[0:11] Lady Juliana (Outraged, Accusing): "You knew this before I walked through those doors!"
+[0:17] Lady Juliana (Choking on Tears): "You let me come here..."
+[0:19] Lady Juliana (Crushed, Shaking): "You let me dress in my mother's gown..."
+[0:21] Lady Juliana (Crying Out): "You let me believe I was walking toward my husband!"
+[0:24] Gerald (Cold, Callous): "I changed my mind."
+[0:28] Lady Juliana (Betrayed, Piercing): "You swore you loved me!"
+[0:31] Clarissa (Mocking): "People change their minds, sister."
+[0:33] Lady Juliana (Horrified): "And you knew?"
+[0:35] Clarissa (Unapologetic, Cheerful): "Of course I knew."
+[0:37] Lady Juliana (Trembling): "How long?"
+[0:39] Clarissa (Cruel, Poised): "Long enough to know he was never going to marry you."
+
+----- B  (52s)
+[0:00] Clarissa (Gloating, Smug): "Because he is marrying me."
+[0:02] Lady Juliana (Gasping, Devastated): "No..."
+[0:07] Lady Juliana (Outraged, Accusing): "You knew this before I walked through those doors!"
+[0:13] Lady Juliana (Choking on Tears): "You let me come here..."
+[0:15] Lady Juliana (Crushed, Shaking): "You let me dress in my mother's gown..."
+[0:18] Lady Juliana (Crying Out): "You let me believe I was walking toward my husband!"
+[0:21] Gerald (Cold, Callous): "I changed my mind."
+[0:24] Lady Juliana (Betrayed, Piercing): "You swore you loved me!"
+[0:27] Clarissa (Mocking): "People change their minds, sister."
+[0:30] Lady Juliana (Horrified): "And you knew?"
+[0:31] Clarissa (Unapologetic, Cheerful): "Of course I knew."
+[0:34] Lady Juliana (Trembling): "How long?"
+[0:36] Clarissa (Cruel, Poised): "Long enough to know he was never going to marry you."
+[0:40] VISUAL: Juliana turns abruptly toward the first row of pews, where her elderly father sits gripping an ornate brass cane.
+[0:41] Lady Juliana (Desperate): "Father..."
+[0:42] Lady Juliana (Begging): "Tell them this is a mistake."
+[0:47] Lady Juliana (Choking, Broken): "Father... please look at me."
+[0:50] VISUAL: The father tightens his jaw and stony expression, refusing to offer a single word or look.
+
+#################### PAIR 2 ####################
+----- A  (52s)
+[0:00] VISUAL: The Bearded Stranger effortlessly blocks the guard's strike and drives a devastating strike into him, dropping the armed guard instantly to the floor.
+[0:00] SOUND: A heavy, bone-rattling punch followed by the clatter and thud of the guard collapsing onto the stone floor.
+[0:01] Gerald (Frantic, Shouting): "What are you waiting for?! He's only one man!"
+[0:06] Alexander (Gentle, Protective): "Are you hurt?"
+[0:07] VISUAL: Juliana softly shakes her head 'no', her wide blue eyes locked onto him.
+[0:10] Alexander (Firm, Menacing): "Good. Then don't touch her again."
+[0:12] Lady Ashcroft (Furious, Hysterical): "You cannot interfere in a family matter!"
+[0:14] Alexander (Deep, Resonant): "I can..."
+[0:16] Alexander (Stern, Accusing): "...when your family is dragging a defenseless woman from a church."
+[0:20] Alexander (Solemn, Gentle): "You shouldn't have to beg anybody..."
+[0:23] Alexander (Affirming, Sincere): "...to remember your worth."
+[0:26] Lady Juliana (Whispering, Bewildered): "Why are you doing this?"
+[0:28] Alexander (Simple, Certain): "Because I want to."
+[0:35] Alexander (Honorable, Earnest): "You came here to become a wife."
+[0:38] Alexander (Quiet, Resolute): "They took that from you."
+[0:41] Alexander (Earnest, Sincere): "I am offering it back."
+[0:43] Lady Juliana (Soft, Hesitant): "You don't even know me."
+[0:46] Alexander (Quiet, Steady): "I know enough."
+[0:49] VISUAL: The Bearded Stranger sinks to one knee on the cathedral aisle, offering the silver ring up to Juliana.
+[0:50] SOUND: A collective, stunned gasp rippling across the entire congregation.
+
+----- B  (43s)
+[0:00] Clarissa (Smug, Malicious): "I didn't steal what was never truly yours."
+[0:03] Lady Juliana (Trembling, Resolute): "This was my wedding."
+[0:05] Clarissa (Taunting, Cruel): "It was supposed to be."
+[0:07] Clarissa (Vindictive): "Now it is mine."
+[0:09] Lady Ashcroft (Harsh, Authoritative): "Enough, Juliana."
+[0:12] Lady Ashcroft (Cold, Disgusted): "You have humiliated this family enough for one day."
+[0:16] Lady Juliana (Pained, Betrayed): "I was humiliated by your family."
+[0:19] Lady Juliana (Accusing): "And my father said nothing."
+[0:22] Lady Ashcroft (Brutal, Dismissive): "Your father has made his choice."
+[0:24] Lady Juliana (Choked, Vulnerable): "And what happens to me?"
+[0:26] Lady Ashcroft (Cold, Heartless): "You leave."
+[0:28] Lady Juliana (Disbelieving): "Leave where?"
+[0:29] Lady Ashcroft (Cruel, Scornful): "Wherever a discarded daughter belongs."
+[0:32] Lady Juliana (Fierce, Choked): "This is my mother's church."
+[0:35] Lady Juliana (Defiant, Firm): "I have every right to stand here."
+[0:37] Lady Ashcroft (Venomous): "Not anymore."
+[0:39] Lady Ashcroft (Stern, Final): "Your father has chosen his family..."
+
+#################### PAIR 3 ####################
+----- A  (58s)
+[0:00] Gerald (Aggressive, Snarl): "Your husband stole my gold pocket watch!"
+[0:02] Juliana (Incredulous, Gasping): "What? When?"
+[0:04] Gerald (Cold, Certain): "The last time I came here."
+[0:06] Juliana (Contemptuous, Outraged): "You never even entered the cottage!"
+[0:08] Gerald (Smug, Threatening): "Then you should have nothing to fear from a search."
+[0:10] Juliana (Adamant, Protective): "Alexander would never steal from you."
+[0:12] Gerald (Mocking, Spiteful): "Of course you would defend him. You married a beggar!"
+[0:16] Alexander (Low, Menacing): "Choose your next words carefully."
+[0:18] Gerald (Shouting, Dramatic): "You hear that? He threatens me again!"
+[0:20] Constable (Authoritative, Stern): "I have received a complaint of theft."
+[0:22] Juliana (Fierce): "A complaint is not proof."
+[0:24] Constable (Cold, Procedural): "Then a search will settle the matter."
+[0:26] Juliana (Desperate, Shouting): "You cannot simply invade our home because this man makes an accusation!"
+[0:29] Gerald (Taunting): "If he has nothing to hide..."
+[0:31] Gerald (Smug): "...let the constable search."
+[0:33] Alexander (Dark, Grated): "Search it."
+[0:36] Alexander (Resigned, Calm): "Let them."
+[0:37] SOUND: Heavy thud of boots entering wooden floorboards, followed by forceful banging of furniture.
+[0:39] VISUAL: The Constable begins violently overturning crates and dumping contents across the floor.
+[0:41] Juliana (Distressed, Pleading): "Stop! Those are my mother's medicines!"
+[0:43] VISUAL: The Constable aggressively pulls folded bed linens from a shelf and hurls them onto the damp floor.
+[0:45] Juliana (Crying, Desperate): "Please! There is nothing here!"
+[0:47] Constable (Cold, Indifferent): "Then you have nothing to fear."
+[0:49] Juliana (Heartbroken, Sobbing): "Those are all I have left!"
+[0:50] Gerald (Cruel, Condescending): "Stand aside. Look at this place. A perfect hiding hole for a thief."
+[0:55] Juliana (Furious, Accusatory): "You planted this accusation because you cannot bear that I am happy without you!"
+
+----- B  (32s)
+[0:00] Juliana (Furious, Defiant): "You have already taken enough from me. Leave!"
+[0:02] Gerald (Aggressive, Snarl): "Your husband stole my gold pocket watch!"
+[0:04] Juliana (Incredulous, Gasping): "What? When?"
+[0:06] Gerald (Cold, Certain): "The last time I came here."
+[0:08] Juliana (Contemptuous, Outraged): "You never even entered the cottage!"
+[0:10] Gerald (Smug, Threatening): "Then you should have nothing to fear from a search."
+[0:13] Juliana (Adamant, Protective): "Alexander would never steal from you."
+[0:15] Gerald (Mocking, Spiteful): "Of course you would defend him. You married a beggar!"
+[0:18] Alexander (Low, Menacing): "Choose your next words carefully."
+[0:20] Gerald (Shouting, Dramatic): "You hear that? He threatens me again!"
+[0:23] Constable (Authoritative, Stern): "I have received a complaint of theft."
+[0:25] Juliana (Fierce): "A complaint is not proof."
+[0:27] Constable (Cold, Procedural): "Then a search will settle the matter."
+[0:29] Juliana (Desperate, Shouting): "You cannot simply invade our home because this man makes an accusation!"
+
+#################### PAIR 4 ####################
+----- A  (20s)
+[0:00] Juliana (Broken, Sobbing): "My mother's plants..."
+[0:03] Bald Thug (Cruel, Laughing): "Look at her! Crying over weeds!"
+[0:06] VISUAL: The Tall Thug hoists his heavy wooden club above his head to crush the remaining herbs right before Juliana.
+[0:06] Juliana (Screaming): "Stop!"
+[0:10] VISUAL: Alexander storms forward with lethal intensity, dark hair flying, breath misting in the cold, radiating untamed rage.
+[0:17] Juliana (Whispered Breath, Stunned): "Alexander..."
+
+----- B  (43s)
+[0:01] Bald Thug (Callous): "They look like weeds to me."
+[0:01] VISUAL: The bald thug flings the bouquet into the mud and grinds his heavy boot directly onto the delicate flowers.
+[0:04] VISUAL: Juliana frantically tries to scoop the crushed soil and torn stems back into the bed with her bandaged hands.
+[0:04] Juliana (Choked with Tears, Desperate): "Please! Those plants took months to grow!"
+[0:08] Tall Thug (Contemptuous, Derisive): "Months? You actually spend your days growing this filth?"
+[0:15] Juliana (Defiant, Firm): "Leave my garden alone."
+[0:18] Thug With Cap (Sneering, Disdainful): "A noble lady playing in the dirt. What a joke."
+[0:22] Juliana (Resolute, Dignified): "It is my home. You have no right to destroy anything here."
+[0:25] Thug With Cap (Menacing Snarl): "Get out of the way!"
+[0:27] Juliana (Steely, Fearless): "No."
+[0:28] VISUAL: The Thug with Cap violently shoves Juliana back with both hands; she cries out as she loses her balance and crashes hard onto the wet stone path.
+[0:28] Juliana (Gasping Cry): "Ah!"
+[0:31] VISUAL: Juliana crawls forward on her elbows; fresh crimson blood seeps profusely through her white gauze bandages as she reaches for the ruined blossoms.
+[0:34] Juliana (Broken, Sobbing): "My mother's plants..."
+[0:38] Bald Thug (Cruel, Laughing): "Look at her! Crying over weeds!"
+[0:41] VISUAL: The Tall Thug hoists his heavy wooden club above his head to crush the remaining herbs right before Juliana.
+[0:41] Juliana (Screaming): "Stop!"
+
+#################### PAIR 5 ####################
+----- A  (30s)
+[0:00] Juliana (Unyielding, Resolute): "Poison."
+[0:03] Blond Nobleman (Whispering, Dangerous): "Poison."
+[0:05] Juliana (Urgent): "Someone has been poisoning Her Grace."
+[0:08] Catherine (Shrieking, Feigning Horror): "You hear that?!"
+[0:09] Catherine (Venomous, Accusing): "She admits she has been giving the Duchess poison in secret!"
+[0:13] Juliana (Desperate, Outraged): "That is not what I said!"
+[0:16] Blond Nobleman (Authoritative, Icy): "Enough."
+[0:19] VISUAL: The Blond Nobleman takes the medicine vial from Juliana's grasp, inspecting it under the candlelight.
+[0:21] Blond Nobleman (Cold, Calculating): "An unknown servant enters a restricted chamber."
+[0:24] Blond Nobleman (Condemning, Vindictive): "She secretly administers an unidentified substance to a helpless woman."
+[0:29] Blond Nobleman (To Guard, Stern): "Take her."
+
+----- B  (46s)
+[0:00] Dowager Duchess (Desperate, Clinging): "My lost son wore that ring!"
+[0:02] Dowager Duchess (Pleading): "Did your husband serve beside him?"
+[0:06] Juliana (Soft, Reverent): "He never spoke of his officers. He only spoke of survival."
+[0:09] Dowager Duchess (Hushed, Desperate): "What is your husband's name?"
+[0:11] SOUND: Loud, violent pounding echoes on the wooden double doors.
+[0:13] VISUAL: The heavy mahogany double doors burst open, revealing the Blond Nobleman flanked by Lady Catherine and a royal guard in uniform.
+[0:17] Catherine (Sharp, Accusatory): "What is that maid doing in Her Grace's private chamber?"
+[0:21] Juliana (Calm, Defiant): "She needed help."
+[0:25] Catherine (Piercing, Suspicious): "What are you hiding?"
+[0:27] Juliana (Firm): "Nothing."
+[0:29] Catherine (Demanding, Harsh): "Show me your hand."
+[0:31] Blond Nobleman (Cold, Authoritative): "Girl. Show me what you are holding."
+[0:37] Blond Nobleman (Skeptical): "What is this?"
+[0:38] Juliana (Steady): "Medicine."
+[0:40] Catherine (Mocking, Condescending): "Medicine? You are a new maid."
+[0:43] Catherine (Incredulous, Accusing): "Who permitted you to give medicine to the Duchess?"
+
+#################### PAIR 6 ####################
+----- A  (34s)
+[0:00] Catherine (Icy, Threatening): "The magistrate will call it witchcraft."
+[0:02] Juliana (Furious, Shouted): "You know that is a lie!"
+[0:04] Catherine (Calm, Sinister): "I know exactly what I need him to believe."
+[0:07] Juliana (Screaming, Desperate): "You cannot just destroy it!"
+[0:09] Catherine (Whispered, Malicious): "I can burn it."
+[0:12] Catherine (Chilling, Relentless): "And when they find your corpse at the end of the rope..."
+[0:16] Catherine (Cruel, Resolute): "...no one will remember what was written inside."
+--- CUT ---
+[0:19] Elder Nobleman (Chilling, Decisive): "Tomorrow, she stops being a prisoner. She becomes a witch."
+[0:26] SOUND: Echoing, hollow water droplets splashing into dark pools beneath stone vaults, accompanied by a somber orchestral swell.
+[0:30] VISUAL: Juliana clutches a rough burlap rag to her trembling chest, her tear-stained face lifting upward in dread and fragile hope as the frame holds, cutting abruptly to black.
+
+----- B  (59s)
+[0:00] Catherine (Icy, Threatening): "The magistrate will call it witchcraft."
+[0:02] Juliana (Furious, Shouted): "You know that is a lie!"
+[0:04] Catherine (Calm, Sinister): "I know exactly what I need him to believe."
+[0:07] Juliana (Screaming, Desperate): "You cannot just destroy it!"
+[0:09] Catherine (Whispered, Malicious): "I can burn it."
+[0:12] Catherine (Chilling, Relentless): "And when they find your corpse at the end of the rope..."
+[0:16] Catherine (Cruel, Resolute): "...no one will remember what was written inside."
+[0:19] Juliana (Enraged, Defiant): "You are doing this because I saved the Duchess!"
+[0:21] Catherine (Scornful, Arrogant): "I am doing this because women like you forget their place."
+[0:27] Catherine (Cold, Venomous): "You were cast out once."
+[0:29] Catherine (Menacing): "You should have stayed forgotten."
+[0:32] Juliana (Steely, Resolute): "My husband will find me."
+[0:34] Catherine (Scoffing, Amused): "Your scarred soldier?"
+[0:37] Catherine (Derisive, Biting): "What exactly do you think a penniless veteran can do against Ashbrook?"
+[0:41] Guard (Gruff, Dismissive): "Move along, girl."
+[0:46] VISUAL: The guards shove Juliana violently into the cell; she falls hard onto all fours across the cold, wet stone floor.
+[0:48] Juliana (Crying Out, Broken): "Please!"
+[0:49] SOUND: The heavy iron door slams shut with a deafening metallic thud, and the massive exterior bolt grates locked.
+[0:52] VISUAL: Juliana trembles uncontrollably, her fingers digging into the collar of her rustic dress as terror washes over her.
+[0:56] Juliana (Sobbing, Heartbroken): "Mother..."
+
+#################### PAIR 7 ####################
+----- A  (58s)
+[0:00] Juliana (Anguished): "It belonged to my mother!"
+[0:02] Catherine (Cruel): "A witch has no need for family heirlooms in the gallows."
+[0:04] SOUND: Metallic clatter as the silver pendant bounces against the wooden baseboard.
+[0:05] Juliana (Heartbroken): "My mother's locket!"
+[0:11] VISUAL: Catherine lifts the heavy herbarium, dusting off the cover before opening its aged parchment pages.
+[0:14] Catherine (Intrigued, Murmuring): "Juliana..."
+[0:18] VISUAL: Juliana gasps in horror, realizing her secret identity has been laid bare.
+[0:21] Catherine (Triumphant, Venomous): "Lady Juliana Ashcroft."
+[0:24] Catherine (Mocking, Reveling): "I knew I had seen those eyes before."
+[0:27] Catherine (Cruel): "The disgraced daughter..."
+[0:28] Catherine (Scornful): "...the girl thrown out of her own family home."
+[0:31] Catherine (Taunting): "The bride who married a penniless war veteran..."
+[0:34] Catherine (Vicious): "...because no respectable man would have her."
+[0:36] Juliana (Screaming, Wildly Defiant): "Do not speak about my husband!"
+[0:39] Catherine (Laughing, Scornful): "And look at you now. Scrubbing fireplaces in my house."
+[0:42] Catherine (Mocking): "What a magnificent fall, Lady Juliana."
+[0:45] Blond Nobleman (Harsh, Authoritative): "Drag her to the wet cells beneath the south tower."
+[0:48] Catherine (Smug): "And this?"
+[0:49] Catherine (Gleeful): "This book of weeds will hang her before the magistrate."
+[0:52] Juliana (Screaming, Desperate): "That book is my mother's life's work!"
+[0:54] Catherine (Icy, Threatening): "Then perhaps you can explain every page to the magistrate..."
+
+----- B  (60s)
+[0:00] Dowager Duchess (Fierce, Condemning): "I was poisoned!"
+[0:02] Dowager Duchess (Accusing): "And you... you knew!"
+[0:05] Dowager Duchess (Choking, Weakening): "Catherine knew!"
+[0:07] Dowager Duchess (Gasping): "They have been—"
+[0:09] VISUAL: The Duchess collapses back onto the pillows, coughing violently and clutching her chest.
+[0:10] Juliana (Panicked, Screaming): "Let me help her!"
+[0:11] Juliana (Desperate): "She's still weak, you cannot leave her like this!"
+[0:15] Blond Nobleman (Smooth, Feigning Concern): "You see?"
+[0:16] Blond Nobleman (Sinister): "The poison has clearly damaged her mind."
+[0:19] Dowager Duchess (Hoarse, Straining): "I am not delusional!"
+[0:20] Blond Nobleman (Condescending, Whispering): "Of course you are not."
+[0:22] Blond Nobleman (Dismissive): "You are merely confused."
+[0:23] Catherine (Amused, Mocking): "How convenient that the only person who can prove the poison exists..."
+[0:27] Catherine (Smug): "...is the maid who claims to have discovered it."
+[0:29] Blond Nobleman (Commanding, Resolute): "Take her away before she poisons the rest of this house."
+[0:33] VISUAL: Catherine ruthlessly yanks the silver locket off Juliana's neck.
+[0:33] Juliana (Crying Out): "No!"
+[0:34] Catherine (Insolent, Sneering): "Where did a gutter rat like you find a silver locket?"
+[0:37] Juliana (Screaming, Weeping): "Give it back!"
+[0:39] Juliana (Anguished): "It belonged to my mother!"
+[0:41] Catherine (Cruel): "A witch has no need for family heirlooms in the gallows."
+[0:43] SOUND: Metallic clatter as the silver pendant bounces against the wooden baseboard.
+[0:44] Juliana (Heartbroken): "My mother's locket!"
+[0:50] VISUAL: Catherine lifts the heavy herbarium, dusting off the cover before opening its aged parchment pages.
+[0:53] Catherine (Intrigued, Murmuring): "Juliana..."
+[0:57] VISUAL: Juliana gasps in horror, realizing her secret identity has been laid bare.
+
+#################### PAIR 8 ####################
+----- A  (42s)
+[0:00] Clarissa (Purring, Taunting): "Oh, dear sister..."
+[0:02] Clarissa (taunt): "...still defending your broken scrap of a man?"
+[0:04] Juliana (Steely, Resolute): "Name your price, Clarissa. I know you."
+[0:07] Clarissa (Smooth, Derisive): "You always were clever, Juliana. Always searching for some way to escape."
+[0:12] Clarissa (Scheming): "Perhaps I can give you one."
+[0:14] Juliana (Guarded, Cold): "What do you want?"
+[0:16] Clarissa (Cruel, Savoring): "I want to see you crawl, sister."
+[0:18] Clarissa (Theatrical, Vindictive): "My emerald signet ring fell deep into the frozen blackthorn briars at Ashworth Manor. The thorns have grown over it..."
+[0:24] Clarissa (Chilling, Sarcastic): "...sharp as steel. The ground is frozen, like pure ice."
+[0:28] VISUAL: Gerald bursts into a loud, mocking laugh beside the stony Constable.
+[0:29] Clarissa (Demanding, Brutal): "You will retrieve it with your bare hands before the magistrate arrives."
+[0:32] Gerald (Gleeful, Derisive): "A lady's hands will be shredded to ribbons!"
+[0:35] Clarissa (Cold, Transactional): "Do it, and we withdraw the charges."
+[0:37] Clarissa (Whispering, Menacing): "Fail, or refuse, and your husband hangs from the gallows."
+
+----- B  (20s)
+[0:00] Gerald (Furious, Shouting): "You have thrown yourself away!"
+[0:02] Gerald (Livid): "For a penniless nobody!"
+[0:05] Juliana (Calm, Cutting): "I would rather choose my own life..."
+[0:08] Juliana (Firm, Final): "...than spend another moment begging for yours."
+[0:11] VISUAL: Gerald recoils slightly, mouth agape.
+[0:12] Lady Ashcroft (Imperious, Shouting): "Do not bring this man anywhere near Ashcroft Manor!"
+[0:17] Lady Ashcroft (Venomous): "You are disowned!"

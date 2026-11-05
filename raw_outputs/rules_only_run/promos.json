@@ -1,0 +1,1274 @@
+{
+  "show": "I Married a Broken Soldier. He was a Duke",
+  "meta": {
+    "show": "I Married a Broken Soldier. He was a Duke",
+    "input": "../I Married a Broken Soldier. He was a Duke-scripts (2) (1)/I Married a Broken Soldier. He was a Duke",
+    "mode": "offline",
+    "model": null,
+    "judge_model": null,
+    "episodes": 50,
+    "beats": 3727,
+    "candidates": 3605,
+    "generated": 3605,
+    "seconds": 2.74,
+    "llm_usage": null,
+    "config": {
+      "gates": {
+        "min_duration": 20,
+        "max_duration": 60,
+        "max_hook_offset": 3.0,
+        "max_tail": 1.5,
+        "max_segments": 3,
+        "min_segment": 4.0
+      },
+      "generation": {
+        "hooks_per_episode": 12,
+        "cliffs_per_episode": 6,
+        "cross_episode": true,
+        "montage": true,
+        "montage_max_gap": 6,
+        "montage_hooks_per_episode": 4,
+        "montage_cliffs_per_episode": 3
+      },
+      "weights": {
+        "hook": 0.3,
+        "cliff": 0.3,
+        "intensity": 0.12,
+        "stakes": 0.1,
+        "escalation": 0.05,
+        "sound_off": 0.05,
+        "funnel": 0.12
+      },
+      "penalties": {
+        "dead_air_per_second": 0.03,
+        "context": 0.1,
+        "single": 0.0,
+        "cross": 0.02,
+        "montage": 0.08,
+        "policy_high": 0.5,
+        "policy_medium": 0.05
+      },
+      "selection": {
+        "top": 15,
+        "pool": 400,
+        "mmr_lambda": 0.75,
+        "max_overlap": 0.35,
+        "max_per_episode": 2
+      },
+      "llm": {
+        "model": "groq/llama-3.3-70b-versatile",
+        "judge_model": "",
+        "judge_pool": 40,
+        "judge_batch": 5,
+        "pairwise_top": 12,
+        "temperature": 0.2,
+        "max_tokens": 4000,
+        "cache_dir": ".cache/llm",
+        "blend": 0.65,
+        "pairwise_passes": 2
+      },
+      "names": []
+    }
+  },
+  "promos": [
+    {
+      "rank": 1,
+      "role": "control",
+      "id": "C00630",
+      "score": 0.6397,
+      "format": "single",
+      "duration": 57.7,
+      "segments": [
+        {
+          "episode": 28,
+          "start": "01:16.80",
+          "end": "02:14.50",
+          "start_seconds": 76.8,
+          "end_seconds": 134.5,
+          "duration": 57.7
+        }
+      ],
+      "hook": {
+        "episode": 28,
+        "time": "01:16.80",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "It belonged to my mother!",
+        "beat_id": "E028-058"
+      },
+      "cliffhanger": {
+        "episode": 28,
+        "time": "02:11.40",
+        "kind": "DIALOGUE",
+        "speaker": "Catherine",
+        "text": "Then perhaps you can explain every page to the magistrate...",
+        "beat_id": "E028-093"
+      },
+      "why_it_works": "Opens on an injustice (Juliana: \"It belonged to my mother!\") and cuts on Catherine: \"Then perhaps you can explain every page to the magistrate...\" before it resolves.",
+      "hook_type": "injustice",
+      "arc_position": "mid",
+      "spoiler_level": "mid",
+      "resume_episode": 28,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.186,
+        "cliff": 0.1644,
+        "intensity": 0.0817,
+        "stakes": 0.1,
+        "escalation": 0.0037,
+        "sound_off": 0.05,
+        "funnel": 0.0539,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.62,
+        "opening_peak": 0.62,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.548,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.681,
+        "peak": 1.0,
+        "escalation": 0.0745,
+        "stakes": 1.0,
+        "dead_air": 3.6,
+        "lines": 18,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 28,
+        "last_episode": 28,
+        "series_position": 0.551,
+        "speakers": [
+          "Blond Nobleman",
+          "Catherine",
+          "Juliana"
+        ],
+        "hook_text": "Juliana: \"It belonged to my mother!\"",
+        "cliff_text": "Catherine: \"Then perhaps you can explain every page to the magistrate...\""
+      }
+    },
+    {
+      "rank": 2,
+      "role": "challenger",
+      "id": "C00607",
+      "score": 0.5954,
+      "format": "single",
+      "duration": 45.9,
+      "segments": [
+        {
+          "episode": 27,
+          "start": "00:34.90",
+          "end": "01:20.80",
+          "start_seconds": 34.9,
+          "end_seconds": 80.8,
+          "duration": 45.9
+        }
+      ],
+      "hook": {
+        "episode": 27,
+        "time": "00:35.20",
+        "kind": "DIALOGUE",
+        "speaker": "Dowager Duchess",
+        "text": "My lost son wore that ring!",
+        "beat_id": "E027-019"
+      },
+      "cliffhanger": {
+        "episode": 27,
+        "time": "01:18.10",
+        "kind": "DIALOGUE",
+        "speaker": "Catherine",
+        "text": "Who permitted you to give medicine to the Duchess?",
+        "beat_id": "E027-047"
+      },
+      "why_it_works": "Opens on a reveal (Dowager Duchess: \"My lost son wore that ring!\") and cuts on Catherine: \"Who permitted you to give medicine to the Duchess?\" before it resolves.",
+      "hook_type": "reveal",
+      "arc_position": "mid",
+      "spoiler_level": "mid",
+      "resume_episode": 27,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.216,
+        "cliff": 0.1116,
+        "intensity": 0.0615,
+        "stakes": 0.1,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0563,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.72,
+        "opening_peak": 0.72,
+        "hook_offset": 0.3,
+        "cliff_prior": 0.372,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.5125,
+        "peak": 1.0,
+        "escalation": -0.1,
+        "stakes": 1.0,
+        "dead_air": 2.5,
+        "lines": 14,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 27,
+        "last_episode": 27,
+        "series_position": 0.531,
+        "speakers": [
+          "Blond Nobleman",
+          "Catherine",
+          "Dowager Duchess",
+          "Juliana"
+        ],
+        "hook_text": "Dowager Duchess: \"My lost son wore that ring!\"",
+        "cliff_text": "Catherine: \"Who permitted you to give medicine to the Duchess?\""
+      }
+    },
+    {
+      "rank": 3,
+      "role": "challenger",
+      "id": "C00005",
+      "score": 0.5937,
+      "format": "single",
+      "duration": 48.4,
+      "segments": [
+        {
+          "episode": 1,
+          "start": "01:20.10",
+          "end": "02:08.50",
+          "start_seconds": 80.1,
+          "end_seconds": 128.5,
+          "duration": 48.4
+        }
+      ],
+      "hook": {
+        "episode": 1,
+        "time": "01:20.10",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "Father...",
+        "beat_id": "E001-054"
+      },
+      "cliffhanger": {
+        "episode": 1,
+        "time": "02:04.20",
+        "kind": "DIALOGUE",
+        "speaker": "The Former Groom",
+        "text": "I cannot marry a woman of such plainness and low value...",
+        "beat_id": "E001-086"
+      },
+      "why_it_works": "Opens on a humiliation (Juliana: \"Father...\") and cuts on The Former Groom: \"I cannot marry a woman of such plainness and low value...\" before it resolves.",
+      "hook_type": "humiliation",
+      "arc_position": "premise",
+      "spoiler_level": "premise",
+      "resume_episode": 1,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.1467,
+        "cliff": 0.1536,
+        "intensity": 0.0563,
+        "stakes": 0.0625,
+        "escalation": 0.0047,
+        "sound_off": 0.05,
+        "funnel": 0.12,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.489,
+        "opening_peak": 0.489,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.512,
+        "tail_after_cliff": 1.0,
+        "intensity": 0.4688,
+        "peak": 0.85,
+        "escalation": 0.0937,
+        "stakes": 0.625,
+        "dead_air": 2.4,
+        "lines": 15,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 1,
+        "last_episode": 1,
+        "series_position": 0.0,
+        "speakers": [
+          "Juliana",
+          "Lady In Gold Gown",
+          "Matriarch",
+          "The Former Groom"
+        ],
+        "hook_text": "Juliana: \"Father...\"",
+        "cliff_text": "The Former Groom: \"I cannot marry a woman of such plainness and low value...\""
+      }
+    },
+    {
+      "rank": 4,
+      "role": "challenger",
+      "id": "C00055",
+      "score": 0.5928,
+      "format": "single",
+      "duration": 42.6,
+      "segments": [
+        {
+          "episode": 3,
+          "start": "00:13.60",
+          "end": "00:56.20",
+          "start_seconds": 13.6,
+          "end_seconds": 56.2,
+          "duration": 42.6
+        }
+      ],
+      "hook": {
+        "episode": 3,
+        "time": "00:13.80",
+        "kind": "DIALOGUE",
+        "speaker": "Lady In Gold Gown",
+        "text": "I didn't steal what was never truly yours.",
+        "beat_id": "E003-010"
+      },
+      "cliffhanger": {
+        "episode": 3,
+        "time": "00:53.30",
+        "kind": "DIALOGUE",
+        "speaker": "Noble Matriarch",
+        "text": "Your father has chosen his family...",
+        "beat_id": "E003-042"
+      },
+      "why_it_works": "Opens on a defiant stand (Lady In Gold Gown: \"I didn't steal what was never truly yours.\") and cuts on Noble Matriarch: \"Your father has chosen his family...\" before it resolves.",
+      "hook_type": "defiance",
+      "arc_position": "premise",
+      "spoiler_level": "premise",
+      "resume_episode": 3,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.1665,
+        "cliff": 0.0924,
+        "intensity": 0.0688,
+        "stakes": 0.1,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.1151,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.555,
+        "opening_peak": 0.555,
+        "hook_offset": 0.2,
+        "cliff_prior": 0.308,
+        "tail_after_cliff": 0.0,
+        "intensity": 0.5735,
+        "peak": 0.9,
+        "escalation": -0.0972,
+        "stakes": 1.0,
+        "dead_air": 2.4,
+        "lines": 17,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 3,
+        "last_episode": 3,
+        "series_position": 0.041,
+        "speakers": [
+          "Juliana",
+          "Lady In Gold Gown",
+          "Noble Matriarch"
+        ],
+        "hook_text": "Lady In Gold Gown: \"I didn't steal what was never truly yours.\"",
+        "cliff_text": "Noble Matriarch: \"Your father has chosen his family...\""
+      }
+    },
+    {
+      "rank": 5,
+      "role": "challenger",
+      "id": "C00988",
+      "score": 0.5857,
+      "format": "single",
+      "duration": 54.8,
+      "segments": [
+        {
+          "episode": 45,
+          "start": "00:54.00",
+          "end": "01:48.80",
+          "start_seconds": 54.0,
+          "end_seconds": 108.8,
+          "duration": 54.8
+        }
+      ],
+      "hook": {
+        "episode": 45,
+        "time": "00:54.00",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander",
+        "text": "You poisoned my mother. You tortured my wife.",
+        "beat_id": "E045-039"
+      },
+      "cliffhanger": {
+        "episode": 45,
+        "time": "01:46.20",
+        "kind": "DIALOGUE",
+        "speaker": "High Priest",
+        "text": "Before the Crown, you are not Duchess of Ashburton.",
+        "beat_id": "E045-067"
+      },
+      "why_it_works": "Opens on a charged romantic beat (Alexander: \"You poisoned my mother. You tortured my wife.\") and cuts on High Priest: \"Before the Crown, you are not Duchess of Ashburton.\" before it resolves.",
+      "hook_type": "romance",
+      "arc_position": "late",
+      "spoiler_level": "late",
+      "resume_episode": 45,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.1869,
+        "cliff": 0.1801,
+        "intensity": 0.0565,
+        "stakes": 0.1,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0122,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.623,
+        "opening_peak": 0.623,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.6004,
+        "tail_after_cliff": 0.0,
+        "intensity": 0.4706,
+        "peak": 0.95,
+        "escalation": -0.0035,
+        "stakes": 1.0,
+        "dead_air": 3.5,
+        "lines": 12,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 45,
+        "last_episode": 45,
+        "series_position": 0.898,
+        "speakers": [
+          "Alexander",
+          "Catherine",
+          "High Priest",
+          "Rupert"
+        ],
+        "hook_text": "Alexander: \"You poisoned my mother. You tortured my wife.\"",
+        "cliff_text": "High Priest: \"Before the Crown, you are not Duchess of Ashburton.\""
+      }
+    },
+    {
+      "rank": 6,
+      "role": "challenger",
+      "id": "C00075",
+      "score": 0.5782,
+      "format": "single",
+      "duration": 20.0,
+      "segments": [
+        {
+          "episode": 4,
+          "start": "01:54.80",
+          "end": "02:14.80",
+          "start_seconds": 114.8,
+          "end_seconds": 134.8,
+          "duration": 20.0
+        }
+      ],
+      "hook": {
+        "episode": 4,
+        "time": "01:55.00",
+        "kind": "DIALOGUE",
+        "speaker": "Gerald",
+        "text": "You have thrown yourself away!",
+        "beat_id": "E004-086"
+      },
+      "cliffhanger": {
+        "episode": 4,
+        "time": "02:12.00",
+        "kind": "DIALOGUE",
+        "speaker": "Lady Ashcroft",
+        "text": "You are disowned!",
+        "beat_id": "E004-098"
+      },
+      "why_it_works": "Opens on an ultimatum (Gerald: \"You have thrown yourself away!\") and cuts on Lady Ashcroft: \"You are disowned!\" before it resolves.",
+      "hook_type": "ultimatum",
+      "arc_position": "premise",
+      "spoiler_level": "premise",
+      "resume_episode": 4,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.189,
+        "cliff": 0.1178,
+        "intensity": 0.0857,
+        "stakes": 0.0125,
+        "escalation": 0.0104,
+        "sound_off": 0.05,
+        "funnel": 0.1127,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.63,
+        "opening_peak": 0.63,
+        "hook_offset": 0.2,
+        "cliff_prior": 0.3928,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.7143,
+        "peak": 1.0,
+        "escalation": 0.2083,
+        "stakes": 0.125,
+        "dead_air": 1.5,
+        "lines": 6,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 4,
+        "last_episode": 4,
+        "series_position": 0.061,
+        "speakers": [
+          "Gerald",
+          "Juliana",
+          "Lady Ashcroft"
+        ],
+        "hook_text": "Gerald: \"You have thrown yourself away!\"",
+        "cliff_text": "Lady Ashcroft: \"You are disowned!\""
+      }
+    },
+    {
+      "rank": 7,
+      "role": "challenger",
+      "id": "C00766",
+      "score": 0.6234,
+      "format": "single",
+      "duration": 46.7,
+      "segments": [
+        {
+          "episode": 36,
+          "start": "02:25.80",
+          "end": "03:12.50",
+          "start_seconds": 145.8,
+          "end_seconds": 192.5,
+          "duration": 46.7
+        }
+      ],
+      "hook": {
+        "episode": 36,
+        "time": "02:26.50",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander",
+        "text": "What wedding?",
+        "beat_id": "E036-090"
+      },
+      "cliffhanger": {
+        "episode": 36,
+        "time": "03:09.50",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander",
+        "text": "Because before that wedding begins...",
+        "beat_id": "E036-116"
+      },
+      "why_it_works": "Opens on an injustice (Alexander: \"What wedding?\") and cuts on Alexander: \"Because before that wedding begins...\" before it resolves.",
+      "hook_type": "injustice",
+      "arc_position": "late",
+      "spoiler_level": "late",
+      "resume_episode": 36,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.1656,
+        "cliff": 0.2303,
+        "intensity": 0.0682,
+        "stakes": 0.075,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0343,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.552,
+        "opening_peak": 0.552,
+        "hook_offset": 0.7,
+        "cliff_prior": 0.7676,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.5687,
+        "peak": 1.0,
+        "escalation": 0.0,
+        "stakes": 0.75,
+        "dead_air": 1.7,
+        "lines": 12,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 36,
+        "last_episode": 36,
+        "series_position": 0.714,
+        "speakers": [
+          "Alexander",
+          "Alexander's Mother"
+        ],
+        "hook_text": "Alexander: \"What wedding?\"",
+        "cliff_text": "Alexander: \"Because before that wedding begins...\""
+      }
+    },
+    {
+      "rank": 8,
+      "role": "challenger",
+      "id": "C00252",
+      "score": 0.6143,
+      "format": "single",
+      "duration": 22.2,
+      "segments": [
+        {
+          "episode": 11,
+          "start": "01:01.80",
+          "end": "01:24.00",
+          "start_seconds": 61.8,
+          "end_seconds": 84.0,
+          "duration": 22.2
+        }
+      ],
+      "hook": {
+        "episode": 11,
+        "time": "01:01.80",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "Please! There is nothing here!",
+        "beat_id": "E011-054"
+      },
+      "cliffhanger": {
+        "episode": 11,
+        "time": "01:21.30",
+        "kind": "DIALOGUE",
+        "speaker": "Gerald",
+        "text": "What is it, soldier? Going to strike a gentleman in front of his wife?",
+        "beat_id": "E011-068"
+      },
+      "why_it_works": "Opens on an injustice (Juliana: \"Please! There is nothing here!\") and cuts on Gerald: \"What is it, soldier? Going to strike a gentleman in...\" before it resolves.",
+      "hook_type": "injustice",
+      "arc_position": "mid",
+      "spoiler_level": "mid",
+      "resume_episode": 11,
+      "policy_flags": [
+        "violence:low"
+      ],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.186,
+        "cliff": 0.1578,
+        "intensity": 0.09,
+        "stakes": 0.05,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0955,
+        "dead_air": -0.015,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.62,
+        "opening_peak": 0.62,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.526,
+        "tail_after_cliff": 0.0,
+        "intensity": 0.75,
+        "peak": 1.0,
+        "escalation": -0.35,
+        "stakes": 0.5,
+        "dead_air": 4.5,
+        "lines": 7,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 11,
+        "last_episode": 11,
+        "series_position": 0.204,
+        "speakers": [
+          "Constable",
+          "Gerald",
+          "Juliana"
+        ],
+        "hook_text": "Juliana: \"Please! There is nothing here!\"",
+        "cliff_text": "Gerald: \"What is it, soldier? Going to strike a gentleman in front of his wife?\""
+      }
+    },
+    {
+      "rank": 9,
+      "role": "challenger",
+      "id": "C00021",
+      "score": 0.5868,
+      "format": "single",
+      "duration": 43.7,
+      "segments": [
+        {
+          "episode": 1,
+          "start": "00:35.30",
+          "end": "01:19.00",
+          "start_seconds": 35.3,
+          "end_seconds": 79.0,
+          "duration": 43.7
+        }
+      ],
+      "hook": {
+        "episode": 1,
+        "time": "00:35.40",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "Why are you holding her hand?",
+        "beat_id": "E001-023"
+      },
+      "cliffhanger": {
+        "episode": 1,
+        "time": "01:15.00",
+        "kind": "DIALOGUE",
+        "speaker": "Lady In Gold Gown",
+        "text": "Long enough to know he was never going to marry you.",
+        "beat_id": "E001-051"
+      },
+      "why_it_works": "Opens on a public betrayal (Juliana: \"Why are you holding her hand?\") and cuts on Lady In Gold Gown: \"Long enough to know he was never going to marry you.\" before it resolves.",
+      "hook_type": "betrayal",
+      "arc_position": "premise",
+      "spoiler_level": "premise",
+      "resume_episode": 1,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.1254,
+        "cliff": 0.1368,
+        "intensity": 0.0789,
+        "stakes": 0.075,
+        "escalation": 0.0007,
+        "sound_off": 0.05,
+        "funnel": 0.12,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.418,
+        "opening_peak": 0.418,
+        "hook_offset": 0.1,
+        "cliff_prior": 0.456,
+        "tail_after_cliff": 0.5,
+        "intensity": 0.6571,
+        "peak": 0.95,
+        "escalation": 0.0143,
+        "stakes": 0.75,
+        "dead_air": 3.7,
+        "lines": 14,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 1,
+        "last_episode": 1,
+        "series_position": 0.0,
+        "speakers": [
+          "Juliana",
+          "Lady In Gold Gown",
+          "The Former Groom"
+        ],
+        "hook_text": "Juliana: \"Why are you holding her hand?\"",
+        "cliff_text": "Lady In Gold Gown: \"Long enough to know he was never going to marry you.\""
+      }
+    },
+    {
+      "rank": 10,
+      "role": "challenger",
+      "id": "C01017",
+      "score": 0.5842,
+      "format": "single",
+      "duration": 55.5,
+      "segments": [
+        {
+          "episode": 46,
+          "start": "01:18.00",
+          "end": "02:13.50",
+          "start_seconds": 78.0,
+          "end_seconds": 133.5,
+          "duration": 55.5
+        }
+      ],
+      "hook": {
+        "episode": 46,
+        "time": "01:18.10",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "Now a church calls my marriage a lie!",
+        "beat_id": "E046-044"
+      },
+      "cliffhanger": {
+        "episode": 46,
+        "time": "02:07.20",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander",
+        "text": "Lower them! Or explain to the Crown why its own bailiffs raised iron on the Duke it just confirmed!",
+        "beat_id": "E046-067"
+      },
+      "why_it_works": "Opens on a reveal (Juliana: \"Now a church calls my marriage a lie!\") and cuts on Alexander: \"Lower them! Or explain to the Crown why its own bailiffs...\" before it resolves.",
+      "hook_type": "reveal",
+      "arc_position": "late",
+      "spoiler_level": "late",
+      "resume_episode": 46,
+      "policy_flags": [
+        "weapon:low"
+      ],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.216,
+        "cliff": 0.1304,
+        "intensity": 0.078,
+        "stakes": 0.1,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0098,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.72,
+        "opening_peak": 0.72,
+        "hook_offset": 0.1,
+        "cliff_prior": 0.4346,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.65,
+        "peak": 1.0,
+        "escalation": -0.3771,
+        "stakes": 1.0,
+        "dead_air": 1.4,
+        "lines": 12,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 46,
+        "last_episode": 46,
+        "series_position": 0.918,
+        "speakers": [
+          "Alexander",
+          "Catherine",
+          "High Priest",
+          "Juliana"
+        ],
+        "hook_text": "Juliana: \"Now a church calls my marriage a lie!\"",
+        "cliff_text": "Alexander: \"Lower them! Or explain to the Crown why its own bailiffs raised iron on the Duke it...\""
+      }
+    },
+    {
+      "rank": 11,
+      "role": "challenger",
+      "id": "C00662",
+      "score": 0.5781,
+      "format": "single",
+      "duration": 58.7,
+      "segments": [
+        {
+          "episode": 29,
+          "start": "00:37.40",
+          "end": "01:36.10",
+          "start_seconds": 37.4,
+          "end_seconds": 96.1,
+          "duration": 58.7
+        }
+      ],
+      "hook": {
+        "episode": 29,
+        "time": "00:37.70",
+        "kind": "DIALOGUE",
+        "speaker": "Catherine",
+        "text": "The magistrate will call it witchcraft.",
+        "beat_id": "E029-021"
+      },
+      "cliffhanger": {
+        "episode": 29,
+        "time": "01:34.20",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "Mother...",
+        "beat_id": "E029-059"
+      },
+      "why_it_works": "Opens on an injustice (Catherine: \"The magistrate will call it witchcraft.\") and cuts on Juliana: \"Mother...\" before it resolves.",
+      "hook_type": "injustice",
+      "arc_position": "mid",
+      "spoiler_level": "mid",
+      "resume_episode": 29,
+      "policy_flags": [
+        "violence:low"
+      ],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.186,
+        "cliff": 0.1495,
+        "intensity": 0.0786,
+        "stakes": 0.0625,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0515,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.472,
+        "opening_peak": 0.62,
+        "hook_offset": 0.3,
+        "cliff_prior": 0.4985,
+        "tail_after_cliff": 0.6,
+        "intensity": 0.655,
+        "peak": 1.0,
+        "escalation": -0.28,
+        "stakes": 0.625,
+        "dead_air": 3.4,
+        "lines": 17,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 29,
+        "last_episode": 29,
+        "series_position": 0.571,
+        "speakers": [
+          "Catherine",
+          "Guard",
+          "Juliana"
+        ],
+        "hook_text": "Catherine: \"The magistrate will call it witchcraft.\"",
+        "cliff_text": "Juliana: \"Mother...\""
+      }
+    },
+    {
+      "rank": 12,
+      "role": "challenger",
+      "id": "C00258",
+      "score": 0.5727,
+      "format": "single",
+      "duration": 32.3,
+      "segments": [
+        {
+          "episode": 11,
+          "start": "00:14.30",
+          "end": "00:46.60",
+          "start_seconds": 14.3,
+          "end_seconds": 46.6,
+          "duration": 32.3
+        }
+      ],
+      "hook": {
+        "episode": 11,
+        "time": "00:14.40",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "You have already taken enough from me. Leave!",
+        "beat_id": "E011-013"
+      },
+      "cliffhanger": {
+        "episode": 11,
+        "time": "00:43.50",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "You cannot simply invade our home because this man makes an accusation!",
+        "beat_id": "E011-039"
+      },
+      "why_it_works": "Opens on a defiant stand (Juliana: \"You have already taken enough from me. Leave!\") and cuts on Juliana: \"You cannot simply invade our home because this man makes...\" before it resolves.",
+      "hook_type": "defiance",
+      "arc_position": "mid",
+      "spoiler_level": "mid",
+      "resume_episode": 11,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.1599,
+        "cliff": 0.096,
+        "intensity": 0.0806,
+        "stakes": 0.0875,
+        "escalation": 0.0032,
+        "sound_off": 0.05,
+        "funnel": 0.0955,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.52,
+        "opening_peak": 0.533,
+        "hook_offset": 0.1,
+        "cliff_prior": 0.32,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.6714,
+        "peak": 1.0,
+        "escalation": 0.0646,
+        "stakes": 0.875,
+        "dead_air": 0.9,
+        "lines": 14,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 11,
+        "last_episode": 11,
+        "series_position": 0.204,
+        "speakers": [
+          "Alexander",
+          "Constable",
+          "Gerald",
+          "Juliana"
+        ],
+        "hook_text": "Juliana: \"You have already taken enough from me. Leave!\"",
+        "cliff_text": "Juliana: \"You cannot simply invade our home because this man makes an accusation!\""
+      }
+    },
+    {
+      "rank": 13,
+      "role": "challenger",
+      "id": "C00903",
+      "score": 0.5561,
+      "format": "single",
+      "duration": 54.6,
+      "segments": [
+        {
+          "episode": 42,
+          "start": "00:17.90",
+          "end": "01:12.50",
+          "start_seconds": 17.9,
+          "end_seconds": 72.5,
+          "duration": 54.6
+        }
+      ],
+      "hook": {
+        "episode": 42,
+        "time": "00:18.00",
+        "kind": "DIALOGUE",
+        "speaker": "Blond Nobleman",
+        "text": "Guards! Arrest this imposter!",
+        "beat_id": "E042-009"
+      },
+      "cliffhanger": {
+        "episode": 42,
+        "time": "01:04.20",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander's Mother",
+        "text": "Let everyone hear me! This is my son... Alexander Ashburn. The rightful Duke of Ashburn!",
+        "beat_id": "E042-033"
+      },
+      "why_it_works": "Opens on a reveal (Blond Nobleman: \"Guards! Arrest this imposter!\") and cuts on Alexander's Mother: \"Let everyone hear me! This is my son... Alexander...\" before it resolves.",
+      "hook_type": "reveal",
+      "arc_position": "late",
+      "spoiler_level": "late",
+      "resume_episode": 42,
+      "policy_flags": [
+        "minor:low"
+      ],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.186,
+        "cliff": 0.1416,
+        "intensity": 0.0589,
+        "stakes": 0.1,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0196,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.62,
+        "opening_peak": 0.62,
+        "hook_offset": 0.1,
+        "cliff_prior": 0.472,
+        "tail_after_cliff": 0.1,
+        "intensity": 0.4912,
+        "peak": 1.0,
+        "escalation": -0.2643,
+        "stakes": 1.0,
+        "dead_air": 2.3,
+        "lines": 14,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 42,
+        "last_episode": 42,
+        "series_position": 0.837,
+        "speakers": [
+          "Alexander",
+          "Alexander's Mother",
+          "Blond Nobleman",
+          "Catherine",
+          "Royal Guard"
+        ],
+        "hook_text": "Blond Nobleman: \"Guards! Arrest this imposter!\"",
+        "cliff_text": "Alexander's Mother: \"Let everyone hear me! This is my son... Alexander Ashburn. The rightful Duke of Ashburn!\""
+      }
+    },
+    {
+      "rank": 14,
+      "role": "challenger",
+      "id": "C00367",
+      "score": 0.5055,
+      "format": "single",
+      "duration": 20.0,
+      "segments": [
+        {
+          "episode": 15,
+          "start": "00:53.50",
+          "end": "01:13.50",
+          "start_seconds": 53.5,
+          "end_seconds": 73.5,
+          "duration": 20.0
+        }
+      ],
+      "hook": {
+        "episode": 15,
+        "time": "00:53.50",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "My mother's plants...",
+        "beat_id": "E015-038"
+      },
+      "cliffhanger": {
+        "episode": 15,
+        "time": "01:10.50",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "Alexander...",
+        "beat_id": "E015-047"
+      },
+      "why_it_works": "Opens on a confrontation (Juliana: \"My mother's plants...\") and cuts on Juliana: \"Alexander...\" before it resolves.",
+      "hook_type": "confrontation",
+      "arc_position": "mid",
+      "spoiler_level": "mid",
+      "resume_episode": 15,
+      "policy_flags": [
+        "weapon:low"
+      ],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.1365,
+        "cliff": 0.1418,
+        "intensity": 0.079,
+        "stakes": 0.0125,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0857,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.455,
+        "opening_peak": 0.455,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.4728,
+        "tail_after_cliff": 0.9,
+        "intensity": 0.6583,
+        "peak": 1.0,
+        "escalation": -0.275,
+        "stakes": 0.125,
+        "dead_air": 3.0,
+        "lines": 4,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 15,
+        "last_episode": 15,
+        "series_position": 0.286,
+        "speakers": [
+          "Bald Thug",
+          "Juliana"
+        ],
+        "hook_text": "Juliana: \"My mother's plants...\"",
+        "cliff_text": "Juliana: \"Alexander...\""
+      }
+    },
+    {
+      "rank": 15,
+      "role": "challenger",
+      "id": "C00740",
+      "score": 0.5548,
+      "format": "single",
+      "duration": 51.0,
+      "segments": [
+        {
+          "episode": 35,
+          "start": "01:29.80",
+          "end": "02:20.80",
+          "start_seconds": 89.8,
+          "end_seconds": 140.8,
+          "duration": 51.0
+        }
+      ],
+      "hook": {
+        "episode": 35,
+        "time": "01:29.80",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander's Mother",
+        "text": "A traitor?",
+        "beat_id": "E035-040"
+      },
+      "cliffhanger": {
+        "episode": 35,
+        "time": "02:17.00",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander",
+        "text": "Someone ordered my men to die.",
+        "beat_id": "E035-065"
+      },
+      "why_it_works": "Opens on a humiliation (Alexander's Mother: \"A traitor?\") and cuts on Alexander: \"Someone ordered my men to die.\" before it resolves.",
+      "hook_type": "humiliation",
+      "arc_position": "late",
+      "spoiler_level": "late",
+      "resume_episode": 35,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {},
+      "score_parts": {
+        "hook": 0.1605,
+        "cliff": 0.1656,
+        "intensity": 0.0537,
+        "stakes": 0.0875,
+        "escalation": 0.0008,
+        "sound_off": 0.05,
+        "funnel": 0.0367,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.535,
+        "opening_peak": 0.535,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.552,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.4474,
+        "peak": 1.0,
+        "escalation": 0.0161,
+        "stakes": 0.875,
+        "dead_air": 1.5,
+        "lines": 16,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 35,
+        "last_episode": 35,
+        "series_position": 0.694,
+        "speakers": [
+          "Alexander",
+          "Alexander's Mother"
+        ],
+        "hook_text": "Alexander's Mother: \"A traitor?\"",
+        "cliff_text": "Alexander: \"Someone ordered my men to die.\""
+      }
+    }
+  ]
+}

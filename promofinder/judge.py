@@ -1,22 +1,15 @@
 import copy
 import hashlib
-import json
 import random
-import re
 import string
-import threading
 from concurrent.futures import ThreadPoolExecutor
-from pathlib import Path
-from typing import Annotated
 
-from pydantic import BaseModel, BeforeValidator, Field
-
-from .features import beats_in, clip_time
-from .llm import LLMError
 from .models import Candidate, Show
+from .providers import LLMError
 from .rank import craft_check, overlap, select
-
-HOOK_TYPES = ["betrayal", "reveal", "injustice", "ultimatum", "rescue", "humiliation", "defiance", "romance", "confrontation"]
+from .render import RENDER_VERSION, render_clip
+from .store import VerdictStore
+from .verdicts import HOOK_TYPES, ClipVerdict, Verdicts, judge_value, merge_verdicts
 
 JUDGE_SYSTEM = (
     "You are a cold viewer scrolling TikTok who has never heard of this show, and also a strict promo editor. "
@@ -33,105 +26,23 @@ JUDGE_SYSTEM = (
     "would flag, hook_type, and why_it_works in at most 20 words, written plainly for an editor. Reply in JSON."
 )
 
-PAIR_SYSTEM = (
-    "You pick which of two promo clips for a vertical microdrama to run first as a paid ad aimed at people who "
-    "have never seen the show. Prefer the clip that stops the scroll fastest, makes sense to a stranger, and ends "
-    "on a cliffhanger that makes people install to see what happens. Reply in JSON."
+COMPACT_TAIL = (
+    "\n\nBe brief. Return JSON: {\"clips\": [{\"clip\": letter, \"notes\": at most 15 words, "
+    "\"unexplained_refs\": [names or objects the clip never sets up], "
+    "\"hook\": 0-5, \"cliffhanger\": 0-5, \"standalone\": 0-5, \"escalation\": 0-5, \"premise\": 0-5, "
+    "\"spoiler_level\": none|minor|major, \"policy_flags\": [..], \"hook_type\": one of "
+    + "|".join(HOOK_TYPES) + ", \"why_it_works\": at most 12 words}]} with one entry per clip."
 )
 
+FULL_TAIL = (
+    "\n\nReturn JSON: {\"clips\": [{\"clip\": letter, \"notes\": str, \"who\": str, \"stakes\": str, "
+    "\"open_question\": str, \"unexplained_refs\": [names or objects the clip never sets up], "
+    "\"hook\": 0-5, \"cliffhanger\": 0-5, \"standalone\": 0-5, \"escalation\": 0-5, \"premise\": 0-5, "
+    "\"spoiler_level\": none|minor|major, \"policy_flags\": [..], \"hook_type\": one of "
+    + "|".join(HOOK_TYPES) + ", \"why_it_works\": str}]} with one entry per clip."
+)
 
-WORD_SCORES = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "zero": 0}
-
-
-def score(value):
-    if isinstance(value, str):
-        text = value.strip().lower()
-        if text in WORD_SCORES:
-            return WORD_SCORES[text]
-        found = re.search(r"\d+(?:\.\d+)?", text)
-        if not found:
-            return value
-        value = float(found.group())
-        out_of = re.search(r"/\s*(\d+)", text)
-        if out_of and float(out_of.group(1)) not in (0, 5):
-            value = value * 5 / float(out_of.group(1))
-    if isinstance(value, (int, float)):
-        return max(0.0, min(5.0, float(value)))
-    return value
-
-
-def text_list(value):
-    if isinstance(value, str):
-        return [part.strip() for part in re.split(r"[;,]", value) if part.strip()]
-    return value or []
-
-
-Score = Annotated[float, BeforeValidator(score)]
-TextList = Annotated[list[str], BeforeValidator(text_list)]
-
-
-class ClipVerdict(BaseModel):
-    clip: str
-    notes: str = ""
-    who: str = ""
-    stakes: str = ""
-    open_question: str = ""
-    unexplained_refs: TextList = []
-    hook: Score = Field(ge=0, le=5)
-    cliffhanger: Score = Field(ge=0, le=5)
-    standalone: Score = Field(ge=0, le=5)
-    escalation: Score = Field(default=3, ge=0, le=5)
-    premise: Score = Field(default=3, ge=0, le=5)
-    spoiler_level: str = "none"
-    policy_flags: TextList = []
-    hook_type: str = "confrontation"
-    why_it_works: str = ""
-    judge_spread: float = 0.0
-    standalone_min: float | None = None
-
-
-class Verdicts(BaseModel):
-    clips: list[ClipVerdict]
-
-
-class PairChoice(BaseModel):
-    reason: str = ""
-    winner: str
-
-
-RENDER_VERSION = "render-v1"
-
-
-def render_clip(candidate: Candidate, show: Show) -> str:
-    rows = []
-    current = 0
-    for seg_index, beat in beats_in(candidate, show):
-        if seg_index != current:
-            rows.append("--- CUT ---")
-            current = seg_index
-        t = clip_time(candidate, seg_index, beat.start)
-        stamp = f"[{int(t // 60)}:{int(t % 60):02d}]"
-        if beat.kind == "DIALOGUE":
-            tone = f" ({', '.join(beat.delivery[:2])})" if beat.delivery else ""
-            rows.append(f'{stamp} {beat.speaker}{tone}: "{beat.text}"')
-        elif beat.kind == "ACTION":
-            rows.append(f"{stamp} VISUAL: {beat.text}")
-        elif beat.kind == "SFX":
-            rows.append(f"{stamp} SOUND: {beat.text}")
-    return "\n".join(rows)
-
-
-def judge_value(v: ClipVerdict, cfg: dict | None = None) -> float:
-    llm_cfg = (cfg or {}).get("llm", {})
-    core = (0.25 * v.hook + 0.25 * v.cliffhanger + 0.2 * v.standalone + 0.15 * v.escalation + 0.15 * v.premise) / 5
-    core -= min(0.15, 0.04 * len(v.unexplained_refs))
-    if v.spoiler_level.lower().startswith("major"):
-        core -= llm_cfg.get("spoiler_major_penalty", 0.08)
-    return round(core, 4)
-
-
-def is_major_spoiler(c: Candidate) -> bool:
-    return str(c.judge.get("spoiler_level", "")).lower().startswith("major")
+JUDGE_VERSION = hashlib.sha256((JUDGE_SYSTEM + RENDER_VERSION).encode("utf-8")).hexdigest()[:8]
 
 
 def judge_pool(scored: list[Candidate], cfg: dict) -> list[Candidate]:
@@ -151,30 +62,10 @@ def judge_model_for(llm, cfg: dict):
     return llm
 
 
-COMPACT_TAIL = (
-    "\n\nBe brief. Return JSON: {\"clips\": [{\"clip\": letter, \"notes\": at most 15 words, "
-    "\"unexplained_refs\": [names or objects the clip never sets up], "
-    "\"hook\": 0-5, \"cliffhanger\": 0-5, \"standalone\": 0-5, \"escalation\": 0-5, \"premise\": 0-5, "
-    "\"spoiler_level\": none|minor|major, \"policy_flags\": [..], \"hook_type\": one of "
-    + "|".join(HOOK_TYPES) + ", \"why_it_works\": at most 12 words}]} with one entry per clip."
-)
-
-
 def ask_verdicts(batch: list[Candidate], show: Show, judge_llm, compact: bool = False):
     letters = list(string.ascii_uppercase[: len(batch)])
     blocks = [f"CLIP {letter} ({c.duration:.0f}s)\n{render_clip(c, show)}" for letter, c in zip(letters, batch)]
-    if compact:
-        try:
-            return batch, letters, judge_llm.json(JUDGE_SYSTEM, "\n\n".join(blocks) + COMPACT_TAIL, Verdicts), None
-        except LLMError as exc:
-            return batch, letters, None, exc
-    user = "\n\n".join(blocks) + (
-        "\n\nReturn JSON: {\"clips\": [{\"clip\": letter, \"notes\": str, \"who\": str, \"stakes\": str, "
-        "\"open_question\": str, \"unexplained_refs\": [names or objects the clip never sets up], "
-        "\"hook\": 0-5, \"cliffhanger\": 0-5, \"standalone\": 0-5, \"escalation\": 0-5, \"premise\": 0-5, "
-        "\"spoiler_level\": none|minor|major, \"policy_flags\": [..], \"hook_type\": one of "
-        + "|".join(HOOK_TYPES) + ", \"why_it_works\": str}]} with one entry per clip."
-    )
+    user = "\n\n".join(blocks) + (COMPACT_TAIL if compact else FULL_TAIL)
     try:
         return batch, letters, judge_llm.json(JUDGE_SYSTEM, user, Verdicts), None
     except LLMError as exc:
@@ -199,33 +90,6 @@ def judge_batches(show: Show, items: list[Candidate], judge_llm, cfg: dict, seed
             if letter in by_letter:
                 verdicts[c.cid] = by_letter[letter]
     return verdicts
-
-
-SPOILER_RANK = {"none": 0, "minor": 1, "major": 2}
-SCORE_FIELDS = ["hook", "cliffhanger", "standalone", "escalation", "premise"]
-
-
-def merge_verdicts(found: list[ClipVerdict]) -> ClipVerdict:
-    if len(found) == 1:
-        return found[0]
-    first = found[0]
-    data = first.model_dump()
-    for name in SCORE_FIELDS:
-        data[name] = round(sum(getattr(v, name) for v in found) / len(found), 2)
-    sets = [{r.strip().lower() for r in v.unexplained_refs} for v in found]
-    common = set.intersection(*sets)
-    data["unexplained_refs"] = [r for r in first.unexplained_refs if r.strip().lower() in common]
-    data["spoiler_level"] = max((v.spoiler_level.strip().lower() for v in found), key=lambda x: SPOILER_RANK.get(x, 0))
-    flags = []
-    for v in found:
-        flags += [f for f in v.policy_flags if f not in flags]
-    data["policy_flags"] = flags
-    data["standalone_min"] = min(v.standalone for v in found)
-    data["judge_spread"] = round(max(abs(getattr(a, n) - getattr(b, n)) for a in found for b in found for n in SCORE_FIELDS), 2)
-    return ClipVerdict.model_validate(data)
-
-
-JUDGE_VERSION = hashlib.sha256((JUDGE_SYSTEM + RENDER_VERSION).encode("utf-8")).hexdigest()[:8]
 
 
 def pass_store(judge_llm, cfg: dict, n: int):
@@ -281,6 +145,8 @@ def apply_verdict(c: Candidate, v: ClipVerdict, cfg: dict, lo: float, hi: float)
     floor = v.standalone if v.standalone_min is None else v.standalone_min
     if floor < cfg["llm"].get("min_standalone", 3):
         c.judge["rejected"] = f"standalone {floor:g} < {cfg['llm'].get('min_standalone', 3)} in at least one judging pass"
+    elif v.cliffhanger < cfg["llm"].get("min_cliffhanger", 3):
+        c.judge["rejected"] = f"cliffhanger {v.cliffhanger:g} < {cfg['llm'].get('min_cliffhanger', 3)}: it does not end on an unresolved moment"
     craft = craft_check(c, cfg)
     if craft:
         c.judge["craft"] = craft
@@ -332,28 +198,6 @@ def refine(show: Show, scored: list[Candidate], judged: list[Candidate], judge_l
     return out
 
 
-def judge_show(show: Show, scored: list[Candidate], llm, cfg: dict, log=print):
-    judge_llm = judge_model_for(llm, cfg)
-    pool = judge_pool(scored, cfg)
-    log(f"Judging {len(pool)} diverse candidates blind")
-    base = [c.score for c in pool]
-    lo, hi = min(base), max(base)
-    verdicts = judge_repeated(show, pool, judge_llm, cfg, seed=7, log=log)
-    for c in pool:
-        if c.cid in verdicts:
-            apply_verdict(c, verdicts[c.cid], cfg, lo, hi)
-    judged = [c for c in pool if c.judge]
-    learned = learned_wave(show, scored, judged, judge_llm, cfg, lo, hi, log)
-    judged += learned["clips"]
-    judged += refine(show, scored, judged, judge_llm, cfg, lo, hi, log)
-    for c in scored:
-        if not c.judge:
-            c.score = round(c.score * 0.25, 4)
-    rejected = [c for c in judged if c.judge.get("rejected")]
-    log(f"Judged {len(judged)} clips in total, {len(rejected)} rejected as not standalone")
-    return judged, learned["info"]
-
-
 def learned_wave(show: Show, scored: list[Candidate], judged: list[Candidate], judge_llm, cfg: dict, lo: float, hi: float, log=print) -> dict:
     size = cfg["llm"].get("learned_wave", 30)
     if not size:
@@ -395,136 +239,23 @@ def learned_wave(show: Show, scored: list[Candidate], judged: list[Candidate], j
     return {"clips": out, "info": info}
 
 
-def clip_key(c: Candidate) -> str:
-    return "|".join(f"{s.ep}:{s.start:.2f}-{s.end:.2f}" for s in c.segments)
-
-
-class VerdictStore:
-    def __init__(self, cache_dir: str, spec: str):
-        name = re.sub(r"[^a-z0-9]+", "-", spec.lower()).strip("-")
-        self.path = Path(cache_dir).parent / "verdicts" / f"{name}.jsonl"
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.lock = threading.Lock()
-        self.data: dict[str, dict] = {}
-        if self.path.exists():
-            for line in self.path.read_text(encoding="utf-8").splitlines():
-                if line.strip():
-                    row = json.loads(line)
-                    self.data[row["key"]] = row["verdict"]
-
-    def get(self, c: Candidate) -> ClipVerdict | None:
-        found = self.data.get(clip_key(c))
-        return ClipVerdict.model_validate({"clip": "A", **found}) if found else None
-
-    def put(self, c: Candidate, v: ClipVerdict):
-        key = clip_key(c)
-        row = v.model_dump(exclude={"clip"})
-        with self.lock:
-            self.data[key] = row
-            with open(self.path, "a", encoding="utf-8") as fh:
-                fh.write(json.dumps({"key": key, "verdict": row}, ensure_ascii=False) + "\n")
-
-
-def jury_check(show: Show, eligible: list[Candidate], cfg: dict, log=print) -> dict:
-    spec = cfg["llm"].get("jury_model")
-    size = cfg["llm"].get("jury_top", 25)
-    if not spec or not size:
-        return {"used": False}
-    from .llm import LLM
-    try:
-        jury = LLM(spec, cfg["llm"])
-    except LLMError as exc:
-        log(f"Jury model unavailable, skipping ({exc})")
-        return {"used": False, "error": str(exc)}
-    store = VerdictStore(cfg["llm"].get("cache_dir", ".cache/llm"), spec)
-    shortlist_cfg = copy.deepcopy(cfg)
-    shortlist_cfg["selection"]["top"] = size
-    floor = cfg["llm"].get("min_standalone", 3)
-    vetoed, judged_total, rounds = 0, 0, 0
-    verdicts: dict[str, ClipVerdict] = {}
-    for rounds in range(1, 5):
-        pool = [c for c in eligible if not c.judge.get("rejected")]
-        shortlist = select(pool, shortlist_cfg)
-        todo = [c for c in shortlist if "jury" not in c.judge]
-        if not todo:
-            break
-        log(f"Second-model jury ({spec}), round {rounds}: {len(todo)} clips")
-        reused = 0
-        for c in todo:
-            known = store.get(c)
-            if known is not None:
-                verdicts[c.cid] = known
-                reused += 1
-        if reused:
-            log(f"Reused {reused} stored jury verdicts")
-        for attempt in range(3):
-            missing = [c for c in todo if c.cid not in verdicts]
-            if not missing:
-                break
-            fresh = judge_batches(show, missing, jury, cfg, seed=41 + 10 * rounds + attempt, log=log, compact=cfg["llm"].get("jury_compact", True), size=cfg["llm"].get("jury_batch", 1))
-            by_id = {c.cid: c for c in missing}
-            for cid, v in fresh.items():
-                store.put(by_id[cid], v)
-            verdicts.update(fresh)
-        for c in todo:
-            v = verdicts.get(c.cid)
-            if not v:
-                c.judge["jury"] = {"model": spec, "missing": True}
-                continue
-            judged_total += 1
-            first = {n: c.judge.get(n) for n in SCORE_FIELDS}
-            c.judge["jury"] = {"model": spec, **{n: getattr(v, n) for n in SCORE_FIELDS}, "unexplained_refs": v.unexplained_refs, "spoiler_level": v.spoiler_level}
-            for n in SCORE_FIELDS:
-                if first[n] is not None:
-                    c.judge[n] = round((first[n] + getattr(v, n)) / 2, 2)
-            jury_value = judge_value(v, cfg)
-            own = c.judge.get("judge_score", jury_value)
-            c.judge["judge_score"] = round((own + jury_value) / 2, 4)
-            c.score = round(c.score + cfg["llm"].get("blend", 0.65) * (c.judge["judge_score"] - own), 4)
-            if v.standalone < floor:
-                c.judge["rejected"] = f"second-model jury gave standalone {v.standalone:g} < {floor}"
-                vetoed += 1
-    log(f"Jury judged {judged_total} clips over {rounds} rounds, vetoed {vetoed} as not standalone")
-    return {"used": True, "model": spec, "shortlist": size, "judged": judged_total, "vetoed": vetoed, "rounds": rounds, "usage": jury.usage()}
-
-
-def pairwise_order(show: Show, chosen: list[Candidate], llm, cfg: dict, log=print) -> list[Candidate]:
-    k = min(cfg["llm"].get("pairwise_top", 12), len(chosen))
-    if k < 2:
-        return chosen
-    judge_llm = llm
-    if cfg["llm"].get("judge_model"):
-        from .llm import LLM
-        judge_llm = LLM(cfg["llm"]["judge_model"], cfg["llm"])
-    head, tail = chosen[:k], chosen[k:]
-
-    def prefers(a: Candidate, b: Candidate) -> int:
-        votes = 0
-        for first, second, sign in ((a, b, 1), (b, a, -1)):
-            user = (
-                f"CLIP A ({first.duration:.0f}s)\n{render_clip(first, show)}\n\nCLIP B ({second.duration:.0f}s)\n"
-                f"{render_clip(second, show)}\n\nReturn JSON: {{\"reason\": short, \"winner\": \"A\" or \"B\"}}"
-            )
-            try:
-                choice = judge_llm.json(PAIR_SYSTEM, user, PairChoice)
-            except LLMError:
-                return 0
-            pick = choice.winner.strip().upper()[:1]
-            if pick == "A":
-                votes += sign
-            elif pick == "B":
-                votes -= sign
-        return 1 if votes == 2 else -1 if votes == -2 else 0
-
-    swaps = 0
-    passes = cfg["llm"].get("pairwise_passes", 2)
-    for _ in range(passes):
-        for i in range(len(head) - 1, 0, -1):
-            if prefers(head[i], head[i - 1]) == 1:
-                head[i - 1], head[i] = head[i], head[i - 1]
-                swaps += 1
-    log(f"Pairwise reorder of top {k}: {swaps} swaps over {passes} passes")
-    for c in head:
-        c.judge["pairwise_checked"] = True
-    ordered = head + tail
-    return [c for c in ordered if not is_major_spoiler(c)] + [c for c in ordered if is_major_spoiler(c)]
+def judge_show(show: Show, scored: list[Candidate], llm, cfg: dict, log=print):
+    judge_llm = judge_model_for(llm, cfg)
+    pool = judge_pool(scored, cfg)
+    log(f"Judging {len(pool)} diverse candidates blind")
+    base = [c.score for c in pool]
+    lo, hi = min(base), max(base)
+    verdicts = judge_repeated(show, pool, judge_llm, cfg, seed=7, log=log)
+    for c in pool:
+        if c.cid in verdicts:
+            apply_verdict(c, verdicts[c.cid], cfg, lo, hi)
+    judged = [c for c in pool if c.judge]
+    learned = learned_wave(show, scored, judged, judge_llm, cfg, lo, hi, log)
+    judged += learned["clips"]
+    judged += refine(show, scored, judged, judge_llm, cfg, lo, hi, log)
+    for c in scored:
+        if not c.judge:
+            c.score = round(c.score * 0.25, 4)
+    rejected = [c for c in judged if c.judge.get("rejected")]
+    log(f"Judged {len(judged)} clips in total, {len(rejected)} rejected as not standalone")
+    return judged, learned["info"]

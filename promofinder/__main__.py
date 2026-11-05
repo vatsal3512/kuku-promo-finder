@@ -27,10 +27,13 @@ def main(argv=None):
     go.add_argument("--config", default="config.yaml", help="YAML config with weights and gates")
     go.add_argument("--top", type=int, default=None, help="Number of promos to return")
     go.add_argument("--name", default=None, help="Show name for the report")
+    go.add_argument("--profile", choices=["fast", "standard", "full"], default=None, help="fast: about 5 min, standard: about 10 min, full: everything in the config")
 
     chk = sub.add_parser("check", allow_abbrev=False, help="Show how an input parses before spending any LLM calls")
     chk.add_argument("--input", required=True)
     chk.add_argument("--verbose", action="store_true", help="Also list every episode")
+    chk.add_argument("--model", default=None, help="Also test this provider/model: key, speed and JSON replies")
+    chk.add_argument("--config", default="config.yaml")
 
     ev = sub.add_parser("eval", allow_abbrev=False, help="Check a run for validity and score it against a gold set")
     ev.add_argument("--run", required=True)
@@ -76,15 +79,22 @@ def main(argv=None):
             config_path=args.config,
             top=args.top,
             name=args.name,
+            profile=args.profile,
         )
         print_promos(result["records"])
+        if result["meta"].get("degraded"):
+            print()
+            print("Some steps fell back to rules: " +"; ".join(f"{d['stage']} ({d['reason'][:80]})" for d in result["meta"]["degraded"]))
     elif args.command == "check":
-        from .doctor import check_input
+        from .doctor import check_input, probe_model
         result = check_input(args.input)
         if not args.verbose:
             result.pop("per_episode", None)
+        if args.model:
+            from .config import load_config
+            result["model"] = probe_model(args.model, load_config(args.config)["llm"])
         print(json.dumps(result, indent=2))
-        if not result.get("ok"):
+        if not result.get("ok") or (args.model and not result["model"]["ok"]):
             sys.exit(1)
     elif args.command == "eval":
         from .evaluate import report

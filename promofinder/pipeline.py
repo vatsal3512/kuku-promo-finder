@@ -9,6 +9,7 @@ from .export import write_outputs
 from .features import featurize, gates_pass
 from .names import apply_names, label_drift, place_drift
 from .parse import load_show
+from .profiles import apply_profile
 from .rank import base_score, craft_check, pick_control, select
 from .rules import score_beats
 
@@ -19,9 +20,9 @@ def slug(text: str) -> str:
 
 def run(input_path: str, out_root: str = "outputs", mode: str = "offline", model: str | None = None,
         config_path: str | None = None, top: int | None = None, name: str | None = None,
-        judge_model: str | None = None, jury_model: str | None = None, log=print) -> dict:
+        judge_model: str | None = None, jury_model: str | None = None, profile: str | None = None, log=print) -> dict:
     started = time.time()
-    cfg = load_config(config_path)
+    cfg = apply_profile(load_config(config_path), profile)
     if top:
         cfg["selection"]["top"] = top
     if model:
@@ -35,23 +36,57 @@ def run(input_path: str, out_root: str = "outputs", mode: str = "offline", model
         raise SystemExit(f"No screenplay episodes found in {input_path}")
     log(f"Parsed {len(show.episodes)} episodes, {len(show.beats)} beats")
 
+    degraded: list[dict] = []
+    steps = 6 if mode == "llm" else 3
+
+    def step(n: int, text: str):
+        log(f"[{n}/{steps}] {text}")
+
+    def guarded(stage: str, fn, fallback=None):
+        nonlocal llm
+        if llm is not None and llm.dead:
+            degraded.append({"stage": stage, "reason": str(llm.dead)})
+            return fallback
+        try:
+            return fn()
+        except Exception as exc:
+            reason = f"{type(exc).__name__}: {exc}"[:300]
+            log(f"WARNING: {stage} failed, continuing with rules for this step ({reason})")
+            degraded.append({"stage": stage, "reason": reason})
+            return fallback
+
     bible = None
     learn_info = None
     llm = None
     if mode == "llm":
-        from .bible import build_bible
         from .llm import LLM
-        llm = LLM(cfg["llm"]["model"], cfg["llm"])
-        bible = build_bible(show, llm, log)
-        cfg["names"] = list(cfg.get("names") or []) + bible.get("aliases", [])
+        try:
+            llm = LLM(cfg["llm"]["model"], cfg["llm"])
+            if not hasattr(llm, "dead"):
+                llm.dead = None
+        except Exception as exc:
+            log(f"WARNING: model unavailable ({exc}). Running with rules only.")
+            degraded.append({"stage": "model", "reason": str(exc)[:300]})
+            mode = "offline"
+            steps = 3
+    if mode == "llm" and not cfg.get("skip_bible"):
+        from .bible import build_bible
+        step(1, "Reading the whole show for character names")
+        bible = guarded("series bible", lambda: build_bible(show, llm, log))
+        if bible:
+            cfg["names"] = list(cfg.get("names") or []) + bible.get("aliases", [])
     mapping = apply_names(show, cfg.get("names"))
 
     priors = score_beats(show)
     tag_report = None
     if mode == "llm":
         from .tag import tag_show
-        tag_report = tag_show(show, priors, llm, cfg, log)
+        step(2, f"Asking the model for the best hooks and cliffhangers in {len(show.episodes)} episodes")
+        tag_report = guarded("tagging", lambda: tag_show(show, priors, llm, cfg, log))
+        if llm.dead:
+            log(f"WARNING: model stopped working ({llm.dead}). Finishing with rules only.")
 
+    step(3 if mode == "llm" else 1, "Building possible clips")
     candidates = generate(show, priors, cfg)
     log(f"Generated {len(candidates)} candidate windows")
     scored = []
@@ -61,7 +96,7 @@ def run(input_path: str, out_root: str = "outputs", mode: str = "offline", model
             c.score = base_score(c, cfg)
             scored.append(c)
     log(f"{len(scored)} passed the hard gates")
-    if mode != "llm":
+    if mode != "llm" or llm.dead:
         for c in scored:
             craft = craft_check(c, cfg)
             if craft:
@@ -69,21 +104,31 @@ def run(input_path: str, out_root: str = "outputs", mode: str = "offline", model
                 c.judge["craft"] = craft
                 c.score = round(c.score - sum(craft.values()), 4)
 
-    if mode == "llm":
+    if mode == "llm" and not llm.dead:
         from .judge import judge_show
-        _, learn_info = judge_show(show, scored, llm, cfg, log)
+        step(4, "Judging the strongest clips as a first-time viewer")
+        judged = guarded("judging", lambda: judge_show(show, scored, llm, cfg, log))
+        learn_info = judged[1] if judged else None
 
     eligible = [c for c in scored if not c.judge.get("rejected")]
     jury_info = None
-    if mode == "llm":
+    if mode == "llm" and cfg["llm"].get("jury_model"):
         from .judge import jury_check
-        jury_info = jury_check(show, eligible, cfg, log)
+        step(5, "Second model double-checks the shortlist")
+        jury_info = guarded("second judge", lambda: jury_check(show, eligible, cfg, log))
         eligible = [c for c in eligible if not c.judge.get("rejected")]
+    if not eligible and scored:
+        log("WARNING: every clip was rejected by the judge. Falling back to the rule ranking.")
+        degraded.append({"stage": "selection", "reason": "all judged clips rejected"})
+        eligible = scored
     chosen = select(eligible, cfg)
-    if mode == "llm" and cfg["llm"].get("pairwise_top"):
+    if mode == "llm" and cfg["llm"].get("pairwise_top") and not llm.dead:
         from .judge import pairwise_order
-        chosen = pairwise_order(show, chosen, llm, cfg, log)
+        step(6, "Ordering the final list")
+        chosen = guarded("ordering", lambda: pairwise_order(show, chosen, llm, cfg, log), chosen) or chosen
     chosen = pick_control(chosen, cfg)
+    if not chosen:
+        log("No promo fits the rules (20-60 s, hook in the first 3 s, clean cliffhanger cut). See the check command for why.")
 
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     out_dir = Path(out_root) / slug(show.name) / f"{stamp}-{mode}"
@@ -99,6 +144,8 @@ def run(input_path: str, out_root: str = "outputs", mode: str = "offline", model
         "generated": len(candidates),
         "seconds": round(time.time() - started, 2),
         "llm_usage": llm.usage() if llm else None,
+        "profile": cfg.get("profile"),
+        "degraded": degraded,
         "config": cfg,
     }
     extras = {
@@ -115,5 +162,7 @@ def run(input_path: str, out_root: str = "outputs", mode: str = "offline", model
         extras["jury"] = jury_info
     records = write_outputs(out_dir, show, chosen, scored, meta, extras)
     meta["seconds"] = round(time.time() - started, 2)
-    log(f"Wrote {len(records)} promos to {out_dir}")
+    step(steps, f"Wrote {len(records)} promos to {out_dir}")
+    if degraded:
+        log(f"Note: {len(degraded)} step(s) fell back to rules: " + "; ".join(d["stage"] for d in degraded))
     return {"out_dir": str(out_dir), "records": records, "meta": meta}

@@ -87,6 +87,9 @@ def merge(base: dict, extra: dict) -> dict:
 
 
 def load_config(path: str | None = None) -> dict:
+    if path and not Path(path).exists() and Path(path).name == "config.yaml":
+        bundled = Path(__file__).resolve().parent.parent / "config.yaml"
+        path = str(bundled) if bundled.exists() else path
     if path and Path(path).exists():
         return merge(DEFAULTS, yaml.safe_load(Path(path).read_text(encoding="utf-8")) or {})
     return copy.deepcopy(DEFAULTS)

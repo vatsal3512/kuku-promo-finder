@@ -97,4 +97,4 @@ Start: (00:11.30) | End: (00:13.10)
 
 `CAMERA`, `ACTION` and `SOUND FX` blocks use the same timing line. It also reads `[mm:ss - mm:ss]` and SRT-style `hh:mm:ss,mmm --> hh:mm:ss,mmm` ranges, tags without bold, and `.md` / `.fountain` files. Run `check` first on a new show to see if anything looks off.
 
-The show scripts used for the assignment are not in this repo.
+Outputs from the full input pack are in `raw_outputs/`. The show scripts themselves are not in this repo.

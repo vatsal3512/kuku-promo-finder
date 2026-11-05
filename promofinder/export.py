@@ -198,6 +198,24 @@ def write_outputs(out_dir: Path, show: Show, chosen: list[Candidate], scored: li
         lines.append(f'ffmpeg -y -f concat -safe 0 -i "$OUT_DIR/{tag}.txt" -c copy "$OUT_DIR/{tag}.mp4"')
         lines.append("")
     (out_dir / "ffmpeg_cuts.sh").write_text("\n".join(lines), encoding="utf-8")
+    ps = [
+        '$VideoDir = if ($env:VIDEO_DIR) { $env:VIDEO_DIR } else { ".\\video" }',
+        '$OutDir = if ($env:OUT_DIR) { $env:OUT_DIR } else { ".\\promo_cuts" }',
+        "New-Item -ItemType Directory -Force -Path $OutDir | Out-Null",
+        "",
+    ]
+    for r, c in zip(records, chosen):
+        tag = f"promo{r['rank']:02d}"
+        names = []
+        for i, s in enumerate(c.segments, 1):
+            name = f"{tag}_part{i}.mp4"
+            names.append(name)
+            ps.append(f'ffmpeg -y -ss {s.start:.2f} -to {s.end:.2f} -i "$VideoDir\\episode-{s.ep:03d}.mp4" -c:v libx264 -c:a aac "$OutDir\\{name}"')
+        listing = ", ".join(f"\"file '{n}'\"" for n in names)
+        ps.append(f'@({listing}) | Set-Content -Encoding ascii "$OutDir\\{tag}.txt"')
+        ps.append(f'ffmpeg -y -f concat -safe 0 -i "$OutDir\\{tag}.txt" -c copy "$OutDir\\{tag}.mp4"')
+        ps.append("")
+    (out_dir / "ffmpeg_cuts.ps1").write_text("\n".join(ps), encoding="utf-8")
     with open(out_dir / "candidates_scored.jsonl", "w", encoding="utf-8") as fh:
         for c in sorted(scored, key=lambda x: x.score, reverse=True):
             fh.write(json.dumps({

@@ -1,13 +1,16 @@
 import base64
 import html
 import json
+import os
 import tempfile
+import zipfile
 from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
 
+from promofinder.parse import SCRIPT_SUFFIXES
 from promofinder.pipeline import run
 
 ROOT = Path(__file__).parent
@@ -15,7 +18,43 @@ OUTPUTS = ROOT / "outputs"
 RAW = ROOT / "raw_outputs"
 SAMPLE = ROOT / "tests" / "fixtures" / "sample_show"
 LOGO = ROOT / "assets" / "kuku-logo-white.png"
+CONFIG = ROOT / "config.yaml"
 RED = "#EC1C24"
+MAX_PUBLIC_EPISODES = 60
+MODES = {
+    "fast": ("Fast", "AI picks and one judging pass, about 5 minutes for 50 episodes"),
+    "offline": ("Rules only", "no AI, a few seconds, no key needed"),
+    "full": ("Full", "everything including the second judge, 20-25 minutes, needs the passcode"),
+}
+
+
+def secret(name: str) -> str:
+    try:
+        return str(st.secrets.get(name, "") or os.environ.get(name, ""))
+    except Exception:
+        return os.environ.get(name, "")
+
+
+def unpack(uploads, work: Path) -> list[str]:
+    names = []
+    for f in uploads:
+        if f.name.lower().endswith(".zip"):
+            with zipfile.ZipFile(f) as zf:
+                for info in zf.infolist():
+                    inner = Path(info.filename)
+                    if info.is_dir() or inner.suffix.lower() not in SCRIPT_SUFFIXES or inner.name.startswith("."):
+                        continue
+                    target = work / inner.name
+                    n = 2
+                    while target.exists():
+                        target = work / f"{inner.stem} ({n}){inner.suffix}"
+                        n += 1
+                    target.write_bytes(zf.read(info))
+                    names.append(inner.name)
+        else:
+            (work / Path(f.name).name).write_bytes(f.getvalue())
+            names.append(f.name)
+    return names
 
 st.set_page_config(page_title="PromoFinder", layout="wide", initial_sidebar_state="expanded")
 
@@ -143,30 +182,64 @@ def said(beat: dict) -> str:
 
 with st.sidebar:
     st.markdown("**Run it on new scripts**")
-    st.caption("Upload one script file per episode. Rules-only mode takes a few seconds and needs no key.")
-    uploads = st.file_uploader("Episode scripts", type=["txt", "md", "fountain"], accept_multiple_files=True, label_visibility="collapsed")
+    st.caption("Upload one script file per episode, or a single .zip of them. A whole series in one file also works.")
+    uploads = st.file_uploader("Episode scripts", type=["txt", "md", "fountain", "text", "zip"], accept_multiple_files=True, label_visibility="collapsed")
     use_sample = st.checkbox("Use the two-episode sample show instead", value=not uploads)
-    mode = st.radio("Mode", ["offline", "llm"], horizontal=True, format_func=lambda m: "Rules only" if m == "offline" else "Full (needs API key)")
-    model = st.text_input("Model", "nvidia/nvidia/nemotron-3-ultra-550b-a55b", disabled=mode == "offline")
+    choice = st.radio("Mode", list(MODES), format_func=lambda m: MODES[m][0], horizontal=True)
+    st.caption(MODES[choice][1])
+    passcode = ""
+    if choice == "full":
+        passcode = st.text_input("Passcode", type="password")
+    model = st.text_input("Model", "nvidia/nvidia/nemotron-3-ultra-550b-a55b", disabled=choice == "offline")
     top = st.slider("How many promos", 5, 25, 15)
     if st.button("Find promos", type="primary", use_container_width=True):
         work = Path(tempfile.mkdtemp(prefix="promofinder-"))
         source = SAMPLE
         if uploads and not use_sample:
-            for f in uploads:
-                (work / f.name).write_bytes(f.getvalue())
+            unpack(uploads, work)
             source = work
-        logs = []
-        with st.spinner("Reading scripts and picking promos"):
-            try:
-                result = run(str(source), out_root=str(OUTPUTS), mode=mode, model=model if mode == "llm" else None, top=top, log=logs.append)
-                st.session_state["run_dir"] = str(Path(result["out_dir"]).resolve())
-                st.session_state.pop("list", None)
-                st.rerun()
-            except Exception as exc:
-                st.error(str(exc))
-        if logs:
-            st.code("\n".join(logs[-10:]), language=None)
+        blocked = None
+        if choice == "full" and (not secret("FULL_PASSCODE") or passcode != secret("FULL_PASSCODE")):
+            blocked = "Full mode is locked on the public app. Use Fast here, or run Full from the command line."
+        if choice == "fast" and source is not SAMPLE:
+            from promofinder.doctor import check_input
+            found = check_input(str(source))
+            if found.get("episodes", 0) > MAX_PUBLIC_EPISODES:
+                blocked = f"{found['episodes']} episodes is more than this public app runs at once ({MAX_PUBLIC_EPISODES}). Use the command line for bigger shows."
+        if blocked:
+            st.warning(blocked)
+        else:
+            lines = []
+            with st.status("Reading scripts and picking promos", expanded=True) as status:
+                def log(message: str):
+                    lines.append(message)
+                    if message.startswith("[") or message.startswith("WARNING") or message.startswith("Note"):
+                        status.write(message)
+                        if message.startswith("["):
+                            status.update(label=message.split("] ", 1)[-1])
+                try:
+                    result = run(
+                        str(source), out_root=str(OUTPUTS), mode="offline" if choice == "offline" else "llm",
+                        model=model if choice != "offline" else None, top=top,
+                        config_path=str(CONFIG), profile=None if choice == "offline" else choice, log=log,
+                    )
+                    degraded = result["meta"].get("degraded")
+                    status.update(label=f"Done in {result['meta']['seconds']:.0f}s" + (" (some steps fell back to rules)" if degraded else ""), state="complete")
+                    st.session_state["run_dir"] = str(Path(result["out_dir"]).resolve())
+                    st.session_state.pop("list", None)
+                    if not result["records"]:
+                        st.warning("No promo fits the rules in these scripts. Check that times and speaker lines are in a supported format.")
+                    else:
+                        st.rerun()
+                except SystemExit as exc:
+                    status.update(label="Nothing to read", state="error")
+                    st.error(str(exc) or "No screenplay episodes found in the upload.")
+                except Exception as exc:
+                    status.update(label="Run failed", state="error")
+                    st.error(str(exc))
+            if lines:
+                with st.expander("Full log"):
+                    st.code("\n".join(lines[-40:]), language=None)
 
 runs = list_runs()
 if not runs:
@@ -207,8 +280,9 @@ GUIDE = [
      "At the bottom of each promo. Add a note if you like. Decisions are saved with the run so the ranking can be tuned later."),
     ("Run it on new scripts",
      "Use the panel on the left (the <b>&raquo;</b> arrow if it is closed). Upload one script file per episode (.txt, .md or .fountain), "
-     "or use the two-episode sample. <b>Rules only</b> takes seconds and needs no key. <b>Full</b> uses the AI judges, about 20-25 minutes "
-     "for 50 episodes. The new run then shows up in the dropdown at the top right, next to the <b>Submitted run</b> and the <b>Rules only</b> run."),
+     "a .zip of them, or a whole series in one file, or use the two-episode sample. <b>Fast</b> uses the AI, about 3-5 minutes for 50 episodes. "
+     "<b>Rules only</b> takes seconds and needs no key. <b>Full</b> adds the second judge (20-25 minutes) and needs a passcode here. "
+     "Progress shows live. The new run then appears in the dropdown at the top right, next to the <b>Submitted run</b>."),
 ]
 with st.expander("How to use this app", expanded=True):
     st.markdown(

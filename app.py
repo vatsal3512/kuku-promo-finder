@@ -21,15 +21,18 @@ st.title("PromoFinder")
 st.caption("Ranked 20-60s promo cuts from microdrama screenplays. The model picks moments, code computes every timestamp.")
 
 
+RAW = ROOT / "raw_outputs"
+
+
 def list_runs():
-    if not OUTPUTS.exists():
-        return []
-    return sorted((p for p in OUTPUTS.glob("*/*") if (p / "promos.json").exists()), key=lambda p: p.name, reverse=True)
+    fresh = sorted((p for p in OUTPUTS.glob("*/*") if (p / "promos.json").exists()), key=lambda p: p.name, reverse=True) if OUTPUTS.exists() else []
+    shipped = [RAW / name for name in ("final_run", "rules_only_run") if (RAW / name / "promos.json").exists()]
+    return fresh + shipped
 
 
 with st.sidebar:
     st.header("New run")
-    uploads = st.file_uploader("Episode scripts (.txt)", type=["txt"], accept_multiple_files=True)
+    uploads = st.file_uploader("Episode scripts", type=["txt", "md", "fountain"], accept_multiple_files=True)
     use_sample = st.checkbox("Use the bundled sample show", value=not uploads)
     mode = st.radio("Mode", ["offline", "llm"], horizontal=True)
     model = st.text_input("Model (provider/model)", "nvidia/nvidia/nemotron-3-ultra-550b-a55b", disabled=mode == "offline")
@@ -56,11 +59,11 @@ with st.sidebar:
     st.header("Open a run")
     runs = list_runs()
     if runs:
-        labels = [str(p.relative_to(OUTPUTS)) for p in runs]
-        current = st.session_state.get("run_dir")
+        labels = [str(p.relative_to(ROOT)) for p in runs]
+        current = st.session_state.get("run_dir") or str(RAW / "final_run")
         index = next((i for i, p in enumerate(runs) if str(p) == current), 0)
         picked = st.selectbox("Run", labels, index=index)
-        st.session_state["run_dir"] = str(OUTPUTS / picked)
+        st.session_state["run_dir"] = str(ROOT / picked)
 
 run_dir = st.session_state.get("run_dir")
 if not run_dir:

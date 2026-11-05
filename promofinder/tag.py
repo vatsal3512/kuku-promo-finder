@@ -5,7 +5,7 @@ from typing import Annotated
 from pydantic import BaseModel, BeforeValidator, Field
 
 from .export import clock
-from .llm import LLMError
+from .providers import LLMError
 from .models import Episode, Show
 from .rules import Prior
 

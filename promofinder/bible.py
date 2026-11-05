@@ -2,7 +2,7 @@ from collections import defaultdict
 
 from pydantic import BaseModel, Field
 
-from .llm import LLMError
+from .providers import LLMError
 from .models import Show
 
 SYSTEM = (

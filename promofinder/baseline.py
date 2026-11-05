@@ -6,7 +6,8 @@ from pydantic import BaseModel
 from rapidfuzz import fuzz
 
 from .export import clock
-from .llm import LLM, LLMError
+from .llm import LLM
+from .providers import LLMError
 from .names import apply_names
 from .parse import load_show, parse_time
 

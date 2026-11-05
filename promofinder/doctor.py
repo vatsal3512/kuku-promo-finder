@@ -80,7 +80,8 @@ def probe_model(spec: str, llm_cfg: dict) -> dict:
 
     from pydantic import BaseModel
 
-    from .llm import LLM, PROVIDERS, LLMError, key_pool, load_env_file
+    from .llm import LLM
+    from .providers import PROVIDERS, LLMError, key_pool, load_env_file
 
     class Probe(BaseModel):
         ok: bool

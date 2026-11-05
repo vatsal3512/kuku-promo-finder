@@ -3,7 +3,8 @@ from types import SimpleNamespace
 import pytest
 from pydantic import BaseModel
 
-from promofinder.llm import LLM, LLMAuthError, LLMNotFound, LLMQuotaError, LLMRefusal
+from promofinder.llm import LLM
+from promofinder.providers import LLMAuthError, LLMNotFound, LLMQuotaError, LLMRefusal
 
 
 class Answer(BaseModel):
@@ -94,7 +95,7 @@ def test_extra_options_get_their_own_cache_and_fall_back(monkeypatch, tmp_path):
 
 
 def test_model_replies_in_odd_shapes_are_accepted():
-    from promofinder.judge import ClipVerdict
+    from promofinder.verdicts import ClipVerdict
     from promofinder.tag import EpisodeTags
     tags = EpisodeTags.model_validate({"hooks": [{"beat": "b16", "strength": "4"}, {"beat": 12, "strength": 7}],
                                        "cliffhangers": [{"beat": "[b40]"}], "turning_points": ["b3", 5]})

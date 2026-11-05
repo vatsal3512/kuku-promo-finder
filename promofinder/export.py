@@ -2,6 +2,7 @@ import csv
 import json
 from pathlib import Path
 
+from .features import beats_in, clip_time
 from .models import Candidate, Show
 from .rules import POLICY
 
@@ -75,6 +76,23 @@ def rank_reason(role: str, candidate: Candidate, flags: list[str], landing: int)
     return "; ".join(parts) + "."
 
 
+def transcript(candidate: Candidate, show: Show) -> list[dict]:
+    rows = []
+    for seg_index, beat in beats_in(candidate, show):
+        if beat.kind not in ("DIALOGUE", "ACTION", "SFX"):
+            continue
+        rows.append({
+            "segment": seg_index + 1,
+            "t": round(clip_time(candidate, seg_index, beat.start), 2),
+            "kind": beat.kind,
+            "speaker": beat.speaker if beat.kind == "DIALOGUE" else "",
+            "text": beat.text,
+            "hook": beat.uid == candidate.hook_uid,
+            "cliffhanger": beat.uid == candidate.cliff_uid,
+        })
+    return rows
+
+
 def promo_record(rank: int, candidate: Candidate, show: Show) -> dict:
     judge = candidate.judge or {}
     role = "control" if rank == 1 else "retargeting" if str(judge.get("spoiler_level", "")).lower().startswith("major") else "challenger"
@@ -96,9 +114,11 @@ def promo_record(rank: int, candidate: Candidate, show: Show) -> dict:
                 "start_seconds": s.start,
                 "end_seconds": s.end,
                 "duration": s.duration,
+                "episode_duration": show.by_ep[s.ep].duration,
             }
             for s in candidate.segments
         ],
+        "transcript": transcript(candidate, show),
         "hook": beat_view(show, candidate.hook_uid),
         "cliffhanger": beat_view(show, candidate.cliff_uid),
         "why_it_works": judge.get("why_it_works") or candidate.why,

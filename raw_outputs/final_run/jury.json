@@ -9,11 +9,11 @@
     "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
     "keys": 3,
     "rate_limited": 0,
-    "calls": 2,
+    "calls": 0,
     "cache_hits": 0,
-    "prompt_tokens": 1373,
-    "completion_tokens": 6790,
-    "seconds": 468.27,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "seconds": 0.0,
     "failures": 0
   }
 }

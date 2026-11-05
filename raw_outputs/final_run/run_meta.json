@@ -8,20 +8,17 @@
   "beats": 3727,
   "candidates": 3082,
   "generated": 3082,
-  "seconds": 672.47,
+  "seconds": 6.15,
   "llm_usage": {
     "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
     "keys": 3,
-    "rate_limited": 1,
-    "calls": 32,
-    "cache_hits": 119,
-    "prompt_tokens": 59326,
-    "completion_tokens": 73217,
-    "seconds": 1713.59,
-    "failures": 0,
-    "errors": {
-      "429": 1
-    }
+    "rate_limited": 0,
+    "calls": 0,
+    "cache_hits": 151,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "seconds": 0.0,
+    "failures": 0
   },
   "config": {
     "gates": {

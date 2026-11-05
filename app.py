@@ -1,3 +1,5 @@
+import base64
+import html
 import json
 import tempfile
 from datetime import datetime
@@ -6,143 +8,259 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-from promofinder.judge import render_clip
-from promofinder.models import Candidate, Segment
-from promofinder.names import apply_names
-from promofinder.parse import load_show
 from promofinder.pipeline import run
 
 ROOT = Path(__file__).parent
 OUTPUTS = ROOT / "outputs"
-SAMPLE = ROOT / "tests" / "fixtures" / "sample_show"
-
-st.set_page_config(page_title="PromoFinder", layout="wide")
-st.title("PromoFinder")
-st.caption("Ranked 20-60s promo cuts from microdrama screenplays. The model picks moments, code computes every timestamp.")
-
-
 RAW = ROOT / "raw_outputs"
+SAMPLE = ROOT / "tests" / "fixtures" / "sample_show"
+LOGO = ROOT / "assets" / "kuku-logo-white.png"
+RED = "#EC1C24"
+
+st.set_page_config(page_title="PromoFinder", layout="wide", initial_sidebar_state="collapsed")
+
+st.markdown(
+    """
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap');
+.stApp, .stApp p, .stApp li, .stApp label, .stApp input, .stApp textarea, .stApp button { font-family: 'Figtree', sans-serif; }
+.stApp { background: #0E0F11; }
+#MainMenu, footer { visibility: hidden; }
+header[data-testid="stHeader"] { background: transparent; }
+.block-container { padding-top: 3.2rem; padding-bottom: 2rem; max-width: 1280px; }
+section[data-testid="stSidebar"] { background: #131416; border-right: 1px solid #222327; }
+.bar { display: flex; align-items: center; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid #222327; margin-bottom: 14px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand img { height: 22px; }
+.brand .slash { color: #45474d; font-size: 20px; }
+.brand .app { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 19px; color: #fff; letter-spacing: -0.2px; }
+.show { font-size: 13px; color: #9a9da3; text-align: right; line-height: 1.4; }
+.show b { color: #ededed; font-weight: 600; }
+.label { font-size: 11.5px; letter-spacing: 0.9px; text-transform: uppercase; color: #8a8d93; margin: 18px 0 6px 0; }
+.title { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px; color: #fff; letter-spacing: -0.4px; margin: 2px 0 2px 0; }
+.meta { color: #9a9da3; font-size: 14px; }
+.meta .first { color: #EC1C24; font-weight: 600; }
+.meta .retarget { color: #d9a43a; font-weight: 600; }
+.quote { font-size: 17px; color: #f2f2f2; line-height: 1.4; margin: 2px 0 0 0; }
+.quote .at { display: block; color: #7d8086; font-size: 12.5px; margin-top: 2px; }
+.text { color: #c9cbcf; font-size: 14.5px; line-height: 1.5; }
+.warn { color: #e8b4b6; font-size: 14px; line-height: 1.5; }
+.tl { margin: 6px 0 2px 0; }
+.tl .cap { font-size: 12px; color: #8a8d93; margin: 6px 0 3px 0; }
+.lines { border-top: 1px solid #222327; margin-top: 4px; }
+.ln { display: grid; grid-template-columns: 42px 1fr; gap: 10px; padding: 6px 0 6px 10px; border-bottom: 1px solid #1b1c1f; font-size: 14px; line-height: 1.45; border-left: 2px solid transparent; }
+.ln.key { border-left-color: #EC1C24; background: #17181b; }
+.ln .t { color: #6f7278; font-variant-numeric: tabular-nums; font-size: 12.5px; padding-top: 1px; }
+.ln .who { color: #ededed; font-weight: 600; margin-right: 6px; }
+.ln .act { color: #9a9da3; font-style: italic; }
+.ln .tag { color: #EC1C24; font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin-left: 8px; }
+.cut { color: #6f7278; font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase; padding: 6px 0 6px 10px; border-bottom: 1px solid #1b1c1f; }
+.scores { color: #9a9da3; font-size: 13.5px; }
+.scores b { color: #ededed; font-weight: 600; }
+.foot { color: #6f7278; font-size: 12px; margin-top: 28px; padding-top: 10px; border-top: 1px solid #222327; }
+.foot a { color: #9a9da3; }
+.stButton button { border-radius: 6px; font-weight: 600; }
+.stButton button[kind="primary"] { background: #EC1C24; border-color: #EC1C24; }
+div[data-testid="stDataFrame"] { border: 1px solid #222327; border-radius: 6px; }
+</style>
+""",
+    unsafe_allow_html=True,
+)
 
 
-def list_runs():
+def esc(text) -> str:
+    return html.escape(str(text or ""))
+
+
+def logo() -> str:
+    if not LOGO.exists():
+        return '<span class="app">kuku</span>'
+    return f'<img src="data:image/png;base64,{base64.b64encode(LOGO.read_bytes()).decode()}" alt="kuku">'
+
+
+def list_runs() -> list[Path]:
     fresh = sorted((p for p in OUTPUTS.glob("*/*") if (p / "promos.json").exists()), key=lambda p: p.name, reverse=True) if OUTPUTS.exists() else []
-    shipped = [RAW / name for name in ("final_run", "rules_only_run") if (RAW / name / "promos.json").exists()]
+    shipped = [RAW / n for n in ("final_run", "rules_only_run") if (RAW / n / "promos.json").exists()]
     return fresh + shipped
 
 
+def run_name(p: Path) -> str:
+    if p.parent == RAW:
+        return {"final_run": "Submitted run, full input pack", "rules_only_run": "Rules only, full input pack"}.get(p.name, p.name)
+    stamp = p.name.split("-")
+    when = f"{stamp[1][:2]}:{stamp[1][2:4]}" if len(stamp) > 1 and len(stamp[1]) >= 4 else p.name
+    return f"{p.parent.name.replace('-', ' ')}, {stamp[-1]} run at {when}"
+
+
+def mmss(t: float) -> str:
+    return f"{int(t // 60)}:{int(t % 60):02d}"
+
+
+def timeline(p: dict) -> str:
+    rows = []
+    width = 100.0
+    for i, s in enumerate(p["segments"]):
+        total = s.get("episode_duration") or max(s["end_seconds"], 1)
+        a = s["start_seconds"] / total * width
+        b = s["end_seconds"] / total * width
+        hook_end = min(b, (s["start_seconds"] + 3) / total * width) if i == 0 else a
+        rows.append(
+            f'<div class="cap">Episode {s["episode"]} &nbsp;·&nbsp; cut {s["start"]} to {s["end"]} of {mmss(total)}</div>'
+            f'<svg width="100%" height="14" viewBox="0 0 100 14" preserveAspectRatio="none">'
+            f'<rect x="0" y="5" width="100" height="4" rx="2" fill="#26272b"/>'
+            f'<rect x="{a:.2f}" y="3" width="{max(b - a, 0.6):.2f}" height="8" rx="2" fill="#7a1418"/>'
+            f'<rect x="{a:.2f}" y="3" width="{max(hook_end - a, 0):.2f}" height="8" rx="2" fill="{RED}"/>'
+            f"</svg>"
+        )
+    return '<div class="tl">' + "".join(rows) + "</div>"
+
+
+def transcript(p: dict) -> str:
+    lines = p.get("transcript") or []
+    if not lines:
+        return '<div class="text">The transcript is saved with runs made by this version of the tool.</div>'
+    out, seg = [], lines[0]["segment"]
+    for ln in lines:
+        if ln["segment"] != seg:
+            out.append('<div class="cut">cut to next segment</div>')
+            seg = ln["segment"]
+        tag = ' <span class="tag">hook</span>' if ln["hook"] else ' <span class="tag">cliffhanger</span>' if ln["cliffhanger"] else ""
+        body = f'<span class="who">{esc(ln["speaker"])}</span>{esc(ln["text"])}' if ln["kind"] == "DIALOGUE" else f'<span class="act">{esc(ln["text"])}</span>'
+        key = " key" if ln["hook"] or ln["cliffhanger"] else ""
+        out.append(f'<div class="ln{key}"><div class="t">{mmss(ln["t"])}</div><div>{body}{tag}</div></div>')
+    return '<div class="lines">' + "".join(out) + "</div>"
+
+
+def said(beat: dict) -> str:
+    who = f'{esc(beat["speaker"])}: ' if beat.get("speaker") else ""
+    return f'{who}&ldquo;{esc(beat["text"])}&rdquo;' if beat.get("kind") == "DIALOGUE" else esc(beat["text"])
+
+
 with st.sidebar:
-    st.header("New run")
-    uploads = st.file_uploader("Episode scripts", type=["txt", "md", "fountain"], accept_multiple_files=True)
-    use_sample = st.checkbox("Use the bundled sample show", value=not uploads)
-    mode = st.radio("Mode", ["offline", "llm"], horizontal=True)
-    model = st.text_input("Model (provider/model)", "nvidia/nvidia/nemotron-3-ultra-550b-a55b", disabled=mode == "offline")
-    top = st.slider("Promos to return", 5, 25, 15)
-    if st.button("Run", type="primary"):
+    st.markdown("**Run it on new scripts**")
+    st.caption("Upload one script file per episode. Rules-only mode takes a few seconds and needs no key.")
+    uploads = st.file_uploader("Episode scripts", type=["txt", "md", "fountain"], accept_multiple_files=True, label_visibility="collapsed")
+    use_sample = st.checkbox("Use the two-episode sample show instead", value=not uploads)
+    mode = st.radio("Mode", ["offline", "llm"], horizontal=True, format_func=lambda m: "Rules only" if m == "offline" else "Full (needs API key)")
+    model = st.text_input("Model", "nvidia/nvidia/nemotron-3-ultra-550b-a55b", disabled=mode == "offline")
+    top = st.slider("How many promos", 5, 25, 15)
+    if st.button("Find promos", type="primary", use_container_width=True):
         work = Path(tempfile.mkdtemp(prefix="promofinder-"))
+        source = SAMPLE
         if uploads and not use_sample:
             for f in uploads:
                 (work / f.name).write_bytes(f.getvalue())
             source = work
-        else:
-            source = SAMPLE
         logs = []
-        with st.spinner("Running"):
+        with st.spinner("Reading scripts and picking promos"):
             try:
                 result = run(str(source), out_root=str(OUTPUTS), mode=mode, model=model if mode == "llm" else None, top=top, log=logs.append)
-                st.session_state["run_dir"] = result["out_dir"]
-                st.session_state["source"] = str(source)
-                st.success(f"Done in {result['meta']['seconds']}s")
+                st.session_state["run_dir"] = str(Path(result["out_dir"]).resolve())
+                st.session_state.pop("list", None)
+                st.rerun()
             except Exception as exc:
                 st.error(str(exc))
         if logs:
-            st.code("\n".join(logs[-15:]))
-    st.header("Open a run")
-    runs = list_runs()
-    if runs:
-        labels = [str(p.relative_to(ROOT)) for p in runs]
-        current = st.session_state.get("run_dir") or str(RAW / "final_run")
-        index = next((i for i, p in enumerate(runs) if str(p) == current), 0)
-        picked = st.selectbox("Run", labels, index=index)
-        st.session_state["run_dir"] = str(ROOT / picked)
+            st.code("\n".join(logs[-10:]), language=None)
 
-run_dir = st.session_state.get("run_dir")
-if not run_dir:
-    st.info("Run the sample show or upload scripts to begin.")
+runs = list_runs()
+if not runs:
+    st.info("No runs yet. Open the sidebar and run the sample show.")
     st.stop()
 
-payload = json.loads((Path(run_dir) / "promos.json").read_text(encoding="utf-8"))
-meta = payload["meta"]
-promos = payload["promos"]
-c1, c2, c3, c4 = st.columns(4)
-c1.metric("Episodes", meta["episodes"])
-c2.metric("Candidates scored", meta["candidates"])
-c3.metric("Mode", meta["mode"])
-usage = meta.get("llm_usage") or {}
-c4.metric("LLM calls (new + cached)", f"{usage.get('calls', 0)} + {usage.get('cache_hits', 0)}")
+current = st.session_state.get("run_dir") or str(RAW / "final_run")
+start = next((i for i, p in enumerate(runs) if str(p) == current), 0)
 
-show = None
-source = meta.get("input")
-if source and Path(source).exists():
-    show = load_show(source, payload["show"])
-    apply_names(show, meta["config"].get("names"))
+head_l, head_r = st.columns([3, 2])
+with head_l:
+    st.markdown(f'<div class="brand">{logo()}<span class="slash">/</span><span class="app">PromoFinder</span></div>', unsafe_allow_html=True)
+with head_r:
+    picked = st.selectbox("Run", runs, index=start, format_func=run_name, label_visibility="collapsed")
+if str(picked) != current:
+    st.session_state["run_dir"] = str(picked)
+    st.session_state.pop("list", None)
 
-types = sorted({p["hook_type"] for p in promos})
-arcs = sorted({p["spoiler_level"] for p in promos})
-f1, f2, f3 = st.columns(3)
-type_filter = f1.multiselect("Hook type", types, default=types)
-arc_filter = f2.multiselect("Spoiler level", arcs, default=arcs)
-safe_only = f3.checkbox("Hide promos with high policy risk")
+payload = json.loads((picked / "promos.json").read_text(encoding="utf-8"))
+meta, promos = payload["meta"], payload["promos"]
+title = payload["show"].replace("-", " ").strip().title() if payload["show"].islower() else payload["show"]
+how = "Nemotron 3 Ultra picks and judges, Mistral Large 4 double-checks" if meta["mode"] == "llm" else "rules only, no model"
+st.markdown(
+    f'<div class="bar"><div class="show"><b>{esc(title)}</b> &nbsp;·&nbsp; {meta["episodes"]} episodes &nbsp;·&nbsp; '
+    f'{meta["candidates"]:,} possible clips scored &nbsp;·&nbsp; {len(promos)} promos &nbsp;·&nbsp; {how}</div></div>',
+    unsafe_allow_html=True,
+)
 
-feedback_path = Path(run_dir) / "feedback.jsonl"
-table = []
-for p in promos:
-    if p["hook_type"] not in type_filter or p["spoiler_level"] not in arc_filter:
-        continue
-    if safe_only and any(f.endswith(":high") for f in p["policy_flags"]):
-        continue
-    table.append(p)
+ROLE = {"control": "Post first", "challenger": "Test next", "retargeting": "Retargeting"}
+table = pd.DataFrame([{
+    "#": p["rank"],
+    "Clip": " + ".join(f"Ep {s['episode']}  {s['start'][:5]}" for s in p["segments"]),
+    "Length": f"{p['duration']:.0f}s",
+    "Use": ROLE.get(p.get("role"), p.get("role", "")),
+} for p in promos])
 
-st.dataframe(pd.DataFrame([{
-    "rank": p["rank"],
-    "segments": " + ".join(f"Ep{s['episode']} {s['start']}-{s['end']}" for s in p["segments"]),
-    "length": f"{p['duration']:.1f}s",
-    "type": p["hook_type"],
-    "spoiler": p["spoiler_level"],
-    "lands on": f"Ep{p['resume_episode']}",
-    "flags": ", ".join(p["policy_flags"]),
-    "score": p["score"],
-} for p in table]), hide_index=True, width="stretch")
+left, right = st.columns([1.05, 1.6], gap="large")
+with left:
+    st.markdown('<div class="label">Ranked promos</div>', unsafe_allow_html=True)
+    event = st.dataframe(
+        table, hide_index=True, on_select="rerun", selection_mode="single-row", key="list", height=35 * len(table) + 38,
+        column_config={"#": st.column_config.NumberColumn(width=40), "Clip": st.column_config.TextColumn(width="medium"), "Length": st.column_config.TextColumn(width=64), "Use": st.column_config.TextColumn(width=112)},
+    )
+    st.caption("Click a row to open it. #1 is the safest early clip to post first. Retargeting cuts give away late twists, so they are for people already watching. To try it on new scripts, open the panel with the arrow at the top left.")
 
-for p in table:
-    segs = " + ".join(f"Ep{s['episode']} {s['start']}-{s['end']}" for s in p["segments"])
-    with st.expander(f"#{p['rank']} {p.get('role', '')}  {segs}  ({p['duration']:.1f}s, {p['hook_type']})"):
-        left, right = st.columns([3, 2])
-        with left:
-            st.markdown(f"**Hook** (Ep{p['hook']['episode']} {p['hook']['time']}): {p['hook']['speaker'] + ': ' if p['hook']['speaker'] else ''}{p['hook']['text']}")
-            st.markdown(f"**Cliffhanger** (Ep{p['cliffhanger']['episode']} {p['cliffhanger']['time']}): {p['cliffhanger']['speaker'] + ': ' if p['cliffhanger']['speaker'] else ''}{p['cliffhanger']['text']}")
-            st.markdown(f"**Why it works:** {p['why_it_works']}")
-            if show:
-                cand = Candidate(p["id"], p["format"], [Segment(s["episode"], s["start_seconds"], s["end_seconds"]) for s in p["segments"]], p["hook"]["beat_id"], p["cliffhanger"]["beat_id"])
-                st.code(render_clip(cand, show), language=None)
-        with right:
-            judge = p.get("judge") or {}
-            if judge:
-                st.write({k: judge[k] for k in ("hook", "cliffhanger", "standalone", "escalation", "premise") if k in judge})
-                if judge.get("open_question"):
-                    st.markdown(f"**Open question:** {judge['open_question']}")
-                if judge.get("unexplained_refs"):
-                    st.markdown(f"**Needs context:** {', '.join(judge['unexplained_refs'])}")
-                jury = judge.get("jury") or {}
-                if "standalone" in jury:
-                    st.markdown(f"**Second model** ({jury.get('model', '').split('/')[-1]}): " + ", ".join(f"{k} {jury[k]:g}" for k in ("hook", "cliffhanger", "standalone") if k in jury))
-                if judge.get("spoiler_note"):
-                    st.caption(judge["spoiler_note"])
-            st.markdown(f"**Ad policy:** {', '.join(p['policy_flags']) or 'nothing flagged'}  \n**Lands viewers on:** episode {p['resume_episode']}  \n**Spoiler level:** {p['spoiler_level']}")
-            st.write(p["score_parts"])
-            note = st.text_input("Note", key=f"note-{p['id']}")
-            a, r = st.columns(2)
-            for col, verdict in ((a, "approve"), (r, "reject")):
-                if col.button(verdict.capitalize(), key=f"{verdict}-{p['id']}"):
-                    with open(feedback_path, "a", encoding="utf-8") as fh:
-                        fh.write(json.dumps({"id": p["id"], "rank": p["rank"], "verdict": verdict, "note": note, "at": datetime.now().isoformat(timespec="seconds")}) + "\n")
-                    st.toast(f"Saved {verdict} for #{p['rank']}")
+rows = event.selection.rows if event and event.selection else []
+p = promos[rows[0]] if rows else promos[0]
+judge = p.get("judge") or {}
+role = p.get("role", "challenger")
+
+with right:
+    segs = " + ".join(f"Ep {s['episode']}, {s['start']} to {s['end']}" for s in p["segments"])
+    role_html = {"control": '<span class="first">Post first</span>', "retargeting": '<span class="retarget">Retargeting</span>'}.get(role, "Test next")
+    st.markdown(
+        f'<div class="label">Promo #{p["rank"]}</div><div class="title">{esc(segs)}</div>'
+        f'<div class="meta">{role_html} &nbsp;·&nbsp; {p["duration"]:.1f} s &nbsp;·&nbsp; {esc(p["hook_type"])} &nbsp;·&nbsp; sends viewers to episode {p["resume_episode"]}</div>'
+        f"{timeline(p)}",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        f'<div class="label">Opens on</div><div class="quote">{said(p["hook"])}<span class="at">Ep {p["hook"]["episode"]}, {p["hook"]["time"]}</span></div>'
+        f'<div class="label">Cuts on</div><div class="quote">{said(p["cliffhanger"])}<span class="at">Ep {p["cliffhanger"]["episode"]}, {p["cliffhanger"]["time"]}</span></div>'
+        f'<div class="label">Why it works</div><div class="text">{esc(p["why_it_works"])}</div>'
+        f'<div class="label">Why it is ranked here</div><div class="text">{esc(p.get("rank_reason", ""))}</div>',
+        unsafe_allow_html=True,
+    )
+    checks = []
+    risky = [f.split(":")[0].replace("_", " ") for f in p["policy_flags"] if not f.endswith(":low")]
+    if risky:
+        checks.append("Ad review: " + ", ".join(risky))
+    if judge.get("unexplained_refs"):
+        checks.append("A new viewer may not know: " + ", ".join(judge["unexplained_refs"]))
+    if judge.get("craft"):
+        checks.append("Craft: " + ", ".join(judge["craft"]))
+    if checks:
+        st.markdown('<div class="label">Check before posting</div>' + "".join(f'<div class="warn">{esc(c)}</div>' for c in checks), unsafe_allow_html=True)
+
+    st.markdown('<div class="label">Transcript</div>' + transcript(p), unsafe_allow_html=True)
+
+    parts = []
+    if isinstance(judge.get("hook"), (int, float)):
+        parts.append(f'Judge: hook <b>{judge["hook"]:g}</b>, cliffhanger <b>{judge["cliffhanger"]:g}</b>, makes sense alone <b>{judge["standalone"]:g}</b> (out of 5)')
+    jury = judge.get("jury") or {}
+    if "standalone" in jury:
+        parts.append(f'Second judge: <b>{jury.get("hook", 0):g}</b>, <b>{jury.get("cliffhanger", 0):g}</b>, <b>{jury["standalone"]:g}</b>')
+    if parts:
+        st.markdown('<div class="label">Scores</div><div class="scores">' + "<br>".join(parts) + "</div>", unsafe_allow_html=True)
+
+    st.markdown('<div class="label">Your call</div>', unsafe_allow_html=True)
+    note = st.text_input("Note", key=f"note-{p['id']}", placeholder="Optional note for the editor", label_visibility="collapsed")
+    a, r, _ = st.columns([1, 1, 2])
+    for col, verdict in ((a, "approve"), (r, "reject")):
+        if col.button(verdict.capitalize(), key=f"{verdict}-{p['id']}", type="primary" if verdict == "approve" else "secondary", use_container_width=True):
+            with open(picked / "feedback.jsonl", "a", encoding="utf-8") as fh:
+                fh.write(json.dumps({"id": p["id"], "rank": p["rank"], "verdict": verdict, "note": note, "at": datetime.now().isoformat(timespec="seconds")}) + "\n")
+            st.toast(f"Saved: {verdict} #{p['rank']}")
+
+st.markdown(
+    '<div class="foot">Prototype by Vatsal Kumar for the Kuku AI Generalist assignment, Problem 1. Not an official Kuku product. '
+    'Code and raw outputs: <a href="https://github.com/vatsal3512/kuku-promo-finder">github.com/vatsal3512/kuku-promo-finder</a></div>',
+    unsafe_allow_html=True,
+)

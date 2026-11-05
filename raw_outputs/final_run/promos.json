@@ -10,20 +10,17 @@
     "beats": 3727,
     "candidates": 3082,
     "generated": 3082,
-    "seconds": 672.47,
+    "seconds": 6.15,
     "llm_usage": {
       "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
       "keys": 3,
-      "rate_limited": 1,
-      "calls": 32,
-      "cache_hits": 119,
-      "prompt_tokens": 59326,
-      "completion_tokens": 73217,
-      "seconds": 1713.59,
-      "failures": 0,
-      "errors": {
-        "429": 1
-      }
+      "rate_limited": 0,
+      "calls": 0,
+      "cache_hits": 151,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "seconds": 0.0,
+      "failures": 0
     },
     "config": {
       "gates": {
@@ -267,7 +264,172 @@
           "end": "01:30.80",
           "start_seconds": 39.0,
           "end_seconds": 90.8,
-          "duration": 51.8
+          "duration": 51.8,
+          "episode_duration": 138.0
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.1,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Because he is marrying me.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.7,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "No...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 7.8,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "You knew this before I walked through those doors!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 13.8,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "You let me come here...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 15.7,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "You let me dress in my mother's gown...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 18.0,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "You let me believe I was walking toward my husband!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 21.1,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "I changed my mind.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 24.4,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "You swore you loved me!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.5,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "People change their minds, sister.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 30.1,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "And you knew?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 31.6,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Of course I knew.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.1,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "How long?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 36.0,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Long enough to know he was never going to marry you.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 40.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana turns abruptly toward the first row of pews, where her elderly father sits gripping an ornate brass cane.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.1,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Father...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 42.4,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Tell them this is a mistake.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 47.0,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Father... please look at me.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 50.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The father tightens his jaw and stony expression, refusing to offer a single word or look.",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -388,7 +550,172 @@
           "end": "01:45.50",
           "start_seconds": 54.0,
           "end_seconds": 105.5,
-          "duration": 51.5
+          "duration": 51.5,
+          "episode_duration": 110.5
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Lady Ashcroft snatches the heavy book away and flings it disdainfully into the rain-soaked courtyard.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 1.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Barbara, don't!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 3.0,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "A heavy wet slap as the leather-bound book crashes into the puddle-slicked stone pavement.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 5.0,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Even your mother's precious legacy has been cast into the dirt!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.4,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Perhaps that is where it belongs.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 11.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana drops to her knees onto the wet courtyard pavement, oblivious to the dirt soaking through her white bridal gown.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Mysterious Bearded Man bends his knees and kneels down beside Juliana, extending his scarred hand to retrieve the fallen ledger.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Here you go.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "They destroyed it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 28.5,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "They dirtied it. That is not the same thing.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 32.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "It was my mother's.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.9,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Then keep it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Mysterious Bearded Man reaches out with both hands, clasping his strong hands tenderly over hers and the book.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 35.4,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Let them keep everything else.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 37.5,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Look at you.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "A noblewoman reduced to a beggar's wife!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 44.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Choose your next words carefully.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 50.2,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Come.",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -514,7 +841,154 @@
           "end": "01:09.50",
           "start_seconds": 26.8,
           "end_seconds": 69.5,
-          "duration": 42.7
+          "duration": 42.7,
+          "episode_duration": 87.21
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana lunges a step forward, jabbing an accusing finger toward Gerald.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You planted it!",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 1.3,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Oh, dear sister...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 3.2,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "...still defending your broken scrap of a man?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 5.6,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Name your price, Clarissa. I know you.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.6,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "You always were clever, Juliana. Always searching for some way to escape.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 13.3,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Perhaps I can give you one.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 15.4,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "What do you want?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 17.2,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "I want to see you crawl, sister.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.9,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "My emerald signet ring fell deep into the frozen blackthorn briars at Ashworth Manor. The thorns have grown over it...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 25.6,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "...sharp as steel. The ground is frozen, like pure ice.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 30.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Gerald bursts into a loud, mocking laugh beside the stony Constable.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 30.5,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "You will retrieve it with your bare hands before the magistrate arrives.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "A lady's hands will be shredded to ribbons!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 36.5,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Do it, and we withdraw the charges.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 38.6,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Fail, or refuse, and your husband hangs from the gallows.",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -640,7 +1114,190 @@
           "end": "02:15.50",
           "start_seconds": 84.0,
           "end_seconds": 135.5,
-          "duration": 51.5
+          "duration": 51.5,
+          "episode_duration": 145.75
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Bearded Stranger effortlessly blocks the guard's strike and drives a devastating strike into him, dropping the armed guard instantly to the floor.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 0.5,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "A heavy, bone-rattling punch followed by the clatter and thud of the guard collapsing onto the stone floor.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 1.6,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "What are you waiting for?! He's only one man!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 6.4,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Are you hurt?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 7.8,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana softly shakes her head 'no', her wide blue eyes locked onto him.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 10.1,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Good. Then don't touch her again.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.5,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Ashcroft",
+          "text": "You cannot interfere in a family matter!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 14.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "I can...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "...when your family is dragging a defenseless woman from a church.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 20.2,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You shouldn't have to beg anybody...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.4,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "...to remember your worth.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.9,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Why are you doing this?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 28.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Because I want to.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 35.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You came here to become a wife.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 38.5,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "They took that from you.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.3,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "I am offering it back.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 43.7,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "You don't even know me.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 46.4,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "I know enough.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 49.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Bearded Stranger sinks to one knee on the cathedral aisle, offering the silver ring up to Juliana.",
+          "hook": false,
+          "cliffhanger": true
+        },
+        {
+          "segment": 1,
+          "t": 50.8,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "A collective, stunned gasp rippling across the entire congregation.",
+          "hook": false,
+          "cliffhanger": false
         }
       ],
       "hook": {
@@ -767,7 +1424,244 @@
           "end": "01:15.30",
           "start_seconds": 16.8,
           "end_seconds": 75.3,
-          "duration": 58.5
+          "duration": 58.5,
+          "episode_duration": 112.75
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Your husband stole my gold pocket watch!",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "What? When?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.1,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "The last time I came here.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 6.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You never even entered the cottage!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.4,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Then you should have nothing to fear from a search.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 10.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Alexander would never steal from you.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.5,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Of course you would defend him. You married a beggar!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.2,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Choose your next words carefully.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 18.3,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "You hear that? He threatens me again!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 20.6,
+          "kind": "DIALOGUE",
+          "speaker": "Constable",
+          "text": "I have received a complaint of theft.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 22.9,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "A complaint is not proof.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 24.6,
+          "kind": "DIALOGUE",
+          "speaker": "Constable",
+          "text": "Then a search will settle the matter.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.7,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You cannot simply invade our home because this man makes an accusation!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 30.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "If he has nothing to hide...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 31.6,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "...let the constable search.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.3,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Search it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 36.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Let them.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 37.7,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Heavy thud of boots entering wooden floorboards, followed by forceful banging of furniture.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Constable begins violently overturning crates and dumping contents across the floor.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Stop! Those are my mother's medicines!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 43.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Constable aggressively pulls folded bed linens from a shelf and hurls them onto the damp floor.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 45.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Please! There is nothing here!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 47.1,
+          "kind": "DIALOGUE",
+          "speaker": "Constable",
+          "text": "Then you have nothing to fear.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 49.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Those are all I have left!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 50.7,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Stand aside. Look at this place. A perfect hiding hole for a thief.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 55.3,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You planted this accusation because you cannot bear that I am happy without you!",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -895,7 +1789,82 @@
           "end": "02:25.20",
           "start_seconds": 122.8,
           "end_seconds": 145.2,
-          "duration": 22.4
+          "duration": 22.4,
+          "episode_duration": 150.5
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.3,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "You hear that?!",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.0,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "She admits she has been giving the Duchess poison in secret!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 5.9,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "That is not what I said!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.4,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "Enough.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Blond Nobleman takes the medicine vial from Juliana's grasp, inspecting it under the candlelight.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 13.4,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "An unknown servant enters a restricted chamber.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.8,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "She secretly administers an unidentified substance to a helpless woman.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 21.2,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "Take her.",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -1018,7 +1987,163 @@
           "end": "01:02.00",
           "start_seconds": 18.8,
           "end_seconds": 62.0,
-          "duration": 43.2
+          "duration": 43.2,
+          "episode_duration": 86.0
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 1.2,
+          "kind": "DIALOGUE",
+          "speaker": "Bald Thug",
+          "text": "They look like weeds to me.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 1.7,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The bald thug flings the bouquet into the mud and grinds his heavy boot directly onto the delicate flowers.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana frantically tries to scoop the crushed soil and torn stems back into the bed with her bandaged hands.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.4,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Please! Those plants took months to grow!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.7,
+          "kind": "DIALOGUE",
+          "speaker": "Tall Thug",
+          "text": "Months? You actually spend your days growing this filth?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Leave my garden alone.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 18.4,
+          "kind": "DIALOGUE",
+          "speaker": "Thug With Cap",
+          "text": "A noble lady playing in the dirt. What a joke.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 22.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "It is my home. You have no right to destroy anything here.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.0,
+          "kind": "DIALOGUE",
+          "speaker": "Thug With Cap",
+          "text": "Get out of the way!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.7,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "No.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 28.6,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Thug with Cap violently shoves Juliana back with both hands; she cries out as she loses her balance and crashes hard onto the wet stone path.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 29.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Ah!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 31.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana crawls forward on her elbows; fresh crimson blood seeps profusely through her white gauze bandages as she reaches for the ruined blossoms.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.7,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "My mother's plants...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 38.5,
+          "kind": "DIALOGUE",
+          "speaker": "Bald Thug",
+          "text": "Look at her! Crying over weeds!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Tall Thug hoists his heavy wooden club above his head to crush the remaining herbs right before Juliana.",
+          "hook": false,
+          "cliffhanger": true
+        },
+        {
+          "segment": 1,
+          "t": 41.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Stop!",
+          "hook": false,
+          "cliffhanger": false
         }
       ],
       "hook": {
@@ -1141,7 +2266,127 @@
           "end": "03:10.00",
           "start_seconds": 148.9,
           "end_seconds": 190.0,
-          "duration": 41.1
+          "duration": 41.1,
+          "episode_duration": 190.0
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.9,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "No.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.9,
+          "kind": "DIALOGUE",
+          "speaker": "Judge",
+          "text": "Think carefully.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 6.3,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "I have.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.1,
+          "kind": "DIALOGUE",
+          "speaker": "Judge",
+          "text": "You understand that refusal may be treated as proof that you knowingly practiced witchcraft?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 13.2,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Then let it be.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 15.1,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Prudence buries her face in her stained white apron, shuddering with grief.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 18.1,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Do not be afraid. I will not call healing evil just because powerful people have decided to fear it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.6,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Judge furiously smashes his gavel down upon the sound block with a deafening crack.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.7,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "[Violent, resonant smash of the wooden gavel]",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 28.9,
+          "kind": "DIALOGUE",
+          "speaker": "Judge",
+          "text": "Enough!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 30.6,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Judge rises to his full height behind the bench, towering over the silent court.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 32.1,
+          "kind": "DIALOGUE",
+          "speaker": "Judge",
+          "text": "Lady Juliana Ashcroft...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 36.1,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Judge extends his raised hand high in judgment over Lady Juliana as the scene holds on her standing still and unbroken before fading to black.",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -1260,7 +2505,91 @@
           "end": "01:55.80",
           "start_seconds": 86.5,
           "end_seconds": 115.8,
-          "duration": 29.3
+          "duration": 29.3,
+          "episode_duration": 120.88
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana rests her right hand against the edge of the bedcover, unwittingly placing the unique ring directly within the Duchess's line of sight.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 3.7,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "A sharp, stunned gasp.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.3,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Duchess's mouth hangs open in pure disbelief as she stares fixedly at Juliana's hand.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 9.5,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "Your hand... Let me see your hand.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 14.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Your Grace? What is wrong? You look as though you've seen a ghost.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Duchess reaches outward with trembling fingers, grasping frantically for Juliana.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 22.3,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "A sudden sharp rustle of fabric as her fingers snap tight.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 22.7,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "Do not move!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 24.5,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "Where... where... Where did you get this ring? Speak to me!",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -1381,7 +2710,145 @@
           "end": "01:15.50",
           "start_seconds": 22.0,
           "end_seconds": 75.5,
-          "duration": 53.5
+          "duration": 53.5,
+          "episode_duration": 116.0
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "This is where you live now?",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 3.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "A fitting home for a woman who threw away everything for a penniless soldier.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You came all this way just to insult my home?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 11.2,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Home? Look at your hands, Juliana.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.2,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "You look like a servant.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "I work with my hands. There is no shame in that.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.2,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "You were born a lady.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.8,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "And I remain one.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 29.5,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "You chose that scarred beggar over a life of comfort.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 35.8,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "I chose a man who stood beside me when you walked away.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.8,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You have no authority here. Leave.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 43.6,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "I have enough influence to make a beggar disappear.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 46.6,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "And your husband?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 47.5,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Where is that beggar husband?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 48.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Scarred Bearded Man marches purposefully toward the cottage, carrying a heavy bundle of chopped firewood bound tightly with hemp cord.",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -1501,7 +2968,118 @@
           "end": "02:11.50",
           "start_seconds": 78.5,
           "end_seconds": 131.5,
-          "duration": 53.0
+          "duration": 53.0,
+          "episode_duration": 131.5
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.5,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Someone is poisoning her.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 3.0,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Sharp intake of breath from Prudence.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 3.5,
+          "kind": "DIALOGUE",
+          "speaker": "Prudence",
+          "text": "Poison?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 7.5,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Arsenic.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 9.5,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Sudden violent coughing and sputtering from the Duchess.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.0,
+          "kind": "DIALOGUE",
+          "speaker": "Prudence",
+          "text": "Can you save her?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.0,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "I can try.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.0,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Heavy, rhythmic scraping of stone pestle grinding charcoal and dried herbs.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 29.0,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "The charcoal may help remove what is still inside her. We must act quickly.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.7,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Sudden muffled thump and heavy footsteps echoing from the hallway outside the door!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 40.3,
+          "kind": "DIALOGUE",
+          "speaker": "Prudence",
+          "text": "Juliana... someone is coming.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 50.7,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Loud, metallic clack of the door latch turning, followed by the slow creak of wood hinges.",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -1621,7 +3199,244 @@
           "end": "01:37.40",
           "start_seconds": 37.7,
           "end_seconds": 97.4,
-          "duration": 59.7
+          "duration": 59.7,
+          "episode_duration": 138.5
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.5,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "I was poisoned!",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.6,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "And you... you knew!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 5.9,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "Catherine knew!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 7.9,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "They have been—",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 9.1,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Duchess collapses back onto the pillows, coughing violently and clutching her chest.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 10.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Let me help her!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 11.8,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "She's still weak, you cannot leave her like this!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 15.1,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "You see?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.3,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "The poison has clearly damaged her mind.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.3,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "I am not delusional!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 20.9,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "Of course you are not.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 22.4,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "You are merely confused.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.9,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "How convenient that the only person who can prove the poison exists...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.2,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "...is the maid who claims to have discovered it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 29.5,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "Take her away before she poisons the rest of this house.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.1,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Catherine ruthlessly yanks the silver locket off Juliana's neck.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "No!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.5,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Where did a gutter rat like you find a silver locket?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 37.7,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Give it back!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.1,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "It belonged to my mother!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.3,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "A witch has no need for family heirlooms in the gallows.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 43.3,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Metallic clatter as the silver pendant bounces against the wooden baseboard.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 44.8,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "My mother's locket!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 50.3,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Catherine lifts the heavy herbarium, dusting off the cover before opening its aged parchment pages.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 53.5,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Juliana...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 57.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana gasps in horror, realizing her secret identity has been laid bare.",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -1749,7 +3564,163 @@
           "end": "01:48.80",
           "start_seconds": 54.0,
           "end_seconds": 108.8,
-          "duration": 54.8
+          "duration": 54.8,
+          "episode_duration": 121.75
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You poisoned my mother. You tortured my wife.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.2,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "I didn't know!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 6.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You knew exactly what you were doing!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.6,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You hurt the two women who mattered most to me: my mother, and my wife.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 14.8,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Wife?!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 17.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Alexander and Juliana advance side-by-side between the rows of shocked aristocratic guests.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 17.5,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Before the Crown and before God...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 20.6,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Alexander hoists Juliana's hand triumphantly into the air, presenting her to the nobility.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 20.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Lady Juliana Ashcroft is my lawful wife... and the Duchess of Ashburton!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.5,
+          "kind": "DIALOGUE",
+          "speaker": "Rupert",
+          "text": "Juliana?!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 32.5,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Loud, echoing thud of cathedral doors swinging open violently.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "A Catholic Bishop in dark vestments steps through the cathedral doors accompanied by an armed Crown officer.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.4,
+          "kind": "DIALOGUE",
+          "speaker": "High Priest",
+          "text": "No one will bow yet!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Priest holds up the sealed royal proclamation, holding his rosary beads as he marches forward.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.2,
+          "kind": "DIALOGUE",
+          "speaker": "High Priest",
+          "text": "This ceremony was performed without a Crown marriage license, by a priest without authority to sanctify a ducal union.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 47.5,
+          "kind": "DIALOGUE",
+          "speaker": "High Priest",
+          "text": "These vows were never entered into the Royal Matrimonial Register.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 52.2,
+          "kind": "DIALOGUE",
+          "speaker": "High Priest",
+          "text": "Before the Crown, you are not Duchess of Ashburton.",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -1876,7 +3847,136 @@
           "end": "01:52.80",
           "start_seconds": 68.8,
           "end_seconds": 112.8,
-          "duration": 44.0
+          "duration": 44.0,
+          "episode_duration": 114.96
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.2,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You sold my men to the enemy.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.6,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "I didn't!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "And when you believed I was dead...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 7.3,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You took my title.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 9.2,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Brittle snap of breaking sealing wax.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.7,
+          "kind": "DIALOGUE",
+          "speaker": "Crown Official",
+          "text": "Official death confirmation was filed three months after the ambush.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 17.2,
+          "kind": "DIALOGUE",
+          "speaker": "Crown Official",
+          "text": "Duke Alexander Ashburn was declared dead.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.8,
+          "kind": "DIALOGUE",
+          "speaker": "Crown Official",
+          "text": "His estate and title were subsequently transferred under false authority.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 24.6,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "I was told he was dead!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 28.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You were told exactly what you needed to hear.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 31.2,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "Sterling handled the report!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 36.0,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "My Lord?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 38.2,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Heavy iron latch clicking open and wooden door creaking.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.6,
+          "kind": "DIALOGUE",
+          "speaker": "Police Constable",
+          "text": "Going somewhere, Lord Sterling?",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {
@@ -1997,7 +4097,8 @@
           "end": "00:56.60",
           "start_seconds": 37.4,
           "end_seconds": 56.6,
-          "duration": 19.2
+          "duration": 19.2,
+          "episode_duration": 116.69
         },
         {
           "episode": 30,
@@ -2005,7 +4106,100 @@
           "end": "02:24.50",
           "start_seconds": 125.1,
           "end_seconds": 144.5,
-          "duration": 19.4
+          "duration": 19.4,
+          "episode_duration": 151.21
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.3,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "The magistrate will call it witchcraft.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.7,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You know that is a lie!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.6,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "I know exactly what I need him to believe.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 7.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You cannot just destroy it!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 9.9,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "I can burn it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.7,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "And when they find your corpse at the end of the rope...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.4,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "...no one will remember what was written inside.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 2,
+          "t": 19.6,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "She will hang. A perfect solution. The town will cheer as the witch's disgraced daughter faces the noose.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 2,
+          "t": 28.2,
+          "kind": "DIALOGUE",
+          "speaker": "Rupert",
+          "text": "I will write the arrest warrant myself.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 2,
+          "t": 31.6,
+          "kind": "DIALOGUE",
+          "speaker": "Elder Nobleman",
+          "text": "Tomorrow, she stops being a prisoner. She becomes a witch.",
+          "hook": false,
+          "cliffhanger": true
         }
       ],
       "hook": {

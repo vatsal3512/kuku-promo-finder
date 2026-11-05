@@ -71,6 +71,7 @@ DEFAULTS = {
         "funnel_bonus": 0.10,
         "spoiler_major_penalty": 0.08,
         "min_standalone": 3,
+        "min_cliffhanger": 3,
     },
     "names": [],
 }

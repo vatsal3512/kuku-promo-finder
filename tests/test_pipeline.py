@@ -147,7 +147,7 @@ def test_pick_control_prefers_early_safe_clip():
 
 
 def test_merge_verdicts_is_conservative():
-    from promofinder.judge import ClipVerdict, merge_verdicts
+    from promofinder.verdicts import ClipVerdict, merge_verdicts
     a = ClipVerdict(clip="A", hook=5, cliffhanger=4, standalone=4, escalation=5, premise=5, spoiler_level="minor", unexplained_refs=["the ring", "Gerald"], policy_flags=["violence"])
     b = ClipVerdict(clip="A", hook=3, cliffhanger=4, standalone=2, escalation=5, premise=5, spoiler_level="major", unexplained_refs=["Gerald"], policy_flags=["weapon"])
     m = merge_verdicts([a, b])
@@ -173,7 +173,8 @@ def test_one_per_scene_blocks_back_to_back_clips():
 
 
 def test_verdict_store_round_trip(tmp_path):
-    from promofinder.judge import ClipVerdict, VerdictStore
+    from promofinder.store import VerdictStore
+    from promofinder.verdicts import ClipVerdict
     from promofinder.models import Candidate, Segment
     c = Candidate(cid="x", kind="single", segments=[Segment(3, 84.0, 135.5)], hook_uid="", cliff_uid="")
     store = VerdictStore(str(tmp_path / "llm"), "nvidia/some/model")
@@ -289,7 +290,7 @@ class DeadLLM(FakeLLM):
         self.dead = None
 
     def json(self, system, user, schema):
-        from promofinder.llm import LLMAuthError
+        from promofinder.providers import LLMAuthError
         self.dead = LLMAuthError("nvidia rejected the API key (HTTP 401).")
         raise self.dead
 
@@ -360,3 +361,32 @@ def test_stored_verdicts_do_not_depend_on_batch_mates(tmp_path):
     assert judge.calls > calls
     for c in clips[2:5]:
         assert first[c.cid].hook == second[c.cid].hook
+
+
+def test_control_must_also_be_strong_when_possible():
+    from promofinder.models import Candidate, Segment
+    from promofinder.rank import pick_control
+    cfg = {"selection": {"control_max_position": 0.2}}
+    weak = Candidate(cid="weak", kind="single", segments=[Segment(2, 0, 30)], hook_uid="", cliff_uid="", features={"series_position": 0.02},
+                     judge={"hook": 3.75, "cliffhanger": 2.75, "judge_score": 0.7})
+    strong = Candidate(cid="strong", kind="single", segments=[Segment(1, 0, 30)], hook_uid="", cliff_uid="", features={"series_position": 0.0},
+                       policy=["violence:medium"], judge={"hook": 4.5, "cliffhanger": 4.0, "judge_score": 0.8})
+    assert pick_control([weak, strong], cfg)[0].cid == "strong"
+    assert pick_control([weak], cfg)[0].cid == "weak"
+
+
+def test_clips_without_a_real_cliffhanger_are_rejected():
+    from promofinder.judge import apply_verdict
+    from promofinder.models import Candidate, Segment
+    from promofinder.verdicts import ClipVerdict
+    cfg = load_config(None)
+
+    def clip():
+        return Candidate(cid="x", kind="single", segments=[Segment(2, 0, 30)], hook_uid="", cliff_uid="", score=0.5,
+                         features={"series_position": 0.02, "first_line_at": 0.1, "opening_words": 9, "talk_tail": 1.0})
+
+    flat, open_end = clip(), clip()
+    apply_verdict(flat, ClipVerdict(clip="A", hook=4, cliffhanger=2.5, standalone=4), cfg, 0.0, 1.0)
+    apply_verdict(open_end, ClipVerdict(clip="A", hook=4, cliffhanger=4, standalone=4), cfg, 0.0, 1.0)
+    assert "cliffhanger" in flat.judge["rejected"]
+    assert not open_end.judge.get("rejected")

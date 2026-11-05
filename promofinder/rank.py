@@ -131,6 +131,11 @@ def pick_control(chosen: list[Candidate], cfg: dict) -> list[Candidate]:
     ]
     if not pool:
         return chosen
+    floor = rule.get("control_min_score", 4.0)
+    strong = [c for c in pool if min(c.judge.get("hook", 0), c.judge.get("cliffhanger", 0)) >= floor]
+    if strong:
+        pool = strong
     best = min(pool, key=lambda c: (risk_count(c), -c.judge.get("judge_score", 0.0), chosen.index(c)))
-    best.judge["control_reason"] = f"earliest-funnel clip (series position <= {limit}) with the fewest medium/high ad-policy flags, then the best judge score"
+    quality = f", hook and cliffhanger at least {floor:g}/5" if strong else ""
+    best.judge["control_reason"] = f"earliest-funnel clip (series position <= {limit}){quality}, with the fewest medium/high ad-policy flags, then the best judge score"
     return [best] + [c for c in chosen if c is not best]

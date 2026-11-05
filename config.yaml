@@ -43,6 +43,7 @@ llm:
   funnel_bonus: 0.10
   spoiler_major_penalty: 0.08
   min_standalone: 3
+  min_cliffhanger: 3
   concurrency: 6
   max_tokens: 8000
   timeout: 240

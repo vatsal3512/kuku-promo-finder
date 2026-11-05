@@ -4,13 +4,16 @@ from pathlib import Path
 from .models import Beat, Episode, Scene, Show
 
 TIME_RE = re.compile(r"(?<![\d:])(?:(\d{1,2}):)?(\d{1,2}):(\d{2})(?:[.,](\d{1,3}))?(?![\d:])")
-CLOCK = r"(?:\d{1,2}:)?\d{1,2}:\d{2}(?:[.,]\d{1,3})?"
+CLOCK = r"(?:(?:\d{1,2}:)?\d{1,2}:\d{2}(?:[.,]\d{1,3})?|\d{1,4}(?:\.\d{1,3})?\s?s(?:ec)?\b)"
+SECONDS_RE = re.compile(r"^\s*(\d{1,4}(?:\.\d{1,3})?)\s?s(?:ec)?\s*$", re.I)
 RANGE_RE = re.compile(
     r"(?:Start\s*:?\s*)?[\(\[]?\s*(" + CLOCK + r")\s*[\)\]]?\s*(?:\||-->|->|–|—|-|to)\s*(?:End\s*:?\s*)?[\(\[]?\s*(" + CLOCK + r")\s*[\)\]]?",
     re.I,
 )
 TAG_RE = re.compile(r"^\*\*(.+?)\*\*\s*(.*)$")
-PLAIN_TAG_RE = re.compile(r"^([A-Z][A-Z0-9 .'&/\-]{1,40}(?:\s*\([^)]*\))*)\s*:\s*(.*)$")
+NAME_CHARS = r"[A-Z0-9\u0900-\u0DFF .'&/\-]"
+PLAIN_TAG_RE = re.compile(r"^((?:[A-Z]|[\u0900-\u0DFF])" + NAME_CHARS + r"{1,40}(?:\s*\([^)]*\))*)\s*:\s*(.*)$")
+EPISODE_SPLIT_RE = re.compile(r"^\s*(?:#+\s*)?(?:EPISODE NUMBER\s*:\s*)?EPISODE\s+(\d+)\b.*$", re.I | re.M)
 HEADER_RE = re.compile(r"^(EPISODE NUMBER|EPISODE LOGLINE|EPISODE TITLE|CONTINUITY NOTES)\s*:\s*(.*)$", re.I)
 SCENE_RE = re.compile(r"^SCENE\s+(\d+)\s*$", re.I)
 SCENE_FIELD_RE = re.compile(r"^SCENE\s+(HEADING|START|END)\s*:\s*(.*)$", re.I)
@@ -37,6 +40,9 @@ SCRIPT_SUFFIXES = {".txt", ".md", ".fountain", ".text"}
 
 
 def parse_time(value: str):
+    seconds = SECONDS_RE.match(value or "")
+    if seconds:
+        return round(float(seconds.group(1)), 3)
     match = TIME_RE.search(value or "")
     if not match:
         return None
@@ -182,14 +188,51 @@ def parse_text(text: str, source: str = "") -> Episode:
     )
 
 
+def read_script(path: Path) -> str:
+    raw = Path(path).read_bytes()
+    if raw.startswith((b"\xff\xfe", b"\xfe\xff")):
+        return raw.decode("utf-16")
+    if len(raw) > 4 and raw[1::2].count(0) > len(raw) // 4:
+        return raw.decode("utf-16-le", errors="replace")
+    for encoding in ("utf-8-sig", "cp1252"):
+        try:
+            return raw.decode(encoding)
+        except UnicodeDecodeError:
+            continue
+    return raw.decode("utf-8", errors="replace")
+
+
+def split_episodes(text: str) -> list[tuple[int, str]]:
+    marks = [m for m in EPISODE_SPLIT_RE.finditer(text) if not text[m.start():m.end()].strip().upper().startswith("EPISODE LOGLINE")]
+    numbers = [int(m.group(1)) for m in marks]
+    if len(marks) < 2 or len(set(numbers)) < 2:
+        return []
+    chunks = []
+    for i, m in enumerate(marks):
+        end = marks[i + 1].start() if i + 1 < len(marks) else len(text)
+        body = text[m.start():end]
+        if "EPISODE NUMBER" not in body.upper():
+            body = f"EPISODE NUMBER: Episode {m.group(1)}\n" + body
+        chunks.append((int(m.group(1)), body))
+    return chunks
+
+
 def parse_file(path: Path) -> Episode:
-    return parse_text(Path(path).read_text(encoding="utf-8", errors="replace"), str(path))
+    return parse_text(read_script(path), str(path))
+
+
+def parse_path(path: Path) -> list[Episode]:
+    text = read_script(path)
+    chunks = split_episodes(text)
+    if not chunks:
+        return [parse_text(text, str(path))]
+    return [parse_text(body, f"{path}#episode-{n}") for n, body in chunks]
 
 
 def load_show(input_path: str, name: str | None = None) -> Show:
     root = Path(input_path)
     files = [root] if root.is_file() else sorted(p for p in root.rglob("*") if p.suffix.lower() in SCRIPT_SUFFIXES)
-    episodes = [e for e in (parse_file(p) for p in files) if e.beats]
+    episodes = [e for p in files for e in parse_path(p) if e.beats]
     numbers = [e.ep for e in episodes]
     renumbered = len(set(numbers)) < len(numbers) or 0 in numbers
     if renumbered:

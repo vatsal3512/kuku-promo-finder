@@ -124,13 +124,13 @@ def logo() -> str:
 
 def list_runs() -> list[Path]:
     fresh = sorted((p for p in OUTPUTS.glob("*/*") if (p / "promos.json").exists()), key=lambda p: p.name, reverse=True) if OUTPUTS.exists() else []
-    shipped = [RAW / n for n in ("final_run", "rules_only_run") if (RAW / n / "promos.json").exists()]
+    shipped = [RAW / n for n in ("final_run", "v2_run", "rules_only_run") if (RAW / n / "promos.json").exists()]
     return fresh + shipped
 
 
 def run_name(p: Path) -> str:
     if p.parent == RAW:
-        return {"final_run": "Submitted run, full input pack", "rules_only_run": "Rules only, full input pack"}.get(p.name, p.name)
+        return {"final_run": "Submitted run, full input pack", "v2_run": "Latest version, full input pack", "rules_only_run": "Rules only, full input pack"}.get(p.name, p.name)
     stamp = p.name.split("-")
     when = f"{stamp[1][:2]}:{stamp[1][2:4]}" if len(stamp) > 1 and len(stamp[1]) >= 4 else p.name
     return f"{p.parent.name.replace('-', ' ')}, {stamp[-1]} run at {when}"

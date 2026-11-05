@@ -1,0 +1,5252 @@
+{
+  "show": "I Married a Broken Soldier. He was a Duke",
+  "meta": {
+    "show": "I Married a Broken Soldier. He was a Duke",
+    "input": "../I Married a Broken Soldier. He was a Duke-scripts (2) (1)/I Married a Broken Soldier. He was a Duke",
+    "mode": "llm",
+    "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+    "judge_model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+    "episodes": 50,
+    "beats": 3727,
+    "candidates": 3120,
+    "generated": 3120,
+    "seconds": 265.48,
+    "llm_usage": {
+      "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+      "keys": 3,
+      "rate_limited": 0,
+      "calls": 2,
+      "cache_hits": 93,
+      "prompt_tokens": 2256,
+      "completion_tokens": 1183,
+      "seconds": 50.64,
+      "failures": 0
+    },
+    "profile": "full",
+    "degraded": [],
+    "config": {
+      "gates": {
+        "min_duration": 20,
+        "max_duration": 60,
+        "max_hook_offset": 3.0,
+        "max_tail": 1.5,
+        "max_segments": 3,
+        "min_segment": 4.0
+      },
+      "generation": {
+        "hooks_per_episode": 12,
+        "cliffs_per_episode": 6,
+        "cross_episode": true,
+        "montage": true,
+        "montage_max_gap": 6,
+        "montage_hooks_per_episode": 4,
+        "montage_cliffs_per_episode": 3
+      },
+      "weights": {
+        "hook": 0.3,
+        "cliff": 0.3,
+        "intensity": 0.12,
+        "stakes": 0.1,
+        "escalation": 0.05,
+        "sound_off": 0.05,
+        "funnel": 0.12
+      },
+      "penalties": {
+        "dead_air_per_second": 0.03,
+        "context": 0.1,
+        "single": 0.0,
+        "cross": 0.02,
+        "montage": 0.08,
+        "policy_high": 0.5,
+        "policy_medium": 0.05
+      },
+      "selection": {
+        "top": 15,
+        "pool": 400,
+        "mmr_lambda": 0.75,
+        "max_overlap": 0.35,
+        "max_per_episode": 2,
+        "control_max_position": 0.2,
+        "one_per_scene": true
+      },
+      "llm": {
+        "model": "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+        "judge_model": "",
+        "judge_pool": 80,
+        "refine_seeds": 20,
+        "refine_variants": 3,
+        "judge_repeats": 2,
+        "premise_zone": 0.1,
+        "learned_wave": 0,
+        "learn_lambda": 20,
+        "jury_model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+        "jury_top": 25,
+        "judge_batch": 5,
+        "pairwise_top": 12,
+        "temperature": 0.2,
+        "max_tokens": 8000,
+        "concurrency": 6,
+        "timeout": 240,
+        "cache_dir": ".cache/llm",
+        "blend": 0.65,
+        "funnel_bonus": 0.1,
+        "spoiler_major_penalty": 0.08,
+        "min_standalone": 3,
+        "min_cliffhanger": 3,
+        "pairwise_passes": 2
+      },
+      "names": [
+        {
+          "label": "MATRIARCH",
+          "episodes": [
+            1,
+            1
+          ],
+          "name": "Lady Ashcroft"
+        },
+        {
+          "label": "LADY JULIANA",
+          "episodes": [
+            1,
+            34
+          ],
+          "name": "Lady Juliana"
+        },
+        {
+          "label": "LADY IN GOLD GOWN",
+          "episodes": [
+            1,
+            3
+          ],
+          "name": "Clarissa"
+        },
+        {
+          "label": "THE FORMER GROOM",
+          "episodes": [
+            1,
+            9
+          ],
+          "name": "Gerald"
+        },
+        {
+          "label": "NOBLE MATRIARCH",
+          "episodes": [
+            3,
+            3
+          ],
+          "name": "Lady Ashcroft"
+        },
+        {
+          "label": "THE BEARDED STRANGER",
+          "episodes": [
+            3,
+            3
+          ],
+          "name": "Alexander"
+        },
+        {
+          "label": "MYSTERIOUS BEARDED MAN",
+          "episodes": [
+            4,
+            6
+          ],
+          "name": "Alexander"
+        },
+        {
+          "label": "LADY ASHCROFT",
+          "episodes": [
+            4,
+            5
+          ],
+          "name": "Lady Ashcroft"
+        },
+        {
+          "label": "LORD ASHCROFT",
+          "episodes": [
+            5,
+            5
+          ],
+          "name": "Lord Ashcroft"
+        },
+        {
+          "label": "ARISTOCRATIC WOMAN",
+          "episodes": [
+            7,
+            7
+          ],
+          "name": "Clarissa"
+        },
+        {
+          "label": "SCARRED BEARDED MAN",
+          "episodes": [
+            7,
+            7
+          ],
+          "name": "Alexander"
+        },
+        {
+          "label": "LADY CLARISSA",
+          "episodes": [
+            37,
+            37
+          ],
+          "name": "Clarissa"
+        },
+        {
+          "label": "NOBLEWOMAN",
+          "episodes": [
+            24,
+            41
+          ],
+          "name": "Catherine"
+        },
+        {
+          "label": "DOWAGER DUCHESS",
+          "episodes": [
+            26,
+            43
+          ],
+          "name": "Dowager Duchess"
+        },
+        {
+          "label": "LADY CATHERINE",
+          "episodes": [
+            27,
+            27
+          ],
+          "name": "Catherine"
+        },
+        {
+          "label": "ALEXANDER'S MOTHER",
+          "episodes": [
+            35,
+            42
+          ],
+          "name": "Dowager Duchess"
+        },
+        {
+          "label": "LADY ASHBOURNE",
+          "episodes": [
+            47,
+            47
+          ],
+          "name": "Dowager Duchess"
+        },
+        {
+          "label": "HIGH PRIEST",
+          "episodes": [
+            45,
+            46
+          ],
+          "name": "High Priest"
+        },
+        {
+          "label": "FATHER THOMAS",
+          "episodes": [
+            49,
+            50
+          ],
+          "name": "Father Thomas"
+        }
+      ],
+      "profile": "full",
+      "skip_bible": false
+    }
+  },
+  "promos": [
+    {
+      "rank": 1,
+      "role": "control",
+      "rank_reason": "Post first: it sets up the premise from episode 3 with only gore, violence to clear in ad review and sends viewers to episode 3.",
+      "id": "C00052",
+      "score": 0.8229,
+      "format": "single",
+      "duration": 51.5,
+      "segments": [
+        {
+          "episode": 3,
+          "start": "01:24.00",
+          "end": "02:15.50",
+          "start_seconds": 84.0,
+          "end_seconds": 135.5,
+          "duration": 51.5,
+          "episode_duration": 145.75
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Bearded Stranger effortlessly blocks the guard's strike and drives a devastating strike into him, dropping the armed guard instantly to the floor.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 0.5,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "A heavy, bone-rattling punch followed by the clatter and thud of the guard collapsing onto the stone floor.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 1.6,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "What are you waiting for?! He's only one man!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 6.4,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Are you hurt?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 7.8,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana softly shakes her head 'no', her wide blue eyes locked onto him.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 10.1,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Good. Then don't touch her again.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.5,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Ashcroft",
+          "text": "You cannot interfere in a family matter!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 14.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "I can...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "...when your family is dragging a defenseless woman from a church.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 20.2,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You shouldn't have to beg anybody...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.4,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "...to remember your worth.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.9,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Why are you doing this?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 28.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Because I want to.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 35.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You came here to become a wife.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 38.5,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "They took that from you.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.3,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "I am offering it back.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 43.7,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "You don't even know me.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 46.4,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "I know enough.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 49.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Bearded Stranger sinks to one knee on the cathedral aisle, offering the silver ring up to Juliana.",
+          "hook": false,
+          "cliffhanger": true
+        },
+        {
+          "segment": 1,
+          "t": 50.8,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "A collective, stunned gasp rippling across the entire congregation.",
+          "hook": false,
+          "cliffhanger": false
+        }
+      ],
+      "hook": {
+        "episode": 3,
+        "time": "01:24.00",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "The Bearded Stranger effortlessly blocks the guard's strike and drives a devastating strike into him, dropping the armed guard instantly to the floor.",
+        "beat_id": "E003-070"
+      },
+      "cliffhanger": {
+        "episode": 3,
+        "time": "02:13.20",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "The Bearded Stranger sinks to one knee on the cathedral aisle, offering the silver ring up to Juliana.",
+        "beat_id": "E003-111"
+      },
+      "why_it_works": "Brutal rescue shifts to tender proposal in one continuous take",
+      "hook_type": "rescue",
+      "arc_position": "premise",
+      "spoiler_level": "minor",
+      "resume_episode": 3,
+      "policy_flags": [
+        "gore:medium",
+        "violence:medium"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Cold open on a brutal one-punch takedown; shifts to protective intimacy, then a public kneeling proposal. Action-to-romance pivot is seamless and visually loud.",
+        "who": "Alexander (bearded stranger/Duke), Juliana, Gerald, Lady Ashcroft, congregation",
+        "stakes": "Juliana's safety and autonomy; Alexander claiming her as wife before witnesses",
+        "open_question": "Why does Alexander have authority to propose, and will Juliana accept?",
+        "unexplained_refs": [
+          "Gerald's role"
+        ],
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 3.75,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "spoiler_level": "minor",
+        "judge_spread": 1.0,
+        "standalone_min": 3.0,
+        "judge_score": 0.87,
+        "rule_score": 0.6277,
+        "spoiler_note": "judge said major, but the clip is in the opening premise episodes",
+        "craft": {
+          "long for a promo": 0.006
+        },
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 5.0,
+          "cliffhanger": 5.0,
+          "standalone": 4.0,
+          "escalation": 5.0,
+          "premise": 5.0,
+          "unexplained_refs": [
+            "Lady Ashcroft",
+            "silver ring",
+            "congregation"
+          ],
+          "spoiler_level": "none"
+        },
+        "pairwise_checked": true,
+        "control_reason": "earliest-funnel clip (series position <= 0.2), hook and cliffhanger at least 4/5, with the fewest medium/high ad-policy flags, then the best judge score"
+      },
+      "score_parts": {
+        "hook": 0.2449,
+        "cliff": 0.2334,
+        "intensity": 0.0603,
+        "stakes": 0.025,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.1151,
+        "dead_air": -0.051,
+        "context": -0.0,
+        "format": -0.0,
+        "policy": -0.05
+      },
+      "features": {
+        "hook_prior": 0.8163,
+        "opening_peak": 0.8163,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.7781,
+        "tail_after_cliff": 0.0,
+        "intensity": 0.5025,
+        "peak": 1.0,
+        "escalation": -0.2066,
+        "stakes": 0.25,
+        "dead_air": 5.7,
+        "lines": 15,
+        "first_line_at": 1.6,
+        "opening_words": 9,
+        "hook_kind": "ACTION",
+        "talk_tail": 3.5,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 3,
+        "last_episode": 3,
+        "series_position": 0.041,
+        "speakers": [
+          "Alexander",
+          "Gerald",
+          "Lady Ashcroft",
+          "Lady Juliana"
+        ],
+        "hook_text": "[action] The Bearded Stranger effortlessly blocks the guard's strike and drives a devastating...",
+        "cliff_text": "[action] The Bearded Stranger sinks to one knee on the cathedral aisle, offering the silver...",
+        "scenes": [
+          "3-3"
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 1, early enough to land viewers on episode 1; needs ad review for coercion.",
+      "id": "C00006",
+      "score": 0.9117,
+      "format": "single",
+      "duration": 44.3,
+      "segments": [
+        {
+          "episode": 1,
+          "start": "01:29.50",
+          "end": "02:13.80",
+          "start_seconds": 89.5,
+          "end_seconds": 133.8,
+          "duration": 44.3,
+          "episode_duration": 138.0
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The father tightens his jaw and stony expression, refusing to offer a single word or look.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 1.4,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Ashcroft",
+          "text": "Enough!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.6,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Ashcroft",
+          "text": "You have embarrassed this family long enough.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 6.7,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Embarrassed you?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 9.3,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Ashcroft",
+          "text": "Clarissa knows how to carry herself.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.1,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Ashcroft",
+          "text": "She has beauty, connections, and a future worth protecting.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 15.9,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "And I am what?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 18.0,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "You are the daughter people tolerate because they have to.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 21.6,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "I am the daughter they choose.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.8,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Ashcroft",
+          "text": "Clarissa is the jewel of this family.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.5,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "So that is what I was worth to you?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 30.3,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "You have nothing to offer me anymore.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.7,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "I cannot marry a woman of such plainness and low value...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "...when Clarissa is the true jewel of the county.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.8,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana's hand clenches fiercely into the folds of her mother's silk bridal gown, knuckles whitening with suppressed fury.",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 1,
+        "time": "01:29.50",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "The father tightens his jaw and stony expression, refusing to offer a single word or look.",
+        "beat_id": "E001-060"
+      },
+      "cliffhanger": {
+        "episode": 1,
+        "time": "02:11.30",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "Juliana's hand clenches fiercely into the folds of her mother's silk bridal gown, knuckles whitening with suppressed fury.",
+        "beat_id": "E001-089"
+      },
+      "why_it_works": "Three betrayals in 44 seconds — mother, sister, fiancé — forge a revenge protagonist instantly.",
+      "hook_type": "betrayal",
+      "arc_position": "premise",
+      "spoiler_level": "minor",
+      "resume_episode": 1,
+      "policy_flags": [
+        "coercion:medium"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Triple rejection in one drawing room: mother, sister, fiancé all declare Juliana worthless, choose 'jewel' Clarissa. Juliana's fist clenches on bridal silk.",
+        "who": "Juliana (cast-off daughter), Lady Ashcroft (cruel mother), Clarissa (favored sister), Gerald (turncoat fiancé).",
+        "stakes": "Juliana's social ruin, stolen future, and the revenge arc ignition.",
+        "open_question": "What does Juliana do now that she has nothing left to lose?",
+        "unexplained_refs": [],
+        "hook": 3.5,
+        "cliffhanger": 3.75,
+        "standalone": 3.75,
+        "escalation": 4.75,
+        "premise": 4.75,
+        "spoiler_level": "minor",
+        "judge_spread": 1.0,
+        "standalone_min": 3.0,
+        "judge_score": 0.7375,
+        "rule_score": 0.7511,
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 3.0,
+          "cliffhanger": 4.0,
+          "standalone": 4.0,
+          "escalation": 5.0,
+          "premise": 5.0,
+          "unexplained_refs": [
+            "Gerald's exact relationship to Juliana (implied fiancé)",
+            "the bridal gown (wedding-day context)",
+            "the specific event/occasion"
+          ],
+          "spoiler_level": "none"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.2144,
+        "cliff": 0.237,
+        "intensity": 0.054,
+        "stakes": 0.075,
+        "escalation": 0.0007,
+        "sound_off": 0.05,
+        "funnel": 0.12,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.7147,
+        "opening_peak": 0.7147,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.79,
+        "tail_after_cliff": 0.0,
+        "intensity": 0.45,
+        "peak": 0.85,
+        "escalation": 0.0139,
+        "stakes": 0.75,
+        "dead_air": 1.9,
+        "lines": 13,
+        "first_line_at": 1.4,
+        "opening_words": 8,
+        "hook_kind": "ACTION",
+        "talk_tail": 2.6,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 1,
+        "last_episode": 1,
+        "series_position": 0.0,
+        "speakers": [
+          "Clarissa",
+          "Gerald",
+          "Lady Ashcroft",
+          "Lady Juliana"
+        ],
+        "hook_text": "[action] The father tightens his jaw and stony expression, refusing to offer a single word or look.",
+        "cliff_text": "[action] Juliana's hand clenches fiercely into the folds of her mother's silk bridal gown,...",
+        "scenes": [
+          "1-1"
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 11; strongest on standalone 4.5/5 and cliffhanger 4/5; needs ad review for coercion, violence.",
+      "id": "C00270",
+      "score": 0.8684,
+      "format": "single",
+      "duration": 58.5,
+      "segments": [
+        {
+          "episode": 11,
+          "start": "00:16.80",
+          "end": "01:15.30",
+          "start_seconds": 16.8,
+          "end_seconds": 75.3,
+          "duration": 58.5,
+          "episode_duration": 112.75
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Your husband stole my gold pocket watch!",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "What? When?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.1,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "The last time I came here.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 6.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You never even entered the cottage!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.4,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Then you should have nothing to fear from a search.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 10.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Alexander would never steal from you.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.5,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Of course you would defend him. You married a beggar!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.2,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Choose your next words carefully.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 18.3,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "You hear that? He threatens me again!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 20.6,
+          "kind": "DIALOGUE",
+          "speaker": "Constable",
+          "text": "I have received a complaint of theft.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 22.9,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "A complaint is not proof.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 24.6,
+          "kind": "DIALOGUE",
+          "speaker": "Constable",
+          "text": "Then a search will settle the matter.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.7,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You cannot simply invade our home because this man makes an accusation!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 30.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "If he has nothing to hide...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 31.6,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "...let the constable search.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.3,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Search it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 36.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Let them.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 37.7,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Heavy thud of boots entering wooden floorboards, followed by forceful banging of furniture.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Constable begins violently overturning crates and dumping contents across the floor.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Stop! Those are my mother's medicines!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 43.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Constable aggressively pulls folded bed linens from a shelf and hurls them onto the damp floor.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 45.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Please! There is nothing here!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 47.1,
+          "kind": "DIALOGUE",
+          "speaker": "Constable",
+          "text": "Then you have nothing to fear.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 49.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Those are all I have left!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 50.7,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Stand aside. Look at this place. A perfect hiding hole for a thief.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 55.3,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You planted this accusation because you cannot bear that I am happy without you!",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 11,
+        "time": "00:16.80",
+        "kind": "DIALOGUE",
+        "speaker": "Gerald",
+        "text": "Your husband stole my gold pocket watch!",
+        "beat_id": "E011-015"
+      },
+      "cliffhanger": {
+        "episode": 11,
+        "time": "01:12.10",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "You planted this accusation because you cannot bear that I am happy without you!",
+        "beat_id": "E011-062"
+      },
+      "why_it_works": "Home invasion escalation, personal villainy, wife's fierce defense",
+      "hook_type": "injustice",
+      "arc_position": "mid",
+      "spoiler_level": "minor",
+      "resume_episode": 11,
+      "policy_flags": [
+        "coercion:medium",
+        "violence:medium"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Gerald accuses Alexander of stealing a pocket watch; Juliana defends him. Constable arrives, legally invades their cottage, violently destroys belongings including mother's medicines. Juliana realizes Gerald fabricated the theft from jealousy.",
+        "who": "Juliana, Alexander, Gerald (jealous antagonist), Constable, Clarissa (referenced)",
+        "stakes": "Alexander's arrest, home violation, destruction of irreplaceable medicines, Juliana's dignity",
+        "open_question": "Is the watch planted? Will the search find it? How far will Gerald's vendetta go?",
+        "unexplained_refs": [
+          "the cottage"
+        ],
+        "hook": 3.75,
+        "cliffhanger": 4.0,
+        "standalone": 4.5,
+        "escalation": 4.25,
+        "premise": 3.75,
+        "spoiler_level": "minor",
+        "judge_spread": 2.0,
+        "standalone_min": 3.0,
+        "judge_score": 0.7275,
+        "rule_score": 0.7643,
+        "craft": {
+          "long for a promo": 0.034
+        },
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 4.0,
+          "cliffhanger": 4.0,
+          "standalone": 5.0,
+          "escalation": 4.0,
+          "premise": 4.0,
+          "unexplained_refs": [
+            "gold pocket watch",
+            "the cottage",
+            "mother's medicines"
+          ],
+          "spoiler_level": "none"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.251,
+        "cliff": 0.1896,
+        "intensity": 0.0782,
+        "stakes": 0.1,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0955,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.8366,
+        "opening_peak": 0.8366,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.632,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.6519,
+        "peak": 1.0,
+        "escalation": -0.0346,
+        "stakes": 1.0,
+        "dead_air": 1.8,
+        "lines": 23,
+        "first_line_at": 0.0,
+        "opening_words": 9,
+        "hook_kind": "DIALOGUE",
+        "talk_tail": 0.3,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 11,
+        "last_episode": 11,
+        "series_position": 0.204,
+        "speakers": [
+          "Alexander",
+          "Constable",
+          "Gerald",
+          "Juliana"
+        ],
+        "hook_text": "Gerald: \"Your husband stole my gold pocket watch!\"",
+        "cliff_text": "Juliana: \"You planted this accusation because you cannot bear that I am happy without you!\"",
+        "scenes": [
+          "11-1",
+          "11-2"
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 27; strongest on hook 4.5/5 and cliffhanger 4.5/5.",
+      "id": "C00649",
+      "score": 0.8122,
+      "format": "single",
+      "duration": 22.4,
+      "segments": [
+        {
+          "episode": 27,
+          "start": "02:02.80",
+          "end": "02:25.20",
+          "start_seconds": 122.8,
+          "end_seconds": 145.2,
+          "duration": 22.4,
+          "episode_duration": 150.5
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.3,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "You hear that?!",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.0,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "She admits she has been giving the Duchess poison in secret!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 5.9,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "That is not what I said!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.4,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "Enough.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Blond Nobleman takes the medicine vial from Juliana's grasp, inspecting it under the candlelight.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 13.4,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "An unknown servant enters a restricted chamber.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.8,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "She secretly administers an unidentified substance to a helpless woman.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 21.2,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "Take her.",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 27,
+        "time": "02:03.10",
+        "kind": "DIALOGUE",
+        "speaker": "Catherine",
+        "text": "You hear that?!",
+        "beat_id": "E027-078"
+      },
+      "cliffhanger": {
+        "episode": 27,
+        "time": "02:24.00",
+        "kind": "DIALOGUE",
+        "speaker": "Blond Nobleman",
+        "text": "Take her.",
+        "beat_id": "E027-090"
+      },
+      "why_it_works": "False poisoning accusation arrests sympathetic servant instantly",
+      "hook_type": "injustice",
+      "arc_position": "mid",
+      "spoiler_level": "minor",
+      "resume_episode": 27,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Opens on a shriek and a poisoning accusation; within seconds a nobleman inspects a vial, condemns the servant, and orders her arrest. Clear power imbalance, fast beats, no fat.",
+        "who": "Juliana (servant/healer), Catherine (accuser), Lord Rupert Ashburn (blond nobleman/duke), guards",
+        "stakes": "Juliana's freedom and life — accused of poisoning the Duchess",
+        "open_question": "Did Juliana actually poison the Duchess or is she framed?",
+        "unexplained_refs": [
+          "the Duchess"
+        ],
+        "hook": 4.5,
+        "cliffhanger": 4.5,
+        "standalone": 3.75,
+        "escalation": 4.5,
+        "premise": 4.0,
+        "spoiler_level": "minor",
+        "judge_spread": 1.0,
+        "standalone_min": 3.0,
+        "judge_score": 0.76,
+        "rule_score": 0.7054,
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 5.0,
+          "cliffhanger": 5.0,
+          "standalone": 4.0,
+          "escalation": 5.0,
+          "premise": 4.0,
+          "unexplained_refs": [
+            "Catherine",
+            "Juliana",
+            "Duchess",
+            "Blond Nobleman",
+            "medicine vial",
+            "restricted chamber",
+            "Guard"
+          ],
+          "spoiler_level": "none"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.2601,
+        "cliff": 0.242,
+        "intensity": 0.072,
+        "stakes": 0.025,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0563,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.182,
+        "opening_peak": 0.867,
+        "hook_offset": 0.3,
+        "cliff_prior": 0.8068,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.6,
+        "peak": 1.0,
+        "escalation": -0.45,
+        "stakes": 0.25,
+        "dead_air": 2.2,
+        "lines": 7,
+        "first_line_at": 0.3,
+        "opening_words": 14,
+        "hook_kind": "DIALOGUE",
+        "talk_tail": 0.3,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 27,
+        "last_episode": 27,
+        "series_position": 0.531,
+        "speakers": [
+          "Blond Nobleman",
+          "Catherine",
+          "Juliana"
+        ],
+        "hook_text": "Catherine: \"You hear that?!\"",
+        "cliff_text": "Blond Nobleman: \"Take her.\"",
+        "scenes": [
+          "27-1"
+        ]
+      }
+    },
+    {
+      "rank": 5,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 12; strongest on hook 4.75/5 and cliffhanger 4.75/5; needs ad review for coercion, gore, minor, violence.",
+      "id": "C00302",
+      "score": 0.8616,
+      "format": "single",
+      "duration": 42.7,
+      "segments": [
+        {
+          "episode": 12,
+          "start": "00:26.80",
+          "end": "01:09.50",
+          "start_seconds": 26.8,
+          "end_seconds": 69.5,
+          "duration": 42.7,
+          "episode_duration": 87.21
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana lunges a step forward, jabbing an accusing finger toward Gerald.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You planted it!",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 1.3,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Oh, dear sister...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 3.2,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "...still defending your broken scrap of a man?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 5.6,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Name your price, Clarissa. I know you.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.6,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "You always were clever, Juliana. Always searching for some way to escape.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 13.3,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Perhaps I can give you one.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 15.4,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "What do you want?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 17.2,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "I want to see you crawl, sister.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.9,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "My emerald signet ring fell deep into the frozen blackthorn briars at Ashworth Manor. The thorns have grown over it...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 25.6,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "...sharp as steel. The ground is frozen, like pure ice.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 30.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Gerald bursts into a loud, mocking laugh beside the stony Constable.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 30.5,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "You will retrieve it with your bare hands before the magistrate arrives.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "A lady's hands will be shredded to ribbons!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 36.5,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Do it, and we withdraw the charges.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 38.6,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Fail, or refuse, and your husband hangs from the gallows.",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 12,
+        "time": "00:26.80",
+        "kind": "DIALOGUE",
+        "speaker": "Juliana",
+        "text": "You planted it!",
+        "beat_id": "E012-016"
+      },
+      "cliffhanger": {
+        "episode": 12,
+        "time": "01:05.40",
+        "kind": "DIALOGUE",
+        "speaker": "Clarissa",
+        "text": "Fail, or refuse, and your husband hangs from the gallows.",
+        "beat_id": "E012-044"
+      },
+      "why_it_works": "Concrete ticking-clock ultimatum; sister-as-tormentor; visceral body-horror stakes.",
+      "hook_type": "ultimatum",
+      "arc_position": "mid",
+      "spoiler_level": "minor",
+      "resume_episode": 12,
+      "policy_flags": [
+        "coercion:medium",
+        "gore:medium",
+        "minor:medium",
+        "violence:medium"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Juliana accuses Gerald of framing someone; Clarissa (sister) reveals she holds Juliana's husband's life over her. The ultimatum is concrete: retrieve a ring from frozen thorns barehanded before a magistrate arrives, or husband hangs. Gerald laughs at the mutilation. Clarissa's 'crawl' demand is pure humiliation. Ends on the brutal terms being set — strong external deadline and physical cost.",
+        "who": "Juliana (desperate wife), Clarissa (sadistic sister), Gerald (ally to Clarissa), Constable (authority). Husband's life is the lever.",
+        "stakes": "Juliana's hands/shredded skin vs husband's execution. Public humiliation ('crawl') added.",
+        "open_question": "What was planted? Who is the husband? Can she survive the briars in time?",
+        "unexplained_refs": [
+          "Ashworth Manor"
+        ],
+        "hook": 4.75,
+        "cliffhanger": 4.75,
+        "standalone": 4.25,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "spoiler_level": "minor",
+        "judge_spread": 1.0,
+        "standalone_min": 3.0,
+        "judge_score": 0.85,
+        "rule_score": 0.6756,
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 5.0,
+          "cliffhanger": 5.0,
+          "standalone": 5.0,
+          "escalation": 5.0,
+          "premise": 5.0,
+          "unexplained_refs": [
+            "what was planted",
+            "the emerald ring's significance",
+            "the magistrate",
+            "why Clarissa wants the ring"
+          ],
+          "spoiler_level": "none"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.2106,
+        "cliff": 0.232,
+        "intensity": 0.0649,
+        "stakes": 0.075,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0931,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0,
+        "policy": -0.05
+      },
+      "features": {
+        "hook_prior": 0.702,
+        "opening_peak": 0.702,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.7732,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.5406,
+        "peak": 1.0,
+        "escalation": -0.1317,
+        "stakes": 0.75,
+        "dead_air": 0.7,
+        "lines": 14,
+        "first_line_at": 0.0,
+        "opening_words": 6,
+        "hook_kind": "DIALOGUE",
+        "talk_tail": 0.3,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 12,
+        "last_episode": 12,
+        "series_position": 0.224,
+        "speakers": [
+          "Clarissa",
+          "Gerald",
+          "Juliana"
+        ],
+        "hook_text": "Juliana: \"You planted it!\"",
+        "cliff_text": "Clarissa: \"Fail, or refuse, and your husband hangs from the gallows.\"",
+        "scenes": [
+          "12-1"
+        ]
+      }
+    },
+    {
+      "rank": 6,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 5, early enough to land viewers on episode 5; strongest on standalone 4/5; needs ad review for minor.",
+      "id": "C00095",
+      "score": 0.8614,
+      "format": "single",
+      "duration": 51.5,
+      "segments": [
+        {
+          "episode": 5,
+          "start": "00:54.00",
+          "end": "01:45.50",
+          "start_seconds": 54.0,
+          "end_seconds": 105.5,
+          "duration": 51.5,
+          "episode_duration": 110.5
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Lady Ashcroft snatches the heavy book away and flings it disdainfully into the rain-soaked courtyard.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 1.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Barbara, don't!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 3.0,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "A heavy wet slap as the leather-bound book crashes into the puddle-slicked stone pavement.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 5.0,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Even your mother's precious legacy has been cast into the dirt!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.4,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Perhaps that is where it belongs.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 11.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana drops to her knees onto the wet courtyard pavement, oblivious to the dirt soaking through her white bridal gown.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Mysterious Bearded Man bends his knees and kneels down beside Juliana, extending his scarred hand to retrieve the fallen ledger.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.8,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Here you go.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "They destroyed it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 28.5,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "They dirtied it. That is not the same thing.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 32.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "It was my mother's.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.9,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Then keep it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Mysterious Bearded Man reaches out with both hands, clasping his strong hands tenderly over hers and the book.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 35.4,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Let them keep everything else.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 37.5,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Look at you.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "A noblewoman reduced to a beggar's wife!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 44.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Choose your next words carefully.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 50.2,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Come.",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 5,
+        "time": "00:54.50",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "Lady Ashcroft snatches the heavy book away and flings it disdainfully into the rain-soaked courtyard.",
+        "beat_id": "E005-031"
+      },
+      "cliffhanger": {
+        "episode": 5,
+        "time": "01:44.20",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander",
+        "text": "Come.",
+        "beat_id": "E005-059"
+      },
+      "why_it_works": "Priceless heirloom destroyed; bearded stranger kneels in mud to reclaim it.",
+      "hook_type": "humiliation",
+      "arc_position": "premise",
+      "spoiler_level": "minor",
+      "resume_episode": 5,
+      "policy_flags": [
+        "minor:medium",
+        "violence:low"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Post-wedding humiliation: Lady Ashcroft destroys Juliana's mother's ledger in mud. Juliana collapses in bridal gown. The Mysterious Bearded Man (Alexander) kneels, retrieves it, reframes damage ('dirtied, not destroyed'). Gerald mocks 'beggar's wife'; Alexander issues death-cold warning. They leave together.",
+        "who": "Lady Ashcroft, Clarissa, Gerald (antagonists), Juliana (bride/victim), Alexander (bearded protector)",
+        "stakes": "Juliana's dignity/legacy; Alexander's restraint vs. lethal threat; their exit as a unit",
+        "open_question": "What's in the ledger? Where do they go? Will Alexander kill Gerald?",
+        "unexplained_refs": [],
+        "hook": 3.75,
+        "cliffhanger": 3.5,
+        "standalone": 4.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "spoiler_level": "minor",
+        "judge_spread": 1.0,
+        "standalone_min": 4.0,
+        "judge_score": 0.6875,
+        "rule_score": 0.7484,
+        "spoiler_note": "judge said major, but the clip is in the opening premise episodes",
+        "craft": {
+          "long for a promo": 0.006
+        },
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 4.0,
+          "cliffhanger": 4.0,
+          "standalone": 4.0,
+          "escalation": 4.0,
+          "premise": 4.0,
+          "unexplained_refs": [
+            "Barbara",
+            "Lady Ashcroft/Clarissa",
+            "Gerald",
+            "the ledger/book",
+            "the Mysterious Bearded Man"
+          ],
+          "spoiler_level": "none"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.2449,
+        "cliff": 0.2227,
+        "intensity": 0.0707,
+        "stakes": 0.05,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.1102,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.8163,
+        "opening_peak": 0.8163,
+        "hook_offset": 0.5,
+        "cliff_prior": 0.7424,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.5889,
+        "peak": 1.0,
+        "escalation": -0.2675,
+        "stakes": 0.5,
+        "dead_air": 3.4,
+        "lines": 13,
+        "first_line_at": 1.5,
+        "opening_words": 2,
+        "hook_kind": "ACTION",
+        "talk_tail": 0.3,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 5,
+        "last_episode": 5,
+        "series_position": 0.082,
+        "speakers": [
+          "Alexander",
+          "Clarissa",
+          "Gerald",
+          "Juliana"
+        ],
+        "hook_text": "[action] Lady Ashcroft snatches the heavy book away and flings it disdainfully into the...",
+        "cliff_text": "Alexander: \"Come.\"",
+        "scenes": [
+          "5-1"
+        ]
+      }
+    },
+    {
+      "rank": 7,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 29; strongest on cliffhanger 4.5/5 and hook 4/5; needs ad review for coercion, violence.",
+      "id": "C00674",
+      "score": 0.789,
+      "format": "single",
+      "duration": 51.4,
+      "segments": [
+        {
+          "episode": 29,
+          "start": "00:37.40",
+          "end": "01:28.80",
+          "start_seconds": 37.4,
+          "end_seconds": 88.8,
+          "duration": 51.4,
+          "episode_duration": 116.69
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.3,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "The magistrate will call it witchcraft.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.7,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You know that is a lie!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.6,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "I know exactly what I need him to believe.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 7.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You cannot just destroy it!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 9.9,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "I can burn it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.7,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "And when they find your corpse at the end of the rope...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.4,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "...no one will remember what was written inside.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.3,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You are doing this because I saved the Duchess!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 21.9,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "I am doing this because women like you forget their place.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.1,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "You were cast out once.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 29.8,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "You should have stayed forgotten.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 32.4,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "My husband will find me.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.7,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Your scarred soldier?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 37.3,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "What exactly do you think a penniless veteran can do against Ashbrook?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.3,
+          "kind": "DIALOGUE",
+          "speaker": "Guard",
+          "text": "Move along, girl.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 46.6,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The guards shove Juliana violently into the cell; she falls hard onto all fours across the cold, wet stone floor.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 48.3,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Please!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 49.1,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "The heavy iron door slams shut with a deafening metallic thud, and the massive exterior bolt grates locked.",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 29,
+        "time": "00:37.70",
+        "kind": "DIALOGUE",
+        "speaker": "Catherine",
+        "text": "The magistrate will call it witchcraft.",
+        "beat_id": "E029-021"
+      },
+      "cliffhanger": {
+        "episode": 29,
+        "time": "01:26.50",
+        "kind": "SFX",
+        "speaker": "",
+        "text": "The heavy iron door slams shut with a deafening metallic thud, and the massive exterior bolt grates locked.",
+        "beat_id": "E029-054"
+      },
+      "why_it_works": "Witchcraft frame-up; husband underestimated",
+      "hook_type": "injustice",
+      "arc_position": "mid",
+      "spoiler_level": "minor",
+      "resume_episode": 29,
+      "policy_flags": [
+        "coercion:medium",
+        "violence:medium"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Villainess Catherine frames Juliana for witchcraft, burns evidence, throws her in dungeon. Mockery of husband's powerlessness.",
+        "who": "Juliana (prisoner), Catherine (aristocratic villain), guards",
+        "stakes": "Juliana's life (witchcraft execution); husband's ability to save her",
+        "open_question": "What evidence was burned? Can the 'scarred soldier' breach Ashbrook?",
+        "unexplained_refs": [],
+        "hook": 4.0,
+        "cliffhanger": 4.5,
+        "standalone": 3.75,
+        "escalation": 4.5,
+        "premise": 4.0,
+        "spoiler_level": "minor",
+        "judge_spread": 1.0,
+        "standalone_min": 3.0,
+        "judge_score": 0.755,
+        "rule_score": 0.6976,
+        "craft": {
+          "long for a promo": 0.0056
+        },
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 4.0,
+          "cliffhanger": 5.0,
+          "standalone": 4.0,
+          "escalation": 5.0,
+          "premise": 4.0,
+          "unexplained_refs": [
+            "the Duchess",
+            "Ashbrook",
+            "the document/writing",
+            "Juliana's prior casting out",
+            "the scarred soldier husband"
+          ],
+          "spoiler_level": "none"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.2446,
+        "cliff": 0.2044,
+        "intensity": 0.0847,
+        "stakes": 0.0625,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.0515,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.8152,
+        "opening_peak": 0.8152,
+        "hook_offset": 0.3,
+        "cliff_prior": 0.6812,
+        "tail_after_cliff": 0.8,
+        "intensity": 0.7056,
+        "peak": 1.0,
+        "escalation": -0.2556,
+        "stakes": 0.625,
+        "dead_air": 3.4,
+        "lines": 16,
+        "first_line_at": 0.3,
+        "opening_words": 12,
+        "hook_kind": "DIALOGUE",
+        "talk_tail": 2.3,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 29,
+        "last_episode": 29,
+        "series_position": 0.571,
+        "speakers": [
+          "Catherine",
+          "Guard",
+          "Juliana"
+        ],
+        "hook_text": "Catherine: \"The magistrate will call it witchcraft.\"",
+        "cliff_text": "[sfx] The heavy iron door slams shut with a deafening metallic thud, and the massive...",
+        "scenes": [
+          "29-2",
+          "29-3"
+        ]
+      }
+    },
+    {
+      "rank": 8,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 15; strongest on hook 4.75/5 and cliffhanger 4.75/5; needs ad review for gore, minor, violence, weapon.",
+      "id": "C00376",
+      "score": 0.8028,
+      "format": "single",
+      "duration": 43.2,
+      "segments": [
+        {
+          "episode": 15,
+          "start": "00:18.80",
+          "end": "01:02.00",
+          "start_seconds": 18.8,
+          "end_seconds": 62.0,
+          "duration": 43.2,
+          "episode_duration": 86.0
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 1.2,
+          "kind": "DIALOGUE",
+          "speaker": "Bald Thug",
+          "text": "They look like weeds to me.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 1.7,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The bald thug flings the bouquet into the mud and grinds his heavy boot directly onto the delicate flowers.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana frantically tries to scoop the crushed soil and torn stems back into the bed with her bandaged hands.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.4,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Please! Those plants took months to grow!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.7,
+          "kind": "DIALOGUE",
+          "speaker": "Tall Thug",
+          "text": "Months? You actually spend your days growing this filth?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Leave my garden alone.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 18.4,
+          "kind": "DIALOGUE",
+          "speaker": "Thug With Cap",
+          "text": "A noble lady playing in the dirt. What a joke.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 22.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "It is my home. You have no right to destroy anything here.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.0,
+          "kind": "DIALOGUE",
+          "speaker": "Thug With Cap",
+          "text": "Get out of the way!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.7,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "No.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 28.6,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Thug with Cap violently shoves Juliana back with both hands; she cries out as she loses her balance and crashes hard onto the wet stone path.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 29.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Ah!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 31.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana crawls forward on her elbows; fresh crimson blood seeps profusely through her white gauze bandages as she reaches for the ruined blossoms.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.7,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "My mother's plants...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 38.5,
+          "kind": "DIALOGUE",
+          "speaker": "Bald Thug",
+          "text": "Look at her! Crying over weeds!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Tall Thug hoists his heavy wooden club above his head to crush the remaining herbs right before Juliana.",
+          "hook": false,
+          "cliffhanger": true
+        },
+        {
+          "segment": 1,
+          "t": 41.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Stop!",
+          "hook": false,
+          "cliffhanger": false
+        }
+      ],
+      "hook": {
+        "episode": 15,
+        "time": "00:20.50",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "The bald thug flings the bouquet into the mud and grinds his heavy boot directly onto the delicate flowers.",
+        "beat_id": "E015-016"
+      },
+      "cliffhanger": {
+        "episode": 15,
+        "time": "01:00.00",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "The Tall Thug hoists his heavy wooden club above his head to crush the remaining herbs right before Juliana.",
+        "beat_id": "E015-041"
+      },
+      "why_it_works": "Cruel destruction of cherished garden; her bloody defiance demands justice",
+      "hook_type": "humiliation",
+      "arc_position": "mid",
+      "spoiler_level": "none",
+      "resume_episode": 15,
+      "policy_flags": [
+        "gore:medium",
+        "minor:medium",
+        "violence:medium",
+        "weapon:medium"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Thugs destroy Juliana's garden; she defends it, gets shoved, bleeds through bandages, screams as club rises. Visceral cruelty, physical stakes, defiant protagonist.",
+        "who": "Juliana, Bald Thug, Tall Thug, Thug With Cap",
+        "stakes": "Her mother's plants, her safety, her dignity",
+        "open_question": "Why is noblewoman gardening? Who sent thugs? Bandages from what?",
+        "unexplained_refs": [],
+        "hook": 4.75,
+        "cliffhanger": 4.75,
+        "standalone": 3.75,
+        "escalation": 5.0,
+        "premise": 3.5,
+        "spoiler_level": "none",
+        "judge_spread": 1.0,
+        "standalone_min": 3.0,
+        "judge_score": 0.84,
+        "rule_score": 0.6411,
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 5.0,
+          "cliffhanger": 5.0,
+          "standalone": 4.0,
+          "escalation": 5.0,
+          "premise": 4.0,
+          "unexplained_refs": [
+            "mother's plants",
+            "her home (relationship to thugs)"
+          ],
+          "spoiler_level": "none"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.2244,
+        "cliff": 0.2261,
+        "intensity": 0.0702,
+        "stakes": 0.025,
+        "escalation": 0.0097,
+        "sound_off": 0.05,
+        "funnel": 0.0857,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0,
+        "policy": -0.05
+      },
+      "features": {
+        "hook_prior": 0.748,
+        "opening_peak": 0.748,
+        "hook_offset": 1.7,
+        "cliff_prior": 0.7536,
+        "tail_after_cliff": 0.0,
+        "intensity": 0.5853,
+        "peak": 1.0,
+        "escalation": 0.1936,
+        "stakes": 0.25,
+        "dead_air": 3.6,
+        "lines": 12,
+        "first_line_at": 1.2,
+        "opening_words": 6,
+        "hook_kind": "ACTION",
+        "talk_tail": 1.0,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 15,
+        "last_episode": 15,
+        "series_position": 0.286,
+        "speakers": [
+          "Bald Thug",
+          "Juliana",
+          "Tall Thug",
+          "Thug With Cap"
+        ],
+        "hook_text": "[action] The bald thug flings the bouquet into the mud and grinds his heavy boot directly onto...",
+        "cliff_text": "[action] The Tall Thug hoists his heavy wooden club above his head to crush the remaining herbs...",
+        "scenes": [
+          "15-1"
+        ]
+      }
+    },
+    {
+      "rank": 9,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 24; strongest on hook 4.75/5 and cliffhanger 4.25/5; needs ad review for coercion, violence, weapon.",
+      "id": "C00560",
+      "score": 0.7826,
+      "format": "single",
+      "duration": 57.6,
+      "segments": [
+        {
+          "episode": 24,
+          "start": "00:32.50",
+          "end": "01:30.10",
+          "start_seconds": 32.5,
+          "end_seconds": 90.1,
+          "duration": 57.6,
+          "episode_duration": 92.0
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The noblewoman suddenly rears back her riding crop and strikes Juliana violently across the torso.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 0.3,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "A sharp, stinging whip crack as the riding crop makes harsh contact.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 1.3,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana gasps in pain, clutching her stomach and bending over as she absorbs the brutal strike.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.5,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "You are a maid.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.5,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Not a physician. Not a lady.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 6.5,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "And certainly not a woman whose opinion matters.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 10.7,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Yes, my lady.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 13.0,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Good. Perhaps we can teach you your place.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The noblewoman leads Juliana and a frightened Prudence down a dark flagstone hallway.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana's boots step down into a dark, rustic chamber dominated by an enormous, blackened stone hearth.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 21.1,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Clean it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.7,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "All of it, my lady?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 25.3,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Every stone. Perhaps when your hands are black enough, you will finally remember what you are.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 31.3,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana slowly drops to her knees on the cold flagstones before the soot-filled fireplace.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Prudence steps toward the noblewoman in distress, her hands clasped tightly.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.7,
+          "kind": "DIALOGUE",
+          "speaker": "Prudence",
+          "text": "My lady—",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 35.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The noblewoman whips around sharply, thrusting the tip of her riding crop directly into Prudence's face.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 35.5,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Do you want the same punishment?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 38.1,
+          "kind": "DIALOGUE",
+          "speaker": "Prudence",
+          "text": "No, my lady.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 40.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana grips a coarse scrubbing brush with both hands and begins vigorously scraping the thick black ash across the hearthstones.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 40.5,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Rhythmic, harsh rasping sound of bristles scraping against stone.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 42.5,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "That is where clever little servants belong.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 46.1,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Let her think I am only a maid.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 48.7,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana pauses scrubbing. Her soot-caked fingers reach into the deep pocket of her apron, carefully feeling the worn leather cover of her mother's remedy journal and the glass dropper bottle securely concealed within.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 49.0,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Let her believe I am ignorant.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 52.7,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana raises her head. Smudges of dark soot stain her fair cheek, but her piercing blue eyes burn with unwavering defiance and unyielding resolve as she stares toward the hallway.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 53.1,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "I will return. You cannot stop the healer.",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 24,
+        "time": "00:32.50",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "The noblewoman suddenly rears back her riding crop and strikes Juliana violently across the torso.",
+        "beat_id": "E024-023"
+      },
+      "cliffhanger": {
+        "episode": 24,
+        "time": "01:25.60",
+        "kind": "DIALOGUE",
+        "speaker": "Lady Juliana",
+        "text": "I will return. You cannot stop the healer.",
+        "beat_id": "E024-068"
+      },
+      "why_it_works": "Violent humiliation flips to secret healer defiance in 58 seconds.",
+      "hook_type": "humiliation",
+      "arc_position": "mid",
+      "spoiler_level": "minor",
+      "resume_episode": 25,
+      "policy_flags": [
+        "coercion:medium",
+        "violence:medium",
+        "weapon:medium"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Opens on violent whip strike, then forces maid Juliana to clean hearth while she secretly grips hidden healer's journal and vows return. Clear power flip from humiliation to quiet defiance.",
+        "who": "Catherine (cruel noblewoman), Juliana (maid/secret healer), Prudence (frightened fellow servant)",
+        "stakes": "Juliana's dignity, safety, and secret identity as healer vs. Catherine's sadistic control",
+        "open_question": "Will Juliana's hidden remedies and resolve let her escape or strike back?",
+        "unexplained_refs": [
+          "mother's remedy journal",
+          "glass dropper bottle"
+        ],
+        "hook": 4.75,
+        "cliffhanger": 4.25,
+        "standalone": 4.25,
+        "escalation": 4.75,
+        "premise": 4.25,
+        "spoiler_level": "minor",
+        "judge_spread": 1.0,
+        "standalone_min": 4.0,
+        "judge_score": 0.775,
+        "rule_score": 0.6941,
+        "craft": {
+          "long for a promo": 0.0304
+        },
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 5.0,
+          "cliffhanger": 4.0,
+          "standalone": 4.0,
+          "escalation": 5.0,
+          "premise": 4.0,
+          "unexplained_refs": [
+            "mother's remedy journal",
+            "glass dropper bottle",
+            "Prudence",
+            "hearth"
+          ],
+          "spoiler_level": "minor"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.2244,
+        "cliff": 0.253,
+        "intensity": 0.0651,
+        "stakes": 0.0375,
+        "escalation": 0.0004,
+        "sound_off": 0.05,
+        "funnel": 0.0637,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.748,
+        "opening_peak": 0.748,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.8432,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.5426,
+        "peak": 0.95,
+        "escalation": 0.008,
+        "stakes": 0.375,
+        "dead_air": 1.0,
+        "lines": 15,
+        "first_line_at": 2.5,
+        "opening_words": 4,
+        "hook_kind": "ACTION",
+        "talk_tail": 0.3,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 24,
+        "last_episode": 24,
+        "series_position": 0.469,
+        "speakers": [
+          "Catherine",
+          "Lady Juliana",
+          "Prudence"
+        ],
+        "hook_text": "[action] The noblewoman suddenly rears back her riding crop and strikes Juliana violently...",
+        "cliff_text": "Lady Juliana: \"I will return. You cannot stop the healer.\"",
+        "scenes": [
+          "24-1",
+          "24-2"
+        ]
+      }
+    },
+    {
+      "rank": 10,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 2, early enough to land viewers on episode 2; strongest on hook 4/5.",
+      "id": "C00021",
+      "score": 0.7679,
+      "format": "single",
+      "duration": 30.6,
+      "segments": [
+        {
+          "episode": 2,
+          "start": "00:00.00",
+          "end": "00:30.60",
+          "start_seconds": 0.0,
+          "end_seconds": 30.6,
+          "duration": 30.6,
+          "episode_duration": 110.0
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "I cannot marry you, Juliana.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.8,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana gasps softly in heartbreak, her eyes wide and brimming with tears.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.7,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "You are far too plain...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 6.8,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "...far too silent...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 9.6,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "...and completely beneath the future I deserve.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.4,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "Gerald... Look at me.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 18.2,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "You gave me your word before both our families.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 20.9,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Promises change when a better choice appears.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 24.0,
+          "kind": "DIALOGUE",
+          "speaker": "Lady Juliana",
+          "text": "A better choice? Is that what she is?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.8,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "She is what I should have chosen from the beginning.",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 2,
+        "time": "00:00.00",
+        "kind": "DIALOGUE",
+        "speaker": "Gerald",
+        "text": "I cannot marry you, Juliana.",
+        "beat_id": "E002-001"
+      },
+      "cliffhanger": {
+        "episode": 2,
+        "time": "00:27.80",
+        "kind": "DIALOGUE",
+        "speaker": "Gerald",
+        "text": "She is what I should have chosen from the beginning.",
+        "beat_id": "E002-020"
+      },
+      "why_it_works": "Cold public rejection by arrogant fiancé; broken promise before families; 'better choice' reveal hooks revenge/redemption arc.",
+      "hook_type": "betrayal",
+      "arc_position": "premise",
+      "spoiler_level": "minor",
+      "resume_episode": 2,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Opens mid-breakup: Gerald coldly rejects Juliana, listing her flaws, then admits a 'better choice' exists. Juliana reminds him of a public promise; he dismisses it. Ends on his confirmation that the other woman was always the right pick.",
+        "who": "Gerald (arrogant fiancé) and Lady Juliana (humiliated, betrayed bride-to-be).",
+        "stakes": "Public broken engagement; Juliana's honor and future destroyed before both families.",
+        "open_question": "Who is the 'better choice' and what will Juliana do now?",
+        "unexplained_refs": [],
+        "hook": 4.0,
+        "cliffhanger": 3.25,
+        "standalone": 3.75,
+        "escalation": 4.25,
+        "premise": 4.5,
+        "spoiler_level": "minor",
+        "judge_spread": 1.0,
+        "standalone_min": 4.0,
+        "judge_score": 0.715,
+        "rule_score": 0.6559,
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 4.0,
+          "cliffhanger": 3.0,
+          "standalone": 3.0,
+          "escalation": 4.0,
+          "premise": 5.0,
+          "unexplained_refs": [
+            "she (the other woman)",
+            "future I deserve",
+            "families (the betrothal)"
+          ],
+          "spoiler_level": "minor"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.2401,
+        "cliff": 0.1661,
+        "intensity": 0.0696,
+        "stakes": 0.0125,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.1176,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.8005,
+        "opening_peak": 0.8005,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.5536,
+        "tail_after_cliff": 0.1,
+        "intensity": 0.58,
+        "peak": 0.85,
+        "escalation": -0.0917,
+        "stakes": 0.125,
+        "dead_air": 2.7,
+        "lines": 9,
+        "first_line_at": 0.0,
+        "opening_words": 5,
+        "hook_kind": "DIALOGUE",
+        "talk_tail": 0.1,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 2,
+        "last_episode": 2,
+        "series_position": 0.02,
+        "speakers": [
+          "Gerald",
+          "Lady Juliana"
+        ],
+        "hook_text": "Gerald: \"I cannot marry you, Juliana.\"",
+        "cliff_text": "Gerald: \"She is what I should have chosen from the beginning.\"",
+        "scenes": [
+          "2-1"
+        ]
+      }
+    },
+    {
+      "rank": 11,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 13; strongest on cliffhanger 5/5 and hook 4/5; needs ad review for coercion, minor, violence.",
+      "id": "C00335",
+      "score": 0.7144,
+      "format": "single",
+      "duration": 29.3,
+      "segments": [
+        {
+          "episode": 13,
+          "start": "00:24.20",
+          "end": "00:53.50",
+          "start_seconds": 24.2,
+          "end_seconds": 53.5,
+          "duration": 29.3,
+          "episode_duration": 118.88
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "I would rather face the gallows than watch you hurt yourself for me.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 6.6,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You stood beside me when everyone else abandoned me. I will not abandon you now.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana releases his hands and turns toward the briar thicket. Alexander stretches out his chained hands, attempting to hold her back, but the Constable restrains him.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.8,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Careful, sister.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 15.7,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "That garden has swallowed better women than you.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 17.6,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Perhaps the beggar's wife will finally learn what her new life is worth.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 21.6,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana drops to her knees in front of the frozen blackthorn branches, steadying her trembling breath.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Juliana, stop!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.6,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Rattling of heavy iron chains.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 25.8,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana crawls forward on all fours, lowering her head under the jagged, arching thorns.",
+          "hook": false,
+          "cliffhanger": true
+        },
+        {
+          "segment": 1,
+          "t": 27.3,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Please...",
+          "hook": false,
+          "cliffhanger": false
+        }
+      ],
+      "hook": {
+        "episode": 13,
+        "time": "00:24.20",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander",
+        "text": "I would rather face the gallows than watch you hurt yourself for me.",
+        "beat_id": "E013-013"
+      },
+      "cliffhanger": {
+        "episode": 13,
+        "time": "00:50.00",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "Juliana crawls forward on all fours, lowering her head under the jagged, arching thorns.",
+        "beat_id": "E013-030"
+      },
+      "why_it_works": "Self-sacrifice walk into body horror; lover forced to watch; sadistic audience.",
+      "hook_type": "rescue",
+      "arc_position": "mid",
+      "spoiler_level": "minor",
+      "resume_episode": 13,
+      "policy_flags": [
+        "coercion:medium",
+        "minor:medium",
+        "violence:medium"
+      ],
+      "sound_off_hook": false,
+      "judge": {
+        "notes": "Direct continuation of Clip C's ultimatum. Alexander chained, screaming as Juliana crawls into the frozen blackthorns. Her devotion is established ('you stood beside me when everyone else abandoned me'). Clarissa and Gerald mock from the sidelines. Ends on Alexander's strangled 'Please...' as Juliana disappears under thorns. Pure emotional torture — the cliffhanger is whether she survives the retrieval.",
+        "who": "Juliana (self-sacrificing), Alexander (helpless witness), Clarissa (orchestrator), Gerald (mocking), Constable (enforcer).",
+        "stakes": "Juliana's flesh vs husband's life; Alexander's trauma watching; Clarissa's sadistic entertainment.",
+        "open_question": "Does she get the ring? Are her hands destroyed? Does the magistrate arrive in time?",
+        "unexplained_refs": [
+          "why Alexander is chained"
+        ],
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 3.75,
+        "escalation": 5.0,
+        "premise": 4.25,
+        "spoiler_level": "minor",
+        "judge_spread": 2.0,
+        "standalone_min": 3.0,
+        "judge_score": 0.7825,
+        "rule_score": 0.5998,
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 4.0,
+          "cliffhanger": 5.0,
+          "standalone": 4.0,
+          "escalation": 5.0,
+          "premise": 4.0,
+          "unexplained_refs": [
+            "blackthorn briars",
+            "chains",
+            "Constable",
+            "beggar's wife"
+          ],
+          "spoiler_level": "none"
+        }
+      },
+      "score_parts": {
+        "hook": 0.1863,
+        "cliff": 0.1992,
+        "intensity": 0.0736,
+        "stakes": 0.05,
+        "escalation": 0.0,
+        "sound_off": 0.0,
+        "funnel": 0.0906,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.6211,
+        "opening_peak": 0.6211,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.664,
+        "tail_after_cliff": 0.5,
+        "intensity": 0.6136,
+        "peak": 1.0,
+        "escalation": -0.0179,
+        "stakes": 0.5,
+        "dead_air": 2.4,
+        "lines": 7,
+        "first_line_at": 0.0,
+        "opening_words": 13,
+        "hook_kind": "DIALOGUE",
+        "talk_tail": 0.9,
+        "sound_off_hook": false,
+        "context_risk": 0.0,
+        "first_episode": 13,
+        "last_episode": 13,
+        "series_position": 0.245,
+        "speakers": [
+          "Alexander",
+          "Clarissa",
+          "Gerald",
+          "Juliana"
+        ],
+        "hook_text": "Alexander: \"I would rather face the gallows than watch you hurt yourself for me.\"",
+        "cliff_text": "[action] Juliana crawls forward on all fours, lowering her head under the jagged, arching thorns.",
+        "scenes": [
+          "13-1",
+          "13-2"
+        ]
+      }
+    },
+    {
+      "rank": 12,
+      "role": "challenger",
+      "rank_reason": "Test against the control: episode 7, early enough to land viewers on episode 7; strongest on cliffhanger 4.5/5 and standalone 4.5/5; needs ad review for coercion, violence.",
+      "id": "C00152",
+      "score": 0.7582,
+      "format": "single",
+      "duration": 53.5,
+      "segments": [
+        {
+          "episode": 7,
+          "start": "00:22.00",
+          "end": "01:15.50",
+          "start_seconds": 22.0,
+          "end_seconds": 75.5,
+          "duration": 53.5,
+          "episode_duration": 116.0
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "This is where you live now?",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 3.0,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "A fitting home for a woman who threw away everything for a penniless soldier.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 8.0,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You came all this way just to insult my home?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 11.2,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "Home? Look at your hands, Juliana.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.2,
+          "kind": "DIALOGUE",
+          "speaker": "Clarissa",
+          "text": "You look like a servant.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.2,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "I work with my hands. There is no shame in that.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.2,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "You were born a lady.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 26.8,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "And I remain one.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 29.5,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "You chose that scarred beggar over a life of comfort.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 35.8,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "I chose a man who stood beside me when you walked away.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.8,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "You have no authority here. Leave.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 43.6,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "I have enough influence to make a beggar disappear.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 46.6,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "And your husband?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 47.5,
+          "kind": "DIALOGUE",
+          "speaker": "Gerald",
+          "text": "Where is that beggar husband?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 48.0,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Scarred Bearded Man marches purposefully toward the cottage, carrying a heavy bundle of chopped firewood bound tightly with hemp cord.",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 7,
+        "time": "00:22.00",
+        "kind": "DIALOGUE",
+        "speaker": "Clarissa",
+        "text": "This is where you live now?",
+        "beat_id": "E007-008"
+      },
+      "cliffhanger": {
+        "episode": 7,
+        "time": "01:10.00",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "The Scarred Bearded Man marches purposefully toward the cottage, carrying a heavy bundle of chopped firewood bound tightly with hemp cord.",
+        "beat_id": "E007-035"
+      },
+      "why_it_works": "Class clash, sharp dialogue, heroine owns her choice, husband reveal promises payoff.",
+      "hook_type": "defiance",
+      "arc_position": "premise",
+      "spoiler_level": "minor",
+      "resume_episode": 7,
+      "policy_flags": [
+        "coercion:medium",
+        "violence:medium"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Aristocratic siblings invade Juliana's cottage to mock her poverty and marriage to a 'scarred beggar.' Juliana defends her dignity; Gerald threatens to 'make a beggar disappear.' Ends on the husband arriving with firewood — alive, capable, unimpressed.",
+        "who": "Juliana (heroine, working-class by choice), Clarissa & Gerald (aristocratic antagonists), Alexander (scarred husband, seen only at end).",
+        "stakes": "Juliana's home, marriage, and husband's safety vs. aristocratic power and cruelty.",
+        "open_question": "Will Alexander's arrival defuse or ignite the threat? What 'influence' does Gerald actually have?",
+        "unexplained_refs": [],
+        "hook": 3.5,
+        "cliffhanger": 4.5,
+        "standalone": 4.5,
+        "escalation": 4.75,
+        "premise": 4.5,
+        "spoiler_level": "minor",
+        "judge_spread": 2.0,
+        "standalone_min": 4.0,
+        "judge_score": 0.8175,
+        "rule_score": 0.6169,
+        "craft": {
+          "long for a promo": 0.014
+        },
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 4.0,
+          "cliffhanger": 5.0,
+          "standalone": 5.0,
+          "escalation": 5.0,
+          "premise": 5.0,
+          "unexplained_refs": [
+            "Scarred Bearded Man's identity",
+            "Gerald's history with Juliana"
+          ],
+          "spoiler_level": "none"
+        }
+      },
+      "score_parts": {
+        "hook": 0.1609,
+        "cliff": 0.1992,
+        "intensity": 0.064,
+        "stakes": 0.0375,
+        "escalation": 0.0,
+        "sound_off": 0.05,
+        "funnel": 0.1054,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.5363,
+        "opening_peak": 0.5363,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.664,
+        "tail_after_cliff": 0.0,
+        "intensity": 0.5333,
+        "peak": 0.95,
+        "escalation": -0.0446,
+        "stakes": 0.375,
+        "dead_air": 3.2,
+        "lines": 14,
+        "first_line_at": 0.0,
+        "opening_words": 6,
+        "hook_kind": "DIALOGUE",
+        "talk_tail": 4.3,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 7,
+        "last_episode": 7,
+        "series_position": 0.122,
+        "speakers": [
+          "Clarissa",
+          "Gerald",
+          "Juliana"
+        ],
+        "hook_text": "Clarissa: \"This is where you live now?\"",
+        "cliff_text": "[action] The Scarred Bearded Man marches purposefully toward the cottage, carrying a heavy...",
+        "scenes": [
+          "7-1",
+          "7-2"
+        ]
+      }
+    },
+    {
+      "rank": 13,
+      "role": "retargeting",
+      "rank_reason": "Hold for viewers who already started the show: the judge says it gives away a late twist (episode 43).",
+      "id": "C00979",
+      "score": 0.7697,
+      "format": "single",
+      "duration": 44.0,
+      "segments": [
+        {
+          "episode": 43,
+          "start": "01:08.80",
+          "end": "01:52.80",
+          "start_seconds": 68.8,
+          "end_seconds": 112.8,
+          "duration": 44.0,
+          "episode_duration": 114.96
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.2,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You sold my men to the enemy.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.6,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "I didn't!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 4.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "And when you believed I was dead...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 7.3,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You took my title.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 9.2,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Brittle snap of breaking sealing wax.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.7,
+          "kind": "DIALOGUE",
+          "speaker": "Crown Official",
+          "text": "Official death confirmation was filed three months after the ambush.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 17.2,
+          "kind": "DIALOGUE",
+          "speaker": "Crown Official",
+          "text": "Duke Alexander Ashburn was declared dead.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.8,
+          "kind": "DIALOGUE",
+          "speaker": "Crown Official",
+          "text": "His estate and title were subsequently transferred under false authority.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 24.6,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "I was told he was dead!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 28.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "You were told exactly what you needed to hear.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 31.2,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "Sterling handled the report!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 36.0,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "My Lord?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 38.2,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Heavy iron latch clicking open and wooden door creaking.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.6,
+          "kind": "DIALOGUE",
+          "speaker": "Police Constable",
+          "text": "Going somewhere, Lord Sterling?",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 43,
+        "time": "01:09.00",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander",
+        "text": "You sold my men to the enemy.",
+        "beat_id": "E043-056"
+      },
+      "cliffhanger": {
+        "episode": 43,
+        "time": "01:50.40",
+        "kind": "DIALOGUE",
+        "speaker": "Police Constable",
+        "text": "Going somewhere, Lord Sterling?",
+        "beat_id": "E043-085"
+      },
+      "why_it_works": "Dead Duke returns with receipts; traitor arrested on camera",
+      "hook_type": "betrayal",
+      "arc_position": "late",
+      "spoiler_level": "major",
+      "resume_episode": 44,
+      "policy_flags": [
+        "violence:medium",
+        "weapon:medium"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Alexander confronts Rupert with documented betrayal: death certificate, stolen title, sold men. Sterling arrested on camera. Receipts-driven payoff.",
+        "who": "Alexander (Duke), Lord Rupert Ashburn, Crown Official, Catherine, Lord Sterling, Police Constable",
+        "stakes": "Rupert's title and freedom; Sterling's arrest; Alexander's reclaimed power",
+        "open_question": "Will Rupert hang? What happens to Catherine now?",
+        "unexplained_refs": [
+          "the ambush"
+        ],
+        "hook": 5.0,
+        "cliffhanger": 4.5,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "spoiler_level": "major",
+        "judge_spread": 0.0,
+        "standalone_min": 4.0,
+        "judge_score": 0.8,
+        "rule_score": 0.6785,
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 5.0,
+          "cliffhanger": 5.0,
+          "standalone": 4.0,
+          "escalation": 5.0,
+          "premise": 5.0,
+          "unexplained_refs": [
+            "Sterling",
+            "Catherine",
+            "the enemy",
+            "the ambush"
+          ],
+          "spoiler_level": "minor"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.2394,
+        "cliff": 0.2441,
+        "intensity": 0.0746,
+        "stakes": 0.05,
+        "escalation": 0.0032,
+        "sound_off": 0.05,
+        "funnel": 0.0172,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.7981,
+        "opening_peak": 0.7981,
+        "hook_offset": 0.2,
+        "cliff_prior": 0.8138,
+        "tail_after_cliff": 0.3,
+        "intensity": 0.6214,
+        "peak": 1.0,
+        "escalation": 0.0646,
+        "stakes": 0.5,
+        "dead_air": 2.6,
+        "lines": 12,
+        "first_line_at": 0.2,
+        "opening_words": 9,
+        "hook_kind": "DIALOGUE",
+        "talk_tail": 0.3,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 43,
+        "last_episode": 43,
+        "series_position": 0.857,
+        "speakers": [
+          "Alexander",
+          "Blond Nobleman",
+          "Catherine",
+          "Crown Official",
+          "Police Constable"
+        ],
+        "hook_text": "Alexander: \"You sold my men to the enemy.\"",
+        "cliff_text": "Police Constable: \"Going somewhere, Lord Sterling?\"",
+        "scenes": [
+          "43-1"
+        ]
+      }
+    },
+    {
+      "rank": 14,
+      "role": "retargeting",
+      "rank_reason": "Hold for viewers who already started the show: the judge says it gives away a late twist (episode 28).",
+      "id": "C00657",
+      "score": 0.8606,
+      "format": "single",
+      "duration": 59.7,
+      "segments": [
+        {
+          "episode": 28,
+          "start": "00:37.70",
+          "end": "01:37.40",
+          "start_seconds": 37.7,
+          "end_seconds": 97.4,
+          "duration": 59.7,
+          "episode_duration": 138.5
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.5,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "I was poisoned!",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.6,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "And you... you knew!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 5.9,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "Catherine knew!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 7.9,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "They have been—",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 9.1,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "The Duchess collapses back onto the pillows, coughing violently and clutching her chest.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 10.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Let me help her!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 11.8,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "She's still weak, you cannot leave her like this!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 15.1,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "You see?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 16.3,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "The poison has clearly damaged her mind.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 19.3,
+          "kind": "DIALOGUE",
+          "speaker": "Dowager Duchess",
+          "text": "I am not delusional!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 20.9,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "Of course you are not.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 22.4,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "You are merely confused.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 23.9,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "How convenient that the only person who can prove the poison exists...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.2,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "...is the maid who claims to have discovered it.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 29.5,
+          "kind": "DIALOGUE",
+          "speaker": "Blond Nobleman",
+          "text": "Take her away before she poisons the rest of this house.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.1,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Catherine ruthlessly yanks the silver locket off Juliana's neck.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 33.5,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "No!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.5,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Where did a gutter rat like you find a silver locket?",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 37.7,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "Give it back!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 39.1,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "It belonged to my mother!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 41.3,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "A witch has no need for family heirlooms in the gallows.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 43.3,
+          "kind": "SFX",
+          "speaker": "",
+          "text": "Metallic clatter as the silver pendant bounces against the wooden baseboard.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 44.8,
+          "kind": "DIALOGUE",
+          "speaker": "Juliana",
+          "text": "My mother's locket!",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 50.3,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Catherine lifts the heavy herbarium, dusting off the cover before opening its aged parchment pages.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 53.5,
+          "kind": "DIALOGUE",
+          "speaker": "Catherine",
+          "text": "Juliana...",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 57.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Juliana gasps in horror, realizing her secret identity has been laid bare.",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 28,
+        "time": "00:38.20",
+        "kind": "DIALOGUE",
+        "speaker": "Dowager Duchess",
+        "text": "I was poisoned!",
+        "beat_id": "E028-030"
+      },
+      "cliffhanger": {
+        "episode": 28,
+        "time": "01:35.20",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "Juliana gasps in horror, realizing her secret identity has been laid bare.",
+        "beat_id": "E028-070"
+      },
+      "why_it_works": "Poison accusation cascades into witch hunt and identity expose in one minute.",
+      "hook_type": "betrayal",
+      "arc_position": "mid",
+      "spoiler_level": "major",
+      "resume_episode": 28,
+      "policy_flags": [
+        "coercion:medium",
+        "violence:medium"
+      ],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Dowager Duchess accuses Catherine of poisoning; blond nobleman gaslights her; Catherine arrests Juliana, steals her mother's locket, finds hidden herbarium exposing Juliana's secret healer identity. Dense, fast, high-stakes cascade.",
+        "who": "Dowager Duchess (poison victim), Catherine (accused poisoner), Blond Nobleman (enforcer), Juliana (framed healer)",
+        "stakes": "Duchess's life, Juliana's freedom and life (witch accusation), truth of poisoning conspiracy, Juliana's secret identity",
+        "open_question": "Now that Catherine has the herbarium, will Juliana be executed or turned?",
+        "unexplained_refs": [],
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 3.5,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "spoiler_level": "major",
+        "judge_spread": 0.0,
+        "standalone_min": 3.0,
+        "judge_score": 0.825,
+        "rule_score": 0.7406,
+        "craft": {
+          "long for a promo": 0.0388
+        },
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 5.0,
+          "cliffhanger": 5.0,
+          "standalone": 4.0,
+          "escalation": 5.0,
+          "premise": 5.0,
+          "unexplained_refs": [
+            "Catherine",
+            "Blond Nobleman",
+            "the silver locket",
+            "the herbarium",
+            "the Duchess's relation to Juliana"
+          ],
+          "spoiler_level": "minor"
+        },
+        "pairwise_checked": true
+      },
+      "score_parts": {
+        "hook": 0.253,
+        "cliff": 0.2223,
+        "intensity": 0.0734,
+        "stakes": 0.0875,
+        "escalation": 0.0006,
+        "sound_off": 0.05,
+        "funnel": 0.0539,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.8432,
+        "opening_peak": 0.8432,
+        "hook_offset": 0.5,
+        "cliff_prior": 0.741,
+        "tail_after_cliff": 0.4,
+        "intensity": 0.6115,
+        "peak": 1.0,
+        "escalation": 0.0115,
+        "stakes": 0.875,
+        "dead_air": 3.6,
+        "lines": 21,
+        "first_line_at": 0.5,
+        "opening_words": 7,
+        "hook_kind": "DIALOGUE",
+        "talk_tail": 4.6,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 28,
+        "last_episode": 28,
+        "series_position": 0.551,
+        "speakers": [
+          "Blond Nobleman",
+          "Catherine",
+          "Dowager Duchess",
+          "Juliana"
+        ],
+        "hook_text": "Dowager Duchess: \"I was poisoned!\"",
+        "cliff_text": "[action] Juliana gasps in horror, realizing her secret identity has been laid bare.",
+        "scenes": [
+          "28-1"
+        ]
+      }
+    },
+    {
+      "rank": 15,
+      "role": "retargeting",
+      "rank_reason": "Hold for viewers who already started the show: the judge says it gives away a late twist (episode 39).",
+      "id": "C00886",
+      "score": 0.7032,
+      "format": "single",
+      "duration": 35.41,
+      "segments": [
+        {
+          "episode": 39,
+          "start": "01:03.00",
+          "end": "01:38.41",
+          "start_seconds": 63.0,
+          "end_seconds": 98.41,
+          "duration": 35.41,
+          "episode_duration": 98.41
+        }
+      ],
+      "transcript": [
+        {
+          "segment": 1,
+          "t": 0.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "They buried Alexander Ashwin three years ago.",
+          "hook": true,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 2.6,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Today, he comes home.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 5.5,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Alexander emerges in full ducal splendor—dressed in an immaculate navy tailcoat lined with gold embroidery, double-breasted brass buttons, and a crisp white cravat.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 12.8,
+          "kind": "DIALOGUE",
+          "speaker": "Loyalist",
+          "text": "Your Grace.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 17.5,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "Secure the chapel.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 20.8,
+          "kind": "DIALOGUE",
+          "speaker": "Loyalist",
+          "text": "Yes, Your Grace.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 22.5,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "No more hiding.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 24.5,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "I am taking back my house.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 27.2,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Alexander marches forward unstoppably, his long coat fluttering in the winter wind as his icy gaze locks forward.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 32.0,
+          "kind": "DIALOGUE",
+          "speaker": "Alexander",
+          "text": "And I am bringing my wife home.",
+          "hook": false,
+          "cliffhanger": false
+        },
+        {
+          "segment": 1,
+          "t": 34.8,
+          "kind": "ACTION",
+          "speaker": "",
+          "text": "Alexander's eyes burn with furious determination as the screen cuts sharply to black.",
+          "hook": false,
+          "cliffhanger": true
+        }
+      ],
+      "hook": {
+        "episode": 39,
+        "time": "01:03.00",
+        "kind": "DIALOGUE",
+        "speaker": "Alexander",
+        "text": "They buried Alexander Ashwin three years ago.",
+        "beat_id": "E039-040"
+      },
+      "cliffhanger": {
+        "episode": 39,
+        "time": "01:37.80",
+        "kind": "ACTION",
+        "speaker": "",
+        "text": "Alexander's eyes burn with furious determination as the screen cuts sharply to black.",
+        "beat_id": "E039-058"
+      },
+      "why_it_works": "Dead-man-walking hook; ducal reclaim vow",
+      "hook_type": "reveal",
+      "arc_position": "late",
+      "spoiler_level": "major",
+      "resume_episode": 40,
+      "policy_flags": [],
+      "sound_off_hook": true,
+      "judge": {
+        "notes": "Big premise reveal: presumed-dead Duke returns in full regalia to reclaim title, home, and wife. Pure power fantasy hook.",
+        "who": "Alexander Ashwin (Duke, back from dead), loyalist servant",
+        "stakes": "Reclaiming dukedom, home, and wife from usurpers",
+        "open_question": "Who buried him and stole his house? Where is Juliana now?",
+        "unexplained_refs": [],
+        "hook": 4.75,
+        "cliffhanger": 4.25,
+        "standalone": 4.0,
+        "escalation": 4.25,
+        "premise": 5.0,
+        "spoiler_level": "major",
+        "judge_spread": 1.0,
+        "standalone_min": 4.0,
+        "judge_score": 0.7875,
+        "rule_score": 0.6288,
+        "jury": {
+          "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+          "hook": 5.0,
+          "cliffhanger": 5.0,
+          "standalone": 4.0,
+          "escalation": 4.0,
+          "premise": 5.0,
+          "unexplained_refs": [
+            "wife",
+            "chapel",
+            "house"
+          ],
+          "spoiler_level": "none"
+        }
+      },
+      "score_parts": {
+        "hook": 0.2162,
+        "cliff": 0.2559,
+        "intensity": 0.06,
+        "stakes": 0.0125,
+        "escalation": 0.0073,
+        "sound_off": 0.05,
+        "funnel": 0.0269,
+        "dead_air": -0.0,
+        "context": -0.0,
+        "format": -0.0
+      },
+      "features": {
+        "hook_prior": 0.7207,
+        "opening_peak": 0.7207,
+        "hook_offset": 0.0,
+        "cliff_prior": 0.853,
+        "tail_after_cliff": 0.0,
+        "intensity": 0.5,
+        "peak": 1.0,
+        "escalation": 0.1467,
+        "stakes": 0.125,
+        "dead_air": 4.0,
+        "lines": 8,
+        "first_line_at": 0.0,
+        "opening_words": 11,
+        "hook_kind": "DIALOGUE",
+        "talk_tail": 0.41,
+        "sound_off_hook": true,
+        "context_risk": 0.0,
+        "first_episode": 39,
+        "last_episode": 39,
+        "series_position": 0.776,
+        "speakers": [
+          "Alexander",
+          "Loyalist"
+        ],
+        "hook_text": "Alexander: \"They buried Alexander Ashwin three years ago.\"",
+        "cliff_text": "[action] Alexander's eyes burn with furious determination as the screen cuts sharply to black.",
+        "scenes": [
+          "39-4",
+          "39-5"
+        ]
+      }
+    }
+  ],
+  "rejected_by_judge": [
+    {
+      "id": "C00028",
+      "segments": [
+        [
+          2,
+          47.6,
+          72.8
+        ]
+      ],
+      "reason": "cliffhanger 2 < 3: it does not end on an unresolved moment",
+      "why_it_works": "Sister and matriarch pile on public humiliation; fiancé orders her out; clear underdog setup for revenge/redemption.",
+      "unexplained_refs": [
+        "mother's apothecary herbs"
+      ]
+    },
+    {
+      "id": "C00039",
+      "segments": [
+        [
+          2,
+          74.2,
+          96.8
+        ]
+      ],
+      "reason": "cliffhanger 2.5 < 3: it does not end on an unresolved moment",
+      "why_it_works": "Calm fury destroys a powerful man's reputation in seconds — cathartic public takedown.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00073",
+      "segments": [
+        [
+          3,
+          96.5,
+          135.5
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Powerful man publicly rescues humiliated woman with a kneeled proposal in a cathedral.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00125",
+      "segments": [
+        [
+          6,
+          0.0,
+          33.7
+        ]
+      ],
+      "reason": "cliffhanger 2.5 < 3: it does not end on an unresolved moment",
+      "why_it_works": "Intimate quiet after chaos — bride chooses dignity over shame, thunder marks turning point.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00130",
+      "segments": [
+        [
+          6,
+          74.3,
+          106.0
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Silent competence and a single line ('I lost everything') build instant empathy and mystery.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00146",
+      "segments": [
+        [
+          7,
+          69.5,
+          108.1
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Silent intimidation scares off villain; 'didn't need to' power fantasy",
+      "unexplained_refs": [
+        "beggar husband"
+      ]
+    },
+    {
+      "id": "C00215",
+      "segments": [
+        [
+          9,
+          58.5,
+          112.0
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Life-saving kindness pivots to identity thriller; final whisper hooks.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00219",
+      "segments": [
+        [
+          9,
+          40.8,
+          74.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Healer's quiet competence wins gratitude; hints at reputation building",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00237",
+      "segments": [
+        [
+          10,
+          38.0,
+          86.5
+        ]
+      ],
+      "reason": "standalone 1 < 3 in at least one judging pass",
+      "why_it_works": "Tender scar-kissing dialogue sells chemistry but lacks stakes — only works for invested viewers.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00297",
+      "segments": [
+        [
+          12,
+          65.2,
+          87.21
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Wife defies blackmailer to save husband, demands location",
+      "unexplained_refs": [
+        "the garden"
+      ]
+    },
+    {
+      "id": "C00314",
+      "segments": [
+        [
+          12,
+          43.7,
+          87.21
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Sadistic sister forces wife to shred hands in thorns or husband hangs.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00334",
+      "segments": [
+        [
+          13,
+          24.2,
+          56.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Heroine chooses agony for love; villain watches, clock ticks; blood on screen.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00337",
+      "segments": [
+        [
+          13,
+          29.9,
+          56.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Chained husband watches wife crawl into razor thorns; thorns shred her hands.",
+      "unexplained_refs": [
+        "why Alexander is chained"
+      ]
+    },
+    {
+      "id": "C00338",
+      "segments": [
+        [
+          13,
+          29.9,
+          53.5
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Wife crawls into death-thorns to save condemned husband.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00380",
+      "segments": [
+        [
+          15,
+          63.2,
+          86.0
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Lethal protector steps up; veteran identity confirmed by enemy.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00410",
+      "segments": [
+        [
+          16,
+          19.2,
+          52.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Visceral fight choreography; villain name drop",
+      "unexplained_refs": [
+        "Gerald Harrington"
+      ]
+    },
+    {
+      "id": "C00446",
+      "segments": [
+        [
+          17,
+          60.5,
+          112.0
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Intimate whisper hook; marital mystery payoff",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00457",
+      "segments": [
+        [
+          18,
+          158.0,
+          186.5
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Homeless couple, cold fury vs tears, imminent retaliation",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00537",
+      "segments": [
+        [
+          23,
+          78.5,
+          124.5
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Duplicate of Clip B — same poison reveal, cure, door cliffhanger.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00538",
+      "segments": [
+        [
+          23,
+          86.0,
+          131.5
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Poison reveal, desperate cure, door opens on unknown threat.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00570",
+      "segments": [
+        [
+          24,
+          67.5,
+          90.1
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Noblewoman endures humiliation as servant while secretly armed with healing knowledge and defiance.",
+      "unexplained_refs": [
+        "mother's remedy journal"
+      ]
+    },
+    {
+      "id": "C00596",
+      "segments": [
+        [
+          25,
+          82.5,
+          114.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Poison plot uncovered, wife treats victim secretly",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00613",
+      "segments": [
+        [
+          26,
+          55.8,
+          115.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Poisoned duchess recognizes secret ring on maid's hand",
+      "unexplained_refs": [
+        "Juliana's family"
+      ]
+    },
+    {
+      "id": "C00619",
+      "segments": [
+        [
+          26,
+          86.5,
+          110.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "A single ring triggers a noblewoman's terrified recognition of a hidden past.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00623",
+      "segments": [
+        [
+          26,
+          95.0,
+          115.8
+        ]
+      ],
+      "reason": "standalone 1 < 3 in at least one judging pass",
+      "why_it_works": "Duchess recognizes ring on Juliana's hand, demands answers.",
+      "unexplained_refs": [
+        "the ring"
+      ]
+    },
+    {
+      "id": "C00641",
+      "segments": [
+        [
+          27,
+          124.6,
+          145.2
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Powerful nobleman twists healer's aid into crime — instant sympathy.",
+      "unexplained_refs": [
+        "the Duchess"
+      ]
+    },
+    {
+      "id": "C00644",
+      "segments": [
+        [
+          27,
+          26.1,
+          46.4
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Emotional identity mystery hooks instantly",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00645",
+      "segments": [
+        [
+          27,
+          115.0,
+          145.2
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Heroine framed for poisoning while trying to save victim",
+      "unexplained_refs": [
+        "Her Grace"
+      ]
+    },
+    {
+      "id": "C00663",
+      "segments": [
+        [
+          28,
+          76.8,
+          97.4
+        ]
+      ],
+      "reason": "standalone 1 < 3 in at least one judging pass",
+      "why_it_works": "Witch accusation plus hidden identity mystery; too confusing alone.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00758",
+      "segments": [
+        [
+          33,
+          36.5,
+          68.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Interrogation tightens into family blackmail, hinting wider conspiracy.",
+      "unexplained_refs": [
+        "mother's book"
+      ]
+    },
+    {
+      "id": "C00815",
+      "segments": [
+        [
+          36,
+          117.0,
+          139.0
+        ]
+      ],
+      "reason": "standalone 1 < 3 in at least one judging pass",
+      "why_it_works": "Execution deadline, witch accusation, family member's betrayal caused it",
+      "unexplained_refs": [
+        "the truth",
+        "magistrate"
+      ]
+    },
+    {
+      "id": "C00816",
+      "segments": [
+        [
+          36,
+          117.0,
+          152.0
+        ]
+      ],
+      "reason": "standalone 1 < 3 in at least one judging pass",
+      "why_it_works": "Relentless bad news cascade with a hard deadline; each line raises the floor.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00848",
+      "segments": [
+        [
+          38,
+          11.0,
+          67.0
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Starving prisoner's fierce loyalty contrasts with brutality; bells link to wedding",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C00875",
+      "segments": [
+        [
+          38,
+          62.8,
+          87.91
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Bells as ticking clock, heroine facing death with defiant hope, lover's name as lifeline.",
+      "unexplained_refs": [
+        "the wedding"
+      ]
+    },
+    {
+      "id": "C00941",
+      "segments": [
+        [
+          41,
+          57.8,
+          85.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Chained heroine faces smug villains — then the building explodes. Chaos as salvation.",
+      "unexplained_refs": [
+        "Ashburgh title",
+        "Blond Nobleman"
+      ]
+    },
+    {
+      "id": "C00963",
+      "segments": [
+        [
+          42,
+          21.5,
+          77.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Presumed-dead duke returns; guard loyalty flip; mother's public claim; revenge vow",
+      "unexplained_refs": [
+        "Rupert"
+      ]
+    },
+    {
+      "id": "C00980",
+      "segments": [
+        [
+          43,
+          68.8,
+          102.2
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Returned duke confronts usurper; death certificate was forged.",
+      "unexplained_refs": [
+        "the ambush",
+        "three-month gap"
+      ]
+    },
+    {
+      "id": "C00983",
+      "segments": [
+        [
+          43,
+          60.0,
+          102.2
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Duke declared dead, title stolen, betrayer named — revenge engine engaged.",
+      "unexplained_refs": [
+        "Lord Henry Sterling",
+        "the ambush"
+      ]
+    },
+    {
+      "id": "C01022",
+      "segments": [
+        [
+          45,
+          54.0,
+          108.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Secret marriage announced, then legally crushed in 55 seconds — maximum whiplash.",
+      "unexplained_refs": [
+        "Royal Matrimonial Register"
+      ]
+    },
+    {
+      "id": "C01023",
+      "segments": [
+        [
+          45,
+          54.0,
+          113.2
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Triumphant marriage proclamation instantly crushed by Crown authority declaring it legally void.",
+      "unexplained_refs": [
+        "Royal Matrimonial Register"
+      ]
+    },
+    {
+      "id": "C01094",
+      "segments": [
+        [
+          47,
+          56.8,
+          83.5
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Public betrayal by protector; one word shifts power.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C01319",
+      "segments": [
+        [
+          1,
+          17.8,
+          41.5
+        ],
+        [
+          3,
+          132.7,
+          145.75
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Double twist: betrayal then public rescue proposal",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C01429",
+      "segments": [
+        [
+          3,
+          40.4,
+          60.0
+        ],
+        [
+          6,
+          58.2,
+          74.3
+        ]
+      ],
+      "reason": "both judges together rate the cliffhanger 2.5 < 3",
+      "why_it_works": "Instant emotional gut-punch: mother figure disowns daughter, guards drag her out, then quiet resilience hooks empathy.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C01449",
+      "segments": [
+        [
+          4,
+          131.5,
+          151.4
+        ],
+        [
+          8,
+          16.3,
+          37.3
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Public ruin becomes private sanctuary; beard mystery deepens.",
+      "unexplained_refs": [
+        "The wedding context"
+      ]
+    },
+    {
+      "id": "C01498",
+      "segments": [
+        [
+          4,
+          33.8,
+          59.0
+        ],
+        [
+          8,
+          60.5,
+          75.6
+        ]
+      ],
+      "reason": "cliffhanger 2.5 < 3: it does not end on an unresolved moment",
+      "why_it_works": "Betrayal hook flips to dignity; scars become shared language not pity",
+      "unexplained_refs": [
+        "the ring"
+      ]
+    },
+    {
+      "id": "C01537",
+      "segments": [
+        [
+          5,
+          25.4,
+          48.8
+        ],
+        [
+          11,
+          72.1,
+          97.3
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Family betrayal → false arrest setup → protective restraint → planted proof",
+      "unexplained_refs": [
+        "the ledger"
+      ]
+    },
+    {
+      "id": "C01737",
+      "segments": [
+        [
+          9,
+          5.5,
+          24.0
+        ],
+        [
+          13,
+          78.0,
+          107.0
+        ]
+      ],
+      "reason": "standalone 1 < 3 in at least one judging pass",
+      "why_it_works": "Emotional contrast but disjointed; ring discovery pays off",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C01809",
+      "segments": [
+        [
+          10,
+          9.1,
+          25.2
+        ],
+        [
+          14,
+          51.8,
+          81.3
+        ]
+      ],
+      "reason": "cliffhanger 2.5 < 3: it does not end on an unresolved moment",
+      "why_it_works": "Tender enemy-to-lover beat capped by a sword-crossed vow: 'No one will hurt you for protecting me.'",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C02203",
+      "segments": [
+        [
+          16,
+          42.5,
+          52.8
+        ],
+        [
+          19,
+          55.3,
+          83.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Presumed-dead heir returns, mother captive, he chooses stealth over rage",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C02250",
+      "segments": [
+        [
+          20,
+          99.2,
+          109.5
+        ],
+        [
+          25,
+          128.0,
+          159.5
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Two separate scenes stitched together; emotional beats land but lack visual cohesion.",
+      "unexplained_refs": [
+        "Ashbury"
+      ]
+    },
+    {
+      "id": "C02427",
+      "segments": [
+        [
+          26,
+          55.8,
+          62.5
+        ],
+        [
+          31,
+          138.0,
+          155.2
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Mother poisoned, daughter chained, tortured with hot iron",
+      "unexplained_refs": [
+        "mother's life's work"
+      ]
+    },
+    {
+      "id": "C02485",
+      "segments": [
+        [
+          27,
+          115.0,
+          128.5
+        ],
+        [
+          32,
+          7.5,
+          19.0
+        ]
+      ],
+      "reason": "standalone 1 < 3 in at least one judging pass",
+      "why_it_works": "Lightning-fast frame-up, villain weaponizes heroine's fear, mother hostage raises personal stakes.",
+      "unexplained_refs": []
+    },
+    {
+      "id": "C02958",
+      "segments": [
+        [
+          43,
+          13.5,
+          26.0
+        ],
+        [
+          49,
+          98.0,
+          124.8
+        ]
+      ],
+      "reason": "standalone 2 < 3 in at least one judging pass",
+      "why_it_works": "Guard chooses real Duke, but conspiracy talk loses cold viewers",
+      "unexplained_refs": [
+        "the hearing",
+        "crowned priest"
+      ]
+    }
+  ]
+}

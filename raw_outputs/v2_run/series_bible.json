@@ -1,0 +1,212 @@
+{
+  "premise": "After being abandoned at the altar by her fiancé for her sister, a noblewoman marries a mysterious scarred warrior and chooses exile over her family's cruelty, unaware he is a duke reclaiming his stolen title.",
+  "protagonist": "Lady Juliana",
+  "characters": [
+    {
+      "name": "Lady Juliana",
+      "role": "Protagonist; noblewoman and herbalist who marries a mysterious warrior after being abandoned at the altar."
+    },
+    {
+      "name": "Alexander",
+      "role": "Duke of Ashburn; scarred war veteran who marries Juliana and secretly works to reclaim his usurped title."
+    },
+    {
+      "name": "Gerald",
+      "role": "Juliana's former fiancé; abandons her at the altar for her sister and later conspires against her."
+    },
+    {
+      "name": "Clarissa",
+      "role": "Juliana's cruel sister; marries Gerald and participates in schemes against Juliana."
+    },
+    {
+      "name": "Rupert",
+      "role": "Usurper; conspires with Catherine to poison the Dowager Duchess and seize the dukedom."
+    },
+    {
+      "name": "Catherine",
+      "role": "Co-conspirator; Rupert's partner who later becomes Catherine Ashbridge and plots against Juliana and Alexander."
+    },
+    {
+      "name": "Dowager Duchess",
+      "role": "Alexander's mother; poisoned by Rupert and Catherine, later rescued."
+    },
+    {
+      "name": "Lady Ashcroft",
+      "role": "Juliana's stepmother; disowns Juliana and sides with Gerald and Clarissa."
+    },
+    {
+      "name": "Lord Ashcroft",
+      "role": "Juliana's father; disowns Juliana."
+    },
+    {
+      "name": "Prudence",
+      "role": "Villager; Juliana's loyal ally who helps her infiltrate Ashbury Manor."
+    },
+    {
+      "name": "Father Thomas",
+      "role": "Corrupt priest; allies with Catherine to undermine Alexander and Juliana."
+    },
+    {
+      "name": "Lord Sterling",
+      "role": "Aristocratic conspirator; supports Rupert and Catherine's coup."
+    },
+    {
+      "name": "High Priest",
+      "role": "Ecclesiastical authority; invalidates Alexander and Juliana's marriage."
+    }
+  ],
+  "aliases": [
+    {
+      "label": "MATRIARCH",
+      "episodes": [
+        1,
+        1
+      ],
+      "name": "Lady Ashcroft"
+    },
+    {
+      "label": "LADY JULIANA",
+      "episodes": [
+        1,
+        34
+      ],
+      "name": "Lady Juliana"
+    },
+    {
+      "label": "LADY IN GOLD GOWN",
+      "episodes": [
+        1,
+        3
+      ],
+      "name": "Clarissa"
+    },
+    {
+      "label": "THE FORMER GROOM",
+      "episodes": [
+        1,
+        9
+      ],
+      "name": "Gerald"
+    },
+    {
+      "label": "NOBLE MATRIARCH",
+      "episodes": [
+        3,
+        3
+      ],
+      "name": "Lady Ashcroft"
+    },
+    {
+      "label": "THE BEARDED STRANGER",
+      "episodes": [
+        3,
+        3
+      ],
+      "name": "Alexander"
+    },
+    {
+      "label": "MYSTERIOUS BEARDED MAN",
+      "episodes": [
+        4,
+        6
+      ],
+      "name": "Alexander"
+    },
+    {
+      "label": "LADY ASHCROFT",
+      "episodes": [
+        4,
+        5
+      ],
+      "name": "Lady Ashcroft"
+    },
+    {
+      "label": "LORD ASHCROFT",
+      "episodes": [
+        5,
+        5
+      ],
+      "name": "Lord Ashcroft"
+    },
+    {
+      "label": "ARISTOCRATIC WOMAN",
+      "episodes": [
+        7,
+        7
+      ],
+      "name": "Clarissa"
+    },
+    {
+      "label": "SCARRED BEARDED MAN",
+      "episodes": [
+        7,
+        7
+      ],
+      "name": "Alexander"
+    },
+    {
+      "label": "LADY CLARISSA",
+      "episodes": [
+        37,
+        37
+      ],
+      "name": "Clarissa"
+    },
+    {
+      "label": "NOBLEWOMAN",
+      "episodes": [
+        24,
+        41
+      ],
+      "name": "Catherine"
+    },
+    {
+      "label": "DOWAGER DUCHESS",
+      "episodes": [
+        26,
+        43
+      ],
+      "name": "Dowager Duchess"
+    },
+    {
+      "label": "LADY CATHERINE",
+      "episodes": [
+        27,
+        27
+      ],
+      "name": "Catherine"
+    },
+    {
+      "label": "ALEXANDER'S MOTHER",
+      "episodes": [
+        35,
+        42
+      ],
+      "name": "Dowager Duchess"
+    },
+    {
+      "label": "LADY ASHBOURNE",
+      "episodes": [
+        47,
+        47
+      ],
+      "name": "Dowager Duchess"
+    },
+    {
+      "label": "HIGH PRIEST",
+      "episodes": [
+        45,
+        46
+      ],
+      "name": "High Priest"
+    },
+    {
+      "label": "FATHER THOMAS",
+      "episodes": [
+        49,
+        50
+      ],
+      "name": "Father Thomas"
+    }
+  ]
+}

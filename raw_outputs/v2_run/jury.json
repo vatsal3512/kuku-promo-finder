@@ -1,0 +1,19 @@
+{
+  "used": true,
+  "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+  "shortlist": 25,
+  "judged": 33,
+  "vetoed": 1,
+  "rounds": 4,
+  "usage": {
+    "model": "nvidia/mistralai/mistral-large-4-1t-a52b",
+    "keys": 3,
+    "rate_limited": 0,
+    "calls": 2,
+    "cache_hits": 0,
+    "prompt_tokens": 1619,
+    "completion_tokens": 7943,
+    "seconds": 355.26,
+    "failures": 0
+  }
+}

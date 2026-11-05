@@ -1,0 +1,554 @@
+{
+  "usage": {
+    "model": "nvidia/minimaxai/minimax-m3.1-flash",
+    "keys": 3,
+    "rate_limited": 0,
+    "calls": 1,
+    "cache_hits": 0,
+    "prompt_tokens": 880,
+    "completion_tokens": 2183,
+    "seconds": 149.21,
+    "failures": 0
+  },
+  "judge_model": "nvidia/minimaxai/minimax-m3.1-flash",
+  "clips_judged": 35,
+  "clips_total": 35,
+  "runs": {
+    "20261105-054202-offline": {
+      "hook": 4.33,
+      "cliffhanger": 4.47,
+      "standalone": 3.6,
+      "escalation": 4.47,
+      "premise": 4.33,
+      "unexplained_refs": 1.73,
+      "value": 0.77,
+      "standalone_pass_rate": 0.867,
+      "n": 15
+    },
+    "20261105-195121-llm": {
+      "hook": 4.53,
+      "cliffhanger": 4.67,
+      "standalone": 3.73,
+      "escalation": 4.67,
+      "premise": 4.2,
+      "unexplained_refs": 2.07,
+      "value": 0.8,
+      "standalone_pass_rate": 1.0,
+      "n": 15
+    },
+    "20261106-012736-llm": {
+      "hook": 4.53,
+      "cliffhanger": 4.47,
+      "standalone": 3.73,
+      "escalation": 4.47,
+      "premise": 4.2,
+      "unexplained_refs": 2.33,
+      "value": 0.78,
+      "standalone_pass_rate": 0.933,
+      "n": 15
+    }
+  },
+  "rows": {
+    "A": [
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 2,
+        "value": 0.8,
+        "clip": "A:1",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 3.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "unexplained_refs": 3,
+        "value": 0.69,
+        "clip": "A:2",
+        "passes_standalone": true
+      },
+      {
+        "hook": 3.0,
+        "cliffhanger": 3.0,
+        "standalone": 3.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "unexplained_refs": 1,
+        "value": 0.62,
+        "clip": "A:3",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 4.0,
+        "premise": 5.0,
+        "unexplained_refs": 0,
+        "value": 0.93,
+        "clip": "A:4",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 5,
+        "value": 0.81,
+        "clip": "A:5",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 4.0,
+        "standalone": 2.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "unexplained_refs": 3,
+        "value": 0.6,
+        "clip": "A:6",
+        "passes_standalone": false
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 2,
+        "value": 0.83,
+        "clip": "A:7",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 4.0,
+        "standalone": 3.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "unexplained_refs": 1,
+        "value": 0.72,
+        "clip": "A:8",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 5.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 0,
+        "value": 0.97,
+        "clip": "A:9",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 2,
+        "value": 0.88,
+        "clip": "A:10",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 2,
+        "value": 0.88,
+        "clip": "A:11",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 4.0,
+        "standalone": 5.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 0,
+        "value": 0.87,
+        "clip": "A:12",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 3.0,
+        "standalone": 3.0,
+        "escalation": 4.0,
+        "premise": 5.0,
+        "unexplained_refs": 2,
+        "value": 0.63,
+        "clip": "A:13",
+        "passes_standalone": true
+      },
+      {
+        "hook": 3.0,
+        "cliffhanger": 4.0,
+        "standalone": 2.0,
+        "escalation": 4.0,
+        "premise": 2.0,
+        "unexplained_refs": 1,
+        "value": 0.57,
+        "clip": "A:14",
+        "passes_standalone": false
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "unexplained_refs": 2,
+        "value": 0.77,
+        "clip": "A:15",
+        "passes_standalone": true
+      }
+    ],
+    "B": [
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 5,
+        "value": 0.81,
+        "clip": "A:5",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 4.0,
+        "standalone": 5.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 0,
+        "value": 0.95,
+        "clip": "B:1",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 4.0,
+        "standalone": 3.0,
+        "escalation": 3.0,
+        "premise": 4.0,
+        "unexplained_refs": 3,
+        "value": 0.61,
+        "clip": "B:2",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 3,
+        "value": 0.79,
+        "clip": "B:3",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 3,
+        "value": 0.84,
+        "clip": "B:4",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 4.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 0,
+        "value": 0.83,
+        "clip": "B:5",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 4.0,
+        "standalone": 3.0,
+        "escalation": 4.0,
+        "premise": 3.0,
+        "unexplained_refs": 1,
+        "value": 0.74,
+        "clip": "B:6",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 1,
+        "value": 0.84,
+        "clip": "B:7",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 2,
+        "value": 0.8,
+        "clip": "B:8",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 3.0,
+        "escalation": 4.0,
+        "premise": 3.0,
+        "unexplained_refs": 1,
+        "value": 0.79,
+        "clip": "B:9",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 4.0,
+        "standalone": 4.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "unexplained_refs": 0,
+        "value": 0.8,
+        "clip": "B:10",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 3.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 3,
+        "value": 0.77,
+        "clip": "B:11",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 2,
+        "value": 0.77,
+        "clip": "B:12",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 1,
+        "value": 0.92,
+        "clip": "B:14",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 3.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 6,
+        "value": 0.69,
+        "clip": "B:15",
+        "passes_standalone": true
+      }
+    ],
+    "C": [
+      {
+        "hook": 4.0,
+        "cliffhanger": 4.0,
+        "standalone": 3.0,
+        "escalation": 3.0,
+        "premise": 4.0,
+        "unexplained_refs": 3,
+        "value": 0.61,
+        "clip": "B:2",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 3,
+        "value": 0.79,
+        "clip": "B:3",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 3,
+        "value": 0.84,
+        "clip": "B:4",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 4.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 0,
+        "value": 0.83,
+        "clip": "B:5",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 4.0,
+        "standalone": 3.0,
+        "escalation": 4.0,
+        "premise": 3.0,
+        "unexplained_refs": 1,
+        "value": 0.74,
+        "clip": "B:6",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 1,
+        "value": 0.84,
+        "clip": "B:7",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 4.0,
+        "standalone": 4.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "unexplained_refs": 0,
+        "value": 0.8,
+        "clip": "B:10",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 2,
+        "value": 0.77,
+        "clip": "B:12",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 5.0,
+        "unexplained_refs": 1,
+        "value": 0.92,
+        "clip": "B:14",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 4.0,
+        "standalone": 4.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "unexplained_refs": 1,
+        "value": 0.76,
+        "clip": "C:2",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 5.0,
+        "standalone": 4.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 5,
+        "value": 0.78,
+        "clip": "C:7",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 4.0,
+        "standalone": 4.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "unexplained_refs": 3,
+        "value": 0.73,
+        "clip": "C:9",
+        "passes_standalone": true
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 4.0,
+        "standalone": 5.0,
+        "escalation": 4.0,
+        "premise": 4.0,
+        "unexplained_refs": 1,
+        "value": 0.85,
+        "clip": "C:10",
+        "passes_standalone": true
+      },
+      {
+        "hook": 4.0,
+        "cliffhanger": 5.0,
+        "standalone": 2.0,
+        "escalation": 5.0,
+        "premise": 4.0,
+        "unexplained_refs": 8,
+        "value": 0.65,
+        "clip": "C:11",
+        "passes_standalone": false
+      },
+      {
+        "hook": 5.0,
+        "cliffhanger": 4.0,
+        "standalone": 3.0,
+        "escalation": 4.0,
+        "premise": 5.0,
+        "unexplained_refs": 3,
+        "value": 0.72,
+        "clip": "C:15",
+        "passes_standalone": true
+      }
+    ]
+  }
+}

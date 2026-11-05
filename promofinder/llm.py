@@ -28,6 +28,31 @@ class LLMError(RuntimeError):
     pass
 
 
+class LLMAuthError(LLMError):
+    pass
+
+
+class LLMQuotaError(LLMError):
+    pass
+
+
+class LLMNotFound(LLMError):
+    pass
+
+
+class LLMRefusal(LLMError):
+    pass
+
+
+class LLMContextError(LLMError):
+    pass
+
+
+REFUSAL_RE = re.compile(r"^\s*(i'?m sorry|i am sorry|i can(no|')t|i am unable|i'm unable|i won'?t|as an ai)", re.I)
+QUOTA_RE = re.compile(r"insufficient[_ ]quota|credit|billing|payment required|exceeded your current quota", re.I)
+CONTEXT_RE = re.compile(r"context length|context window|maximum context|too many tokens|prompt is too long|reduce the length", re.I)
+
+
 def load_env_file(path: Path = Path(".env")):
     if not path.exists():
         return
@@ -94,6 +119,9 @@ class LLM:
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.lock = threading.Lock()
         self.max_timeouts = int(cfg.get("max_timeouts", 2))
+        self.key_names = keys
+        self.bad_keys: set[int] = set()
+        self.dead: LLMError | None = None
         self.stats = {"keys": len(self.clients), "rate_limited": 0, "calls": 0, "cache_hits": 0, "prompt_tokens": 0, "completion_tokens": 0, "seconds": 0.0, "failures": 0}
 
     def usage(self) -> dict:
@@ -103,11 +131,12 @@ class LLM:
         errors = self.stats.get("errors", {})
         return ", ".join(f"{k}: {v}" for k, v in sorted(errors.items())) or "none"
 
-    def _key(self, system: str, user: str) -> Path:
-        digest = hashlib.sha256(f"{self.spec}|{self.temperature}|{system}|{user}".encode("utf-8")).hexdigest()
+    def _key(self, system: str, user: str, extra: dict | None = None) -> Path:
+        tail = f"|{json.dumps(extra, sort_keys=True)}" if extra else ""
+        digest = hashlib.sha256(f"{self.spec}|{self.temperature}|{system}|{user}{tail}".encode("utf-8")).hexdigest()
         return self.cache_dir / f"{digest}.json"
 
-    def _call(self, system: str, user: str) -> str:
+    def _call(self, system: str, user: str, extra: dict | None = None) -> str:
         kwargs = dict(
             model=self.model,
             messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
@@ -116,10 +145,16 @@ class LLM:
         )
         if self.provider in JSON_MODE:
             kwargs["response_format"] = {"type": "json_object"}
+        if extra:
+            kwargs["extra_body"] = dict(extra)
+        if self.dead:
+            raise self.dead
         delay = 4.0
         with self.lock:
             index = self.turn % len(self.clients)
             self.turn += 1
+            while index in self.bad_keys and len(self.bad_keys) < len(self.clients):
+                index = (index + 1) % len(self.clients)
         tries = 6 * len(self.clients)
         timeouts = 0
         for attempt in range(tries):
@@ -128,6 +163,33 @@ class LLM:
                 response = self.clients[index].chat.completions.create(**kwargs)
             except Exception as exc:
                 status = getattr(exc, "status_code", None)
+                message = str(exc)
+                fatal = self._fatal(status, message)
+                if fatal is not None:
+                    with self.lock:
+                        self.bad_keys.add(index)
+                        self.stats.setdefault("errors", {})
+                        self.stats["errors"][type(fatal).__name__] = self.stats["errors"].get(type(fatal).__name__, 0) + 1
+                        if isinstance(fatal, LLMNotFound) or len(self.bad_keys) >= len(self.clients):
+                            self.dead = fatal
+                    if self.dead:
+                        raise fatal from exc
+                    index = next(i for i in range(len(self.clients)) if i not in self.bad_keys)
+                    continue
+                if status in (400, 413, 422) and CONTEXT_RE.search(message):
+                    raise LLMContextError(f"Prompt too long for {self.spec}") from exc
+                if status in (400, 422) and "extra_body" in kwargs:
+                    kwargs.pop("extra_body")
+                    continue
+                if status == 400 and "temperature" in message.lower() and "temperature" in kwargs:
+                    kwargs.pop("temperature")
+                    continue
+                if status == 400 and "max_tokens" in message and "max_tokens" in kwargs:
+                    kwargs["max_completion_tokens"] = kwargs.pop("max_tokens")
+                    continue
+                if status == 400 and "system" in message.lower() and kwargs["messages"][0]["role"] == "system":
+                    kwargs["messages"] = [{"role": "user", "content": system + "\n\n" + user}]
+                    continue
                 transient = status in (429, 500, 502, 503, 504) or status is None
                 if "Timeout" in type(exc).__name__:
                     timeouts += 1
@@ -166,11 +228,30 @@ class LLM:
                 if usage:
                     self.stats["prompt_tokens"] += getattr(usage, "prompt_tokens", 0) or 0
                     self.stats["completion_tokens"] += getattr(usage, "completion_tokens", 0) or 0
-            return response.choices[0].message.content or ""
+            choice = response.choices[0]
+            content = choice.message.content or ""
+            if getattr(choice, "finish_reason", None) == "content_filter" or (not content.strip() and getattr(choice, "finish_reason", None) != "length"):
+                with self.lock:
+                    self.stats["refusals"] = self.stats.get("refusals", 0) + 1
+                raise LLMRefusal(f"{self.spec} returned no content (finish reason: {getattr(choice, 'finish_reason', None)})")
+            if getattr(choice, "finish_reason", None) == "length":
+                with self.lock:
+                    self.stats["truncated"] = self.stats.get("truncated", 0) + 1
+            return content
         raise LLMError("Gave up after repeated rate limits")
 
-    def json(self, system: str, user: str, schema: type[BaseModel], retries: int = 2) -> BaseModel:
-        path = self._key(system, user)
+    def _fatal(self, status, message: str) -> LLMError | None:
+        names = " or ".join(self.key_names) or "the API key"
+        if status in (401, 403):
+            return LLMAuthError(f"{self.provider} rejected the API key (HTTP {status}). Check {names}.")
+        if status == 402 or (status == 429 and QUOTA_RE.search(message)):
+            return LLMQuotaError(f"{self.provider} says the account has no credit or quota left (HTTP {status}).")
+        if status == 404:
+            return LLMNotFound(f"Model {self.model!r} was not found on {self.provider} (HTTP 404). Check the model name.")
+        return None
+
+    def json(self, system: str, user: str, schema: type[BaseModel], retries: int = 2, extra: dict | None = None) -> BaseModel:
+        path = self._key(system, user, extra)
         if path.exists():
             try:
                 with self.lock:
@@ -181,7 +262,11 @@ class LLM:
         prompt = user
         last_error = None
         for _ in range(retries + 1):
-            raw = self._call(system, prompt)
+            raw = self._call(system, prompt, extra)
+            if "{" not in raw and "[" not in raw and REFUSAL_RE.search(raw):
+                with self.lock:
+                    self.stats["refusals"] = self.stats.get("refusals", 0) + 1
+                raise LLMRefusal(f"{self.spec} declined: {raw.strip()[:120]}")
             try:
                 parsed = schema.model_validate(extract_json(raw))
                 path.write_text(parsed.model_dump_json(), encoding="utf-8")

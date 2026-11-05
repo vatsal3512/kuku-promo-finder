@@ -13,9 +13,10 @@ IMPACT_RE = re.compile(
 )
 STAKES_RE = re.compile(
     r"\b(marry|married|marrying|marriage|wedding|bride|groom|husband|wife|dead|die|dies|dying|death|"
-    r"kill\w*|poison\w*|arrest\w*|hang\w*|gallows|noose|execut\w*|witch\w*|duke|duchess|disown\w*|"
-    r"betray\w*|pregnan\w*|divorce\w*|prison\w*|condemn\w*|traitor|treason|stole|steal\w*|thief|"
-    r"murder\w*|alive|grace|inherit\w*|dowry|son|mother|father|sister|blood|fortune|title|crown|"
+    r"kill\w*|poison\w*|arrest\w*|execut\w*|disown\w*|kidnap\w*|hostage|ransom|"
+    r"betray\w*|pregnan\w*|baby|custody|divorce\w*|affair|cheat\w*|prison\w*|jail|police|condemn\w*|traitor|stole|steal\w*|thief|"
+    r"murder\w*|alive|heir|heiress|inherit\w*|will|contract|company|shares|fired|bankrupt\w*|debt|revenge|"
+    r"son|daughter|mother|father|sister|brother|blood|fortune|"
     r"secret|lie|lied|liar|never|everything|nothing|ring|vow\w*)\b",
     re.I,
 )
@@ -47,10 +48,10 @@ CONTEXT_START_RE = re.compile(r"^(\.\.\.|…|and\b|but\b|so\b|then\b|because\b|o
 CONTINUES_RE = re.compile(r"(picks? up|directly|immediately|continu|follows? (directly|immediately|right))", re.I)
 
 HOOK_TYPES = [
-    ("betrayal", re.compile(r"\b(betray\w*|marrying me|holding her hand|changed my mind|never going to marry|you knew|affair|cheat\w*|abandon\w*|chose her|instead of you)\b", re.I)),
-    ("reveal", re.compile(r"\b(duke|your grace|alive|who are you|always me|lost son|crest|it's you|my son|recogni\w*|identity|imposter|impostor|truth)\b", re.I)),
-    ("injustice", re.compile(r"\b(arrest\w*|planted|accus\w*|witch\w*|trial|guilty|condemn\w*|gallows|hang\w*|frame\w*|poison\w*|magistrate|sentence\w*|execut\w*)\b", re.I)),
-    ("ultimatum", re.compile(r"\b(or your|or else|unless|name your price|do it|bare hands|choose|withdraw the charges|if you want)\b", re.I)),
+    ("betrayal", re.compile(r"\b(betray\w*|changed my mind|you knew|affair|cheat\w*|abandon\w*|chose her|chose him|instead of you|behind my back|with my (husband|wife|sister|best friend))\b", re.I)),
+    ("reveal", re.compile(r"\b(alive|who are you|it's you|it was you|my (son|daughter)|real (father|mother|name)|heir\w*|owner|chairman|billionaire|recogni\w*|identity|imposter|impostor|truth|secret)\b", re.I)),
+    ("injustice", re.compile(r"\b(arrest\w*|planted|accus\w*|fired|framed?|trial|guilty|condemn\w*|police|jail|evidence|thief|stole|poison\w*|sentence\w*|execut\w*)\b", re.I)),
+    ("ultimatum", re.compile(r"\b(or your|or else|unless|do it|choose|sign (it|this|the)|last chance|by tomorrow|if you want|you have until)\b", re.I)),
     ("rescue", re.compile(r"\b(take your hands off|let her go|let go of|stay behind me|i've got you|are you hurt|protect\w*|rescue\w*|don't touch her|step away)\b", re.I)),
     ("humiliation", re.compile(r"\b(beggar|worthless|plain|servant|kneel\w*|crawl\w*|mock\w*|disgrace\w*|embarrass\w*|beneath|your place|gutter|nobody|rat|filth|ashamed|laugh\w*)\b", re.I)),
     ("defiance", re.compile(r"\b(i will not|i won't|i chose|burn it|you cannot|dignity|i accept|how dare|enough|never again|i am not)\b", re.I)),

@@ -281,3 +281,82 @@ def test_craft_check_flags_weak_openings_and_tails():
     assert "thin opening line" in craft_check(thin, {})
     assert craft_check(visual, {}) == {}
     assert set(craft_check(tail, {})) == {"silent tail after last line", "long for a promo"}
+
+
+class DeadLLM(FakeLLM):
+    def __init__(self):
+        super().__init__()
+        self.dead = None
+
+    def json(self, system, user, schema):
+        from promofinder.llm import LLMAuthError
+        self.dead = LLMAuthError("nvidia rejected the API key (HTTP 401).")
+        raise self.dead
+
+
+def test_dead_model_still_returns_valid_promos(tmp_path, monkeypatch):
+    from promofinder import llm as llm_module
+    from promofinder.evaluate import load_run, validity
+    monkeypatch.setattr(llm_module, "LLM", lambda *a, **k: DeadLLM())
+    result = run(str(FIXTURE), out_root=str(tmp_path), mode="llm", top=3, log=lambda *_: None)
+    assert result["records"]
+    assert result["meta"]["degraded"]
+    report = validity(load_run(result["out_dir"]), str(FIXTURE), None)
+    assert report["all_valid"], report["issues"]
+
+
+def test_missing_key_falls_back_to_rules(tmp_path, monkeypatch):
+    from promofinder import llm as llm_module
+
+    def broken(*a, **k):
+        raise llm_module.LLMError("Missing API key: set NVIDIA_API_KEY")
+
+    monkeypatch.setattr(llm_module, "LLM", broken)
+    result = run(str(FIXTURE), out_root=str(tmp_path), mode="llm", top=3, log=lambda *_: None)
+    assert result["meta"]["mode"] == "offline"
+    assert result["meta"]["degraded"][0]["stage"] == "model"
+    assert result["records"]
+
+
+def test_profiles_change_the_budget():
+    from promofinder.profiles import apply_profile
+    cfg = apply_profile(load_config(None), "fast")
+    assert cfg["llm"]["judge_repeats"] == 1 and cfg["llm"]["jury_model"] == "" and cfg["skip_bible"]
+    assert apply_profile(load_config(None), None)["llm"]["judge_repeats"] == load_config(None)["llm"]["judge_repeats"]
+
+
+def test_stored_verdicts_do_not_depend_on_batch_mates(tmp_path):
+    from promofinder.candidates import generate
+    from promofinder.features import featurize, gates_pass
+    from promofinder.judge import judge_repeated
+    from promofinder.rules import score_beats
+
+    show = load_show(str(FIXTURE))
+    priors = score_beats(show)
+    clips = []
+    for c in generate(show, priors, load_config(None)):
+        featurize(c, show, priors)
+        if gates_pass(c, load_config(None)):
+            clips.append(c)
+    clips = clips[:8]
+    assert len(clips) >= 6
+
+    class CountingJudge(FakeLLM):
+        spec = "fake/judge"
+
+        def json(self, system, user, schema, **kwargs):
+            out = super().json(system, user, schema)
+            for v in out.clips:
+                v.hook = 1 + (self.calls % 5)
+            return out
+
+    judge = CountingJudge()
+    cfg = load_config(None)
+    cfg["llm"]["cache_dir"] = str(tmp_path / "llm")
+    cfg["llm"]["judge_repeats"] = 1
+    first = judge_repeated(show, clips[:5], judge, cfg, seed=1)
+    calls = judge.calls
+    second = judge_repeated(show, clips[2:8], judge, cfg, seed=99)
+    assert judge.calls > calls
+    for c in clips[2:5]:
+        assert first[c.cid].hook == second[c.cid].hook

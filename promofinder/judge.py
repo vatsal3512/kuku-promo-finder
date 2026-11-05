@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import random
 import re
@@ -6,8 +7,9 @@ import string
 import threading
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from typing import Annotated
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, BeforeValidator, Field
 
 from .features import beats_in, clip_time
 from .llm import LLMError
@@ -38,20 +40,50 @@ PAIR_SYSTEM = (
 )
 
 
+WORD_SCORES = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "zero": 0}
+
+
+def score(value):
+    if isinstance(value, str):
+        text = value.strip().lower()
+        if text in WORD_SCORES:
+            return WORD_SCORES[text]
+        found = re.search(r"\d+(?:\.\d+)?", text)
+        if not found:
+            return value
+        value = float(found.group())
+        out_of = re.search(r"/\s*(\d+)", text)
+        if out_of and float(out_of.group(1)) not in (0, 5):
+            value = value * 5 / float(out_of.group(1))
+    if isinstance(value, (int, float)):
+        return max(0.0, min(5.0, float(value)))
+    return value
+
+
+def text_list(value):
+    if isinstance(value, str):
+        return [part.strip() for part in re.split(r"[;,]", value) if part.strip()]
+    return value or []
+
+
+Score = Annotated[float, BeforeValidator(score)]
+TextList = Annotated[list[str], BeforeValidator(text_list)]
+
+
 class ClipVerdict(BaseModel):
     clip: str
     notes: str = ""
     who: str = ""
     stakes: str = ""
     open_question: str = ""
-    unexplained_refs: list[str] = []
-    hook: float = Field(ge=0, le=5)
-    cliffhanger: float = Field(ge=0, le=5)
-    standalone: float = Field(ge=0, le=5)
-    escalation: float = Field(ge=0, le=5)
-    premise: float = Field(ge=0, le=5)
+    unexplained_refs: TextList = []
+    hook: Score = Field(ge=0, le=5)
+    cliffhanger: Score = Field(ge=0, le=5)
+    standalone: Score = Field(ge=0, le=5)
+    escalation: Score = Field(default=3, ge=0, le=5)
+    premise: Score = Field(default=3, ge=0, le=5)
     spoiler_level: str = "none"
-    policy_flags: list[str] = []
+    policy_flags: TextList = []
     hook_type: str = "confrontation"
     why_it_works: str = ""
     judge_spread: float = 0.0
@@ -65,6 +97,9 @@ class Verdicts(BaseModel):
 class PairChoice(BaseModel):
     reason: str = ""
     winner: str
+
+
+RENDER_VERSION = "render-v1"
 
 
 def render_clip(candidate: Candidate, show: Show) -> str:
@@ -190,9 +225,34 @@ def merge_verdicts(found: list[ClipVerdict]) -> ClipVerdict:
     return ClipVerdict.model_validate(data)
 
 
+JUDGE_VERSION = hashlib.sha256((JUDGE_SYSTEM + RENDER_VERSION).encode("utf-8")).hexdigest()[:8]
+
+
+def pass_store(judge_llm, cfg: dict, n: int):
+    spec = getattr(judge_llm, "spec", None)
+    if not spec or not cfg["llm"].get("verdict_store", True):
+        return None
+    return VerdictStore(cfg["llm"].get("cache_dir", ".cache/llm"), f"judge-{spec}-{JUDGE_VERSION}-pass{n}")
+
+
 def judge_repeated(show: Show, items: list[Candidate], judge_llm, cfg: dict, seed: int, log=print) -> dict:
     repeats = max(1, cfg["llm"].get("judge_repeats", 2))
-    runs = [judge_batches(show, items, judge_llm, cfg, seed=seed + i, log=log) for i in range(repeats)]
+    runs = []
+    for i in range(repeats):
+        store = pass_store(judge_llm, cfg, i)
+        known = {}
+        if store:
+            for c in items:
+                stored = store.get(c)
+                if stored:
+                    known[c.cid] = stored
+        missing = [c for c in items if c.cid not in known]
+        fresh = judge_batches(show, missing, judge_llm, cfg, seed=seed + i, log=log) if missing else {}
+        if store:
+            for c in missing:
+                if c.cid in fresh:
+                    store.put(c, fresh[c.cid])
+        runs.append({**known, **fresh})
     merged = {}
     for c in items:
         found = [r[c.cid] for r in runs if c.cid in r]

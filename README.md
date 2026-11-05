@@ -2,6 +2,8 @@
 
 Finds promo clips (20-60 s) in microdrama screenplays and ranks them.
 
+Live app: https://kuku-promo-finder.streamlit.app
+
 You give it a folder of episode scripts. It gives back a list of promos, each with the episode, start and end time of every segment, the hook, the cliffhanger, a line on why it works and why it got its rank.
 
 The LLM never writes timestamps itself. It only points at lines in the script, and the code works out the cut points (on shot changes, never in the middle of a line). I tried letting the model write timestamps directly: 23 out of 100 promos came out broken.

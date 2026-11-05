@@ -203,7 +203,7 @@ with left:
     st.markdown('<div class="label">Ranked promos</div>', unsafe_allow_html=True)
     event = st.dataframe(
         table, hide_index=True, on_select="rerun", selection_mode="single-row", key="list", height=35 * len(table) + 38,
-        column_config={"#": st.column_config.NumberColumn(width=40), "Clip": st.column_config.TextColumn(width="medium"), "Length": st.column_config.TextColumn(width=64), "Use": st.column_config.TextColumn(width=112)},
+        column_config={"#": st.column_config.NumberColumn(width=40), "Clip": st.column_config.TextColumn(width=180), "Length": st.column_config.TextColumn(width=64), "Use": st.column_config.TextColumn(width=118)},
     )
     st.caption("Click a row to open it. #1 is the safest early clip to post first. Retargeting cuts give away late twists, so they are for people already watching. To try it on new scripts, open the panel with the arrow at the top left.")
 

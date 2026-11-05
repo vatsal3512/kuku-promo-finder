@@ -1,0 +1,106 @@
+EPISODE NUMBER: Episode 2
+EPISODE LOGLINE: Maya returns as owner and humiliates the chef, until a sister appears.
+CONTINUITY NOTES: Picks up directly from Episode 1's cliffhanger.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. RESTAURANT - DAY
+Scene start: 00:00.00
+Scene end: 00:42.00
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:04.00)
+The staff lines up nervously.
+
+**MAYA (Cold, Resolute):**
+Start: (00:00.40) | End: (00:03.00)
+"Then the restaurant belongs to me."
+
+**HEAD CHEF (Mocking):**
+Start: (00:04.20) | End: (00:07.00)
+"The dishwasher is back? Security!"
+
+**CAMERA:**
+Start: (00:04.00) | End: (00:09.00)
+Close-up on the chef pointing.
+
+**ACTION:**
+Start: (00:07.20) | End: (00:09.00)
+Two guards step toward Maya.
+
+**LAWYER (Formal):**
+Start: (00:09.40) | End: (00:13.00)
+"Stop. Miss Maya Lane is the new owner of this restaurant."
+
+**CAMERA:**
+Start: (00:09.00) | End: (00:14.00)
+Wide shot as the room gasps.
+
+**SOUND FX:**
+Start: (00:13.00) | End: (00:14.00)
+A collective gasp.
+
+**HEAD CHEF (Stunned):**
+Start: (00:14.20) | End: (00:15.60)
+"Owner?"
+
+**CAMERA:**
+Start: (00:14.00) | End: (00:19.00)
+Close-up on the chef's face draining of color.
+
+**MAYA (Calm, Cutting):**
+Start: (00:16.00) | End: (00:19.00)
+"You threw my apron in the trash."
+
+**CAMERA:**
+Start: (00:19.00) | End: (00:25.00)
+Maya steps forward.
+
+**MAYA (Commanding):**
+Start: (00:19.40) | End: (00:22.00)
+"Now pick it up."
+
+**ACTION:**
+Start: (00:22.20) | End: (00:25.00)
+The chef kneels slowly toward the trash bin.
+
+**HEAD CHEF (Desperate, Pleading):**
+Start: (00:25.40) | End: (00:28.40)
+"Please, I have a family."
+
+**CAMERA:**
+Start: (00:25.00) | End: (00:31.00)
+Close-up on Maya.
+
+**MAYA (Cold):**
+Start: (00:28.80) | End: (00:31.00)
+"So did the people you fired."
+
+**CAMERA:**
+Start: (00:31.00) | End: (00:37.00)
+The kitchen door bursts open.
+
+**ACTION:**
+Start: (00:31.20) | End: (00:34.00)
+A woman in a red coat storms in.
+
+**WOMAN IN RED (Venomous):**
+Start: (00:34.20) | End: (00:37.00)
+"That inheritance is mine, sister."
+
+**CAMERA:**
+Start: (00:37.00) | End: (00:42.00)
+Close-up on Maya's eyes widening.
+
+**MAYA (Shocked):**
+Start: (00:37.40) | End: (00:39.00)
+"Sister?"
+
+**SOUND FX:**
+Start: (00:39.00) | End: (00:42.00)
+A sharp sting and cut to black.
+
+--- SCRIPT END ---

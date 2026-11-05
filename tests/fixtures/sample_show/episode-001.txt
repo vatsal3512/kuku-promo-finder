@@ -1,0 +1,122 @@
+EPISODE NUMBER: Episode 1
+EPISODE LOGLINE: A fired dishwasher learns she is the heir of the restaurant empire.
+CONTINUITY NOTES: First episode.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. RESTAURANT KITCHEN - NIGHT
+Scene start: 00:00.00
+Scene end: 00:48.00
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+Wide shot of a steaming kitchen.
+
+**ACTION:**
+Start: (00:00.50) | End: (00:03.00)
+Maya plates a dessert as the head chef storms in.
+
+**HEAD CHEF (Furious, Shouting):**
+Start: (00:03.20) | End: (00:05.40)
+"Who burned the sauce?!"
+
+**CAMERA:**
+Start: (00:03.00) | End: (00:06.00)
+Close-up on the chef's red face.
+
+**MAYA (Calm):**
+Start: (00:06.20) | End: (00:07.60)
+"It was not me."
+
+**CAMERA:**
+Start: (00:06.00) | End: (00:09.00)
+Close-up on Maya.
+
+**HEAD CHEF (Cruel, Mocking):**
+Start: (00:09.10) | End: (00:12.00)
+"A dishwasher talking back? You are fired."
+
+**CAMERA:**
+Start: (00:09.00) | End: (00:14.00)
+Two-shot as the staff freeze.
+
+**ACTION:**
+Start: (00:12.20) | End: (00:14.00)
+He throws her apron into the trash.
+
+**SOUND FX:**
+Start: (00:12.50) | End: (00:13.50)
+A metal lid slams.
+
+**MAYA (Trembling, Defiant):**
+Start: (00:14.20) | End: (00:17.00)
+"You will regret this."
+
+**CAMERA:**
+Start: (00:14.00) | End: (00:20.00)
+Push-in on Maya.
+
+**HEAD CHEF (Gloating):**
+Start: (00:17.40) | End: (00:20.00)
+"Regret firing nobody? Get out."
+
+**CAMERA:**
+Start: (00:20.00) | End: (00:26.00)
+Back door opens to the alley.
+
+**ACTION:**
+Start: (00:20.50) | End: (00:25.50)
+Maya walks into the rain as a black car pulls up.
+
+**DRIVER (Respectful):**
+Start: (00:26.00) | End: (00:28.40)
+"Miss Maya, your grandfather is dying."
+
+**CAMERA:**
+Start: (00:26.00) | End: (00:31.00)
+Close-up on Maya's shocked face.
+
+**MAYA (Shocked, Whispering):**
+Start: (00:28.80) | End: (00:30.60)
+"He swore he would never see me again."
+
+**DRIVER (Urgent):**
+Start: (00:31.00) | End: (00:34.00)
+"He wants to name you his heir tonight."
+
+**CAMERA:**
+Start: (00:31.00) | End: (00:36.00)
+Wide shot of the car door held open.
+
+**ACTION:**
+Start: (00:34.20) | End: (00:36.00)
+Maya looks back at the restaurant window.
+
+**MAYA (Cold, Resolute):**
+Start: (00:36.40) | End: (00:39.00)
+"Then the restaurant belongs to me."
+
+**CAMERA:**
+Start: (00:36.00) | End: (00:42.00)
+Through the window, the head chef laughs with the staff.
+
+**ACTION:**
+Start: (00:39.20) | End: (00:42.00)
+The head chef laughs, unaware.
+
+**CAMERA:**
+Start: (00:42.00) | End: (00:48.00)
+Close-up on Maya getting in the car.
+
+**MAYA (V.O.) (Steely):**
+Start: (00:42.50) | End: (00:46.50)
+"Tomorrow he will learn who owns this kitchen."
+
+**SOUND FX:**
+Start: (00:46.00) | End: (00:48.00)
+A low string sting holds into cut to black.
+
+--- SCRIPT END ---

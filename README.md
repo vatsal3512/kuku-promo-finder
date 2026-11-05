@@ -20,16 +20,22 @@ Put your NVIDIA NIM key in `.env` (free at build.nvidia.com). More keys can go i
 ## Run
 
 ```bash
-python -m promofinder check --input path/to/scripts
+python -m promofinder check --input path/to/scripts --model nvidia/nvidia/nemotron-3-ultra-550b-a55b
+python -m promofinder run --input path/to/scripts --profile fast
 python -m promofinder run --input path/to/scripts
 python -m promofinder run --offline --input tests/fixtures/sample_show
 streamlit run app.py
 ```
 
-- `check` shows how the scripts were parsed, before spending any API calls
-- `run` is the full pipeline, about 20-25 min for 50 episodes on the free tier
+- `check` shows how the scripts were parsed (and warns about odd times, empty files, missing speakers) before spending any API calls. With `--model` it also tests the model: key, speed and whether it answers in clean JSON
+- `--profile fast` takes about 3 min for 50 episodes: quick tagging, one judging pass, no second judge
+- `--profile standard` about 10 min; `run` with no profile (or `--profile full`) is everything, about 20-25 min
 - `--offline` uses only rules, no API key needed, takes a few seconds
 - `app.py` opens a small review app where you can go through the promos and approve or reject them
+
+If the model fails part way (bad key, no credit, the model is down), the run doesn't stop: that step falls back to rules, the output still comes out, and `run_meta.json` lists what fell back under `degraded`. Running the same command again picks up from the cache, so a crashed run costs nothing to restart.
+
+Input can be one file per episode, a whole series in one file (split on `EPISODE 1`, `EPISODE 2`...), or a `.zip` in the app. UTF-8, UTF-16 and old Windows text all work.
 
 Results go to `outputs/<show>/<time>-<mode>/`:
 
@@ -38,7 +44,7 @@ Results go to `outputs/<show>/<time>-<mode>/`:
 | `promos.md` | the ranked list, easy to read |
 | `promos.json` / `promos.csv` | same list with all fields (scores, ad flags, spoiler level, which episode it sends viewers to) |
 | `edl.csv` | edit list: promo, segment, episode, in, out |
-| `ffmpeg_cuts.sh` | cuts the promos from the episode videos once you have them |
+| `ffmpeg_cuts.sh` / `ffmpeg_cuts.ps1` | cuts the promos from the episode videos once you have them (bash or Windows PowerShell) |
 | `candidates_scored.jsonl` | every clip that was scored |
 
 ## Changing the model
@@ -54,6 +60,8 @@ python -m promofinder run --input scripts --jury-model none
 Supported: `nvidia`, `groq`, `gemini`, `openrouter`, `openai`, `together`, `mistral`, `deepseek`, `ollama`, and `custom` for any OpenAI-compatible endpoint (set `PROMO_LLM_BASE_URL` and `PROMO_LLM_API_KEY`). Default is Nemotron 3 Ultra for picking and judging, with Mistral Large 4 as a second judge. Weights and limits are in `config.yaml`.
 
 ## How it works
+
+Module map and data flow: [docs/architecture.md](docs/architecture.md).
 
 1. Parse the scripts into scenes, timed lines, speakers and camera shots.
 2. Score every line as a possible hook or cliffhanger (rules), and ask the LLM for the best hook and cliffhanger in each episode.
@@ -85,7 +93,7 @@ python -m promofinder agree --run outputs/<show>/<run> --human eval/human_scores
 python -m pytest -q
 ```
 
-The tests use a small made-up show in `tests/fixtures/sample_show` and a fake model, so they don't need a key or network.
+The tests don't need a key or network. They use three small made-up shows in different formats (`sample_show`, a whole series in one SRT-style file in `office_combined`, and Hindi speaker names with plain-seconds times in `family_hinglish`), broken inputs (empty, UTF-16, no times, times running backwards), and fake models that fail in the ways real ones do: bad key, no credit, unknown model, refusals, unsupported settings, and replies in odd shapes like `"b16"` or `"4/5"`.
 
 ## Script format
 
@@ -97,6 +105,6 @@ Start: (00:11.30) | End: (00:13.10)
 "Line of dialogue."
 ```
 
-`CAMERA`, `ACTION` and `SOUND FX` blocks use the same timing line. It also reads `[mm:ss - mm:ss]` and SRT-style `hh:mm:ss,mmm --> hh:mm:ss,mmm` ranges, tags without bold, and `.md` / `.fountain` files. Run `check` first on a new show to see if anything looks off.
+`CAMERA`, `ACTION` and `SOUND FX` blocks use the same timing line. It also reads `[mm:ss - mm:ss]`, plain seconds like `[12.5s - 15s]` and SRT-style `hh:mm:ss,mmm --> hh:mm:ss,mmm` ranges, tags without bold (including non-Latin names like Hindi), and `.md` / `.fountain` files. Run `check` first on a new show to see if anything looks off.
 
 Outputs from the full input pack are in `raw_outputs/`. The show scripts themselves are not in this repo.
